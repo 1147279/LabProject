@@ -1,1 +1,14 @@
 http://iot-labs.com.my/2016/03/foggy-about-fog-computing/
+
+
+latency, bandwidth, energy and cost
+
+
+[20] S. Yi, Z. Hao, Z. Qin, and Q. Li, “Fog computing: Platform and applications,” in Proc. 3rd IEEE Workshop Hot Topics Web Syst. Technol. (HotWeb), Washington, DC, USA, 2015, pp. 73–78.
+
+
+[21] K. Ha et al., “Towards wearable cognitive assistance,” in Proc. 12th Annu. Int. Conf. Mobile Syst. Appl. Services, Bretton Woods, NH, USA, 2014, pp. 68–81.
+
+
+
+[22] B.-G. Chun, S. Ihm, P. Maniatis, M. Naik, and A. Patti, “CloneCloud: Elastic execution between mobile device and cloud,” in Proc. 6th Conf. Comput. Syst., Salzburg, Austria, 2011, pp. 301–314.
