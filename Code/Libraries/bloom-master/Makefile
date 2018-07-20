@@ -20,6 +20,7 @@ LINKER_OPT       = -L/usr/lib -lstdc++ -lm
 BUILD_LIST+=bloom_filter_example01
 BUILD_LIST+=bloom_filter_example02
 BUILD_LIST+=bloom_filter_example03
+BUILD_LIST+=smallDataSet
 
 all: $(BUILD_LIST)
 
@@ -27,7 +28,7 @@ $(BUILD_LIST) : %: %.cpp bloom_filter.hpp
 	$(COMPILER) $(OPTIONS) -o $@ $@.cpp $(LINKER_OPT)
 
 strip_bin :
-	@for f in $(BUILD_LIST); do if [ -f $$f ]; then strip -s $$f; echo $$f; fi done; 
+	@for f in $(BUILD_LIST); do if [ -f $$f ]; then strip -s $$f; echo $$f; fi done;
 
 valgrind :
 	@for f in $(BUILD_LIST); do \
