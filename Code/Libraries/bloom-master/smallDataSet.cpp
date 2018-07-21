@@ -1,11 +1,12 @@
 
 #include <iostream>
 #include <string>
-
+#include <fstream>
 #include "bloom_filter.hpp"
+#include <ctime>
+
 
 using namespace std;
-
 
 void createParameters(bloom_parameters &parameters, int elementCount, double falsePositiveProbability, int randSeed)
 {
@@ -33,7 +34,6 @@ void createParameters(bloom_parameters &parameters, int elementCount, double fal
 
 
 }
-
 
 
 
@@ -74,6 +74,80 @@ int main()
   // ----------------------------------------------------------------------------------------------------------
 
 
+
+  // READ FROM Filter
+
+  ifstream inputFile;
+  ifstream queryFile;
+
+  inputFile.open("random-list4.txt", ifstream::in);
+
+  queryFile.open("query.txt", ifstream::in);
+
+  string tempElement;
+  int count = 0;
+
+  while (inputFile >> tempElement)
+  {
+    filter.insert(tempElement);
+    //cout << "read in " << '(' << tempElement << ')' << endl;
+    count++;
+  }
+
+
+  clock_t start;
+
+  start = clock();
+
+
+  while (queryFile >> tempElement)
+  {
+    if (filter.contains(tempElement))
+    {
+      cout << "filter contains: " << tempElement << endl;
+    }
+  }
+
+
+  cout << "Time with Bloom Filter: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+
+  queryFile.close();
+  inputFile.close();
+
+  queryFile.open("query.txt", ifstream::in);
+
+
+
+  start = clock();
+
+  string tempElement2;
+
+  while (queryFile >> tempElement)
+  {
+    inputFile.open("random-list4.txt", ifstream::in);
+    while (inputFile >> tempElement2)
+    {
+      if (tempElement == tempElement2)
+      {
+        cout << "file contains: " << tempElement << endl;
+      }
+    }
+    inputFile.close();
+  }
+
+
+  cout << "Time with no filter: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+
+
+
+
+
+
+
+
+
+
+  /*
 
 
   // Put Stuff In Filter
@@ -150,7 +224,7 @@ int main()
     }
 
     // invalid numbers
-    for (int i = -1; i > -100; --i)
+    for (int i = -1; i > -elementCount; --i)
     {
        if (filter.contains(i))
        {
@@ -158,6 +232,8 @@ int main()
        }
     }
   }
+
+  */
 
   return 0;
 }
