@@ -1,0 +1,8 @@
+Make sure on both computers to say:
+
+sudo service ssh start
+
+Then on host computer say something like: 
+
+scp /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/bloom-master/bloom_filter_example01 darrenblanckensee@10.0.0.110:/Users/darrenblanckensee/Desktop
+
