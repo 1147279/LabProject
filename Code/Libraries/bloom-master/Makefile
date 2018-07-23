@@ -11,16 +11,18 @@
 # http://www.opensource.org/licenses/MIT
 #
 
-COMPILER         = -c++
+COMPILER         = -mpic++
 #COMPILER        = -clang
 OPTIMIZATION_OPT = -O3
-OPTIONS          = -pedantic-errors -ansi -Wall -Wextra -Werror -Wno-long-long $(OPTIMIZATION_OPT)
+OPTIONS          = #-pedantic-errors -ansi -Wall -Wextra -Werror -Wno-long-long $(OPTIMIZATION_OPT)
 LINKER_OPT       = -L/usr/lib -lstdc++ -lm
 
 BUILD_LIST+=bloom_filter_example01
 BUILD_LIST+=bloom_filter_example02
 BUILD_LIST+=bloom_filter_example03
 BUILD_LIST+=smallDataSet
+BUILD_LIST+=MPIedge
+BUILD_LIST+=MPIedgeNotCloud
 
 all: $(BUILD_LIST)
 
@@ -39,7 +41,7 @@ valgrind :
 		fi done;
 
 clean:
-	rm -f core *.o *.bak *stackdump *#
+	rm -f core *.out *.bak *stackdump bloom_filter_example01 bloom_filter_example02 bloom_filter_example03 smallDataSet MPIedge MPIedgeNotCloud
 
 #
 # The End !
