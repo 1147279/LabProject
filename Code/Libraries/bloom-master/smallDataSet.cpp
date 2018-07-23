@@ -40,7 +40,7 @@ void createParameters(bloom_parameters &parameters, int elementCount, double fal
 int main()
 {
 
-  int elementCount = 0;
+  int elementCount = 0 ;
   double falsePositiveProbability = 0;
   int randSeed = 0xA5A5A5A5;
 
@@ -147,9 +147,9 @@ int main()
 
 
 
-  /*
 
 
+/*
   // Put Stuff In Filter
 
 
