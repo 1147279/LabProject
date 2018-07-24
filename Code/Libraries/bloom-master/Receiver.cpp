@@ -2,11 +2,14 @@
 #include <fstream>
 #include <stdio.h>
 #include <string>
+#include <unistd.h>
 
 using namespace std;
 
 int main()
 {
+  unsigned int milli ;//= 500000;
+  milli = 100000;
 
   double sum = 0;
 
@@ -21,18 +24,22 @@ int main()
     }
   }
 
-  cout << "file recived" << endl;
+  inFile.close();
 
-  ifstream areaA;
-  areaA.open("Table1.txt", ifstream::in);
 
+  cout << "file received" << endl;
+
+  usleep(milli);
+
+
+  inFile.open("Table1.txt",ifstream::in);
   double tempA;
   double avg;
   int count = 0;
 
-  while (areaA >> tempA)
+  while (inFile >> tempA)
   {
-
+    cout << tempA << endl;
     sum += tempA;
     count ++;
 
