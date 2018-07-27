@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1532674537 source:c:\users\trust office\documents\elen4012code\query\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<ctime>
+	<cstdlib>
+	"Table.h"
+
+1532672863 c:\users\trust office\documents\elen4012code\query\include\table.h
+	<iostream>
+	<fstream>
+	<string>
+	<ctime>
+	<cstdlib>
+
+1532672863 source:c:\users\trust office\documents\elen4012code\query\src\table.cpp
+	"Table.h"
+
