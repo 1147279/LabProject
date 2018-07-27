@@ -1,0 +1,12 @@
+prefix=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/installed
+exec_prefix=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/installed
+libdir=/usr/local/lib
+includedir=${prefix}/include
+
+Name: libbrotlidec
+URL: https://github.com/google/brotli
+Description: Brotli decoder library
+Version: 1.0.5
+Libs: -L${libdir} -lbrotlidec
+Requires.private: libbrotlicommon >= 1.0.2
+Cflags: -I${includedir}

@@ -1,0 +1,11 @@
+BLOOM FILTER:
+
+https://github.com/ArashPartow/bloom
+
+
+------------------------------------------------------------------
+
+
+COMPRESSION ALGORITHMS:
+
+https://github.com/google/brotli/blob/master/LICENSE

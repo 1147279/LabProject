@@ -1,0 +1,1053 @@
+Start testing: Jul 23 16:11 SAST
+----------------------------------------------------------
+1/70 Testing: roundtrip/tests/testdata/alice29.txt/1
+1/70 Test: roundtrip/tests/testdata/alice29.txt/1
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=1" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/alice29.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/alice29.txt.1" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/alice29.txt/1" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/alice29.txt/1" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/alice29.txt/1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/70 Testing: roundtrip/tests/testdata/alice29.txt/6
+2/70 Test: roundtrip/tests/testdata/alice29.txt/6
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=6" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/alice29.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/alice29.txt.6" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/alice29.txt/6" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/alice29.txt/6" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/alice29.txt/6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/70 Testing: roundtrip/tests/testdata/alice29.txt/9
+3/70 Test: roundtrip/tests/testdata/alice29.txt/9
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=9" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/alice29.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/alice29.txt.9" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/alice29.txt/9" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/alice29.txt/9" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/alice29.txt/9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/70 Testing: roundtrip/tests/testdata/alice29.txt/11
+4/70 Test: roundtrip/tests/testdata/alice29.txt/11
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=11" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/alice29.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/alice29.txt.11" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/alice29.txt/11" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.72 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/alice29.txt/11" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/alice29.txt/11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/70 Testing: roundtrip/tests/testdata/asyoulik.txt/1
+5/70 Test: roundtrip/tests/testdata/asyoulik.txt/1
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=1" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/asyoulik.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/asyoulik.txt.1" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/asyoulik.txt/1" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/asyoulik.txt/1" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/asyoulik.txt/1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/70 Testing: roundtrip/tests/testdata/asyoulik.txt/6
+6/70 Test: roundtrip/tests/testdata/asyoulik.txt/6
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=6" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/asyoulik.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/asyoulik.txt.6" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/asyoulik.txt/6" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/asyoulik.txt/6" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/asyoulik.txt/6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/70 Testing: roundtrip/tests/testdata/asyoulik.txt/9
+7/70 Test: roundtrip/tests/testdata/asyoulik.txt/9
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=9" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/asyoulik.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/asyoulik.txt.9" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/asyoulik.txt/9" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/asyoulik.txt/9" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/asyoulik.txt/9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/70 Testing: roundtrip/tests/testdata/asyoulik.txt/11
+8/70 Test: roundtrip/tests/testdata/asyoulik.txt/11
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=11" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/asyoulik.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/asyoulik.txt.11" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/asyoulik.txt/11" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.56 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/asyoulik.txt/11" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/asyoulik.txt/11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/70 Testing: roundtrip/tests/testdata/lcet10.txt/1
+9/70 Test: roundtrip/tests/testdata/lcet10.txt/1
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=1" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/lcet10.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/lcet10.txt.1" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/lcet10.txt/1" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/lcet10.txt/1" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/lcet10.txt/1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/70 Testing: roundtrip/tests/testdata/lcet10.txt/6
+10/70 Test: roundtrip/tests/testdata/lcet10.txt/6
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=6" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/lcet10.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/lcet10.txt.6" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/lcet10.txt/6" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/lcet10.txt/6" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/lcet10.txt/6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/70 Testing: roundtrip/tests/testdata/lcet10.txt/9
+11/70 Test: roundtrip/tests/testdata/lcet10.txt/9
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=9" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/lcet10.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/lcet10.txt.9" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/lcet10.txt/9" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/lcet10.txt/9" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/lcet10.txt/9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/70 Testing: roundtrip/tests/testdata/lcet10.txt/11
+12/70 Test: roundtrip/tests/testdata/lcet10.txt/11
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=11" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/lcet10.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/lcet10.txt.11" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/lcet10.txt/11" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   2.10 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/lcet10.txt/11" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/lcet10.txt/11" time elapsed: 00:00:02
+----------------------------------------------------------
+
+13/70 Testing: roundtrip/tests/testdata/plrabn12.txt/1
+13/70 Test: roundtrip/tests/testdata/plrabn12.txt/1
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=1" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/plrabn12.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/plrabn12.txt.1" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/plrabn12.txt/1" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/plrabn12.txt/1" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/plrabn12.txt/1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/70 Testing: roundtrip/tests/testdata/plrabn12.txt/6
+14/70 Test: roundtrip/tests/testdata/plrabn12.txt/6
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=6" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/plrabn12.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/plrabn12.txt.6" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/plrabn12.txt/6" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/plrabn12.txt/6" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/plrabn12.txt/6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/70 Testing: roundtrip/tests/testdata/plrabn12.txt/9
+15/70 Test: roundtrip/tests/testdata/plrabn12.txt/9
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=9" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/plrabn12.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/plrabn12.txt.9" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/plrabn12.txt/9" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.18 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/plrabn12.txt/9" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/plrabn12.txt/9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/70 Testing: roundtrip/tests/testdata/plrabn12.txt/11
+16/70 Test: roundtrip/tests/testdata/plrabn12.txt/11
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=11" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/plrabn12.txt" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/plrabn12.txt.11" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/tests/testdata/plrabn12.txt/11" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   2.22 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/tests/testdata/plrabn12.txt/11" end time: Jul 23 16:11 SAST
+"roundtrip/tests/testdata/plrabn12.txt/11" time elapsed: 00:00:02
+----------------------------------------------------------
+
+17/70 Testing: roundtrip/c/enc/encode.c/1
+17/70 Test: roundtrip/c/enc/encode.c/1
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=1" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/enc/encode.c" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/encode.c.1" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/enc/encode.c/1" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/enc/encode.c/1" end time: Jul 23 16:11 SAST
+"roundtrip/c/enc/encode.c/1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/70 Testing: roundtrip/c/enc/encode.c/6
+18/70 Test: roundtrip/c/enc/encode.c/6
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=6" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/enc/encode.c" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/encode.c.6" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/enc/encode.c/6" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/enc/encode.c/6" end time: Jul 23 16:11 SAST
+"roundtrip/c/enc/encode.c/6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/70 Testing: roundtrip/c/enc/encode.c/9
+19/70 Test: roundtrip/c/enc/encode.c/9
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=9" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/enc/encode.c" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/encode.c.9" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/enc/encode.c/9" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/enc/encode.c/9" end time: Jul 23 16:11 SAST
+"roundtrip/c/enc/encode.c/9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/70 Testing: roundtrip/c/enc/encode.c/11
+20/70 Test: roundtrip/c/enc/encode.c/11
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=11" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/enc/encode.c" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/encode.c.11" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/enc/encode.c/11" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.31 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/enc/encode.c/11" end time: Jul 23 16:11 SAST
+"roundtrip/c/enc/encode.c/11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/70 Testing: roundtrip/c/common/dictionary.h/1
+21/70 Test: roundtrip/c/common/dictionary.h/1
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=1" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/common/dictionary.h" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/dictionary.h.1" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/common/dictionary.h/1" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/common/dictionary.h/1" end time: Jul 23 16:11 SAST
+"roundtrip/c/common/dictionary.h/1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/70 Testing: roundtrip/c/common/dictionary.h/6
+22/70 Test: roundtrip/c/common/dictionary.h/6
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=6" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/common/dictionary.h" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/dictionary.h.6" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/common/dictionary.h/6" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/common/dictionary.h/6" end time: Jul 23 16:11 SAST
+"roundtrip/c/common/dictionary.h/6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/70 Testing: roundtrip/c/common/dictionary.h/9
+23/70 Test: roundtrip/c/common/dictionary.h/9
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=9" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/common/dictionary.h" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/dictionary.h.9" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/common/dictionary.h/9" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/common/dictionary.h/9" end time: Jul 23 16:11 SAST
+"roundtrip/c/common/dictionary.h/9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/70 Testing: roundtrip/c/common/dictionary.h/11
+24/70 Test: roundtrip/c/common/dictionary.h/11
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=11" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/common/dictionary.h" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/dictionary.h.11" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/common/dictionary.h/11" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/common/dictionary.h/11" end time: Jul 23 16:11 SAST
+"roundtrip/c/common/dictionary.h/11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/70 Testing: roundtrip/c/dec/decode.c/1
+25/70 Test: roundtrip/c/dec/decode.c/1
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=1" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/dec/decode.c" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/decode.c.1" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/dec/decode.c/1" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/dec/decode.c/1" end time: Jul 23 16:11 SAST
+"roundtrip/c/dec/decode.c/1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/70 Testing: roundtrip/c/dec/decode.c/6
+26/70 Test: roundtrip/c/dec/decode.c/6
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=6" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/dec/decode.c" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/decode.c.6" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/dec/decode.c/6" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/dec/decode.c/6" end time: Jul 23 16:11 SAST
+"roundtrip/c/dec/decode.c/6" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/70 Testing: roundtrip/c/dec/decode.c/9
+27/70 Test: roundtrip/c/dec/decode.c/9
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=9" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/dec/decode.c" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/decode.c.9" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/dec/decode.c/9" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/dec/decode.c/9" end time: Jul 23 16:11 SAST
+"roundtrip/c/dec/decode.c/9" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/70 Testing: roundtrip/c/dec/decode.c/11
+28/70 Test: roundtrip/c/dec/decode.c/11
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DQUALITY=11" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/c/dec/decode.c" "-DOUTPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/decode.c.11" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-roundtrip-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"roundtrip/c/dec/decode.c/11" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.39 sec
+----------------------------------------------------------
+Test Passed.
+"roundtrip/c/dec/decode.c/11" end time: Jul 23 16:11 SAST
+"roundtrip/c/dec/decode.c/11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/70 Testing: compatibility/tests/testdata/10x10y.compressed
+29/70 Test: compatibility/tests/testdata/10x10y.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/10x10y.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/10x10y.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/10x10y.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/10x10y.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/70 Testing: compatibility/tests/testdata/64x.compressed
+30/70 Test: compatibility/tests/testdata/64x.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/64x.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/64x.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/64x.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/64x.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/70 Testing: compatibility/tests/testdata/alice29.txt.compressed
+31/70 Test: compatibility/tests/testdata/alice29.txt.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/alice29.txt.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/alice29.txt.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/alice29.txt.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/alice29.txt.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/70 Testing: compatibility/tests/testdata/asyoulik.txt.compressed
+32/70 Test: compatibility/tests/testdata/asyoulik.txt.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/asyoulik.txt.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/asyoulik.txt.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/asyoulik.txt.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/asyoulik.txt.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/70 Testing: compatibility/tests/testdata/backward65536.compressed
+33/70 Test: compatibility/tests/testdata/backward65536.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/backward65536.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/backward65536.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/backward65536.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/backward65536.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/70 Testing: compatibility/tests/testdata/compressed_file.compressed
+34/70 Test: compatibility/tests/testdata/compressed_file.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/compressed_file.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/compressed_file.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/compressed_file.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/compressed_file.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/70 Testing: compatibility/tests/testdata/compressed_repeated.compressed
+35/70 Test: compatibility/tests/testdata/compressed_repeated.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/compressed_repeated.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/compressed_repeated.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/compressed_repeated.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/compressed_repeated.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/70 Testing: compatibility/tests/testdata/empty.compressed
+36/70 Test: compatibility/tests/testdata/empty.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/70 Testing: compatibility/tests/testdata/empty.compressed.00
+37/70 Test: compatibility/tests/testdata/empty.compressed.00
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.00" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.00" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.00" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.00" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/70 Testing: compatibility/tests/testdata/empty.compressed.01
+38/70 Test: compatibility/tests/testdata/empty.compressed.01
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.01" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.01" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.01" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.01" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/70 Testing: compatibility/tests/testdata/empty.compressed.02
+39/70 Test: compatibility/tests/testdata/empty.compressed.02
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.02" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.02" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.02" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.02" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/70 Testing: compatibility/tests/testdata/empty.compressed.03
+40/70 Test: compatibility/tests/testdata/empty.compressed.03
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.03" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.03" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.03" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.03" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/70 Testing: compatibility/tests/testdata/empty.compressed.04
+41/70 Test: compatibility/tests/testdata/empty.compressed.04
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.04" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.04" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.04" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.04" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/70 Testing: compatibility/tests/testdata/empty.compressed.05
+42/70 Test: compatibility/tests/testdata/empty.compressed.05
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.05" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.05" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.05" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.05" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/70 Testing: compatibility/tests/testdata/empty.compressed.06
+43/70 Test: compatibility/tests/testdata/empty.compressed.06
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.06" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.06" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.06" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.06" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/70 Testing: compatibility/tests/testdata/empty.compressed.07
+44/70 Test: compatibility/tests/testdata/empty.compressed.07
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.07" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.07" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.07" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.07" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/70 Testing: compatibility/tests/testdata/empty.compressed.08
+45/70 Test: compatibility/tests/testdata/empty.compressed.08
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.08" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.08" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.08" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.08" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/70 Testing: compatibility/tests/testdata/empty.compressed.09
+46/70 Test: compatibility/tests/testdata/empty.compressed.09
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.09" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.09" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.09" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.09" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/70 Testing: compatibility/tests/testdata/empty.compressed.10
+47/70 Test: compatibility/tests/testdata/empty.compressed.10
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.10" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.10" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.10" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.10" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/70 Testing: compatibility/tests/testdata/empty.compressed.11
+48/70 Test: compatibility/tests/testdata/empty.compressed.11
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.11" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.11" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.11" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.11" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/70 Testing: compatibility/tests/testdata/empty.compressed.12
+49/70 Test: compatibility/tests/testdata/empty.compressed.12
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.12" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.12" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.12" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.12" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/70 Testing: compatibility/tests/testdata/empty.compressed.13
+50/70 Test: compatibility/tests/testdata/empty.compressed.13
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.13" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.13" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.13" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.13" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/70 Testing: compatibility/tests/testdata/empty.compressed.14
+51/70 Test: compatibility/tests/testdata/empty.compressed.14
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.14" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.14" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.14" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.14" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/70 Testing: compatibility/tests/testdata/empty.compressed.15
+52/70 Test: compatibility/tests/testdata/empty.compressed.15
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.15" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.15" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.15" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.15" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/70 Testing: compatibility/tests/testdata/empty.compressed.16
+53/70 Test: compatibility/tests/testdata/empty.compressed.16
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.16" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.16" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.16" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.16" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/70 Testing: compatibility/tests/testdata/empty.compressed.17
+54/70 Test: compatibility/tests/testdata/empty.compressed.17
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.17" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.17" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.17" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.17" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/70 Testing: compatibility/tests/testdata/empty.compressed.18
+55/70 Test: compatibility/tests/testdata/empty.compressed.18
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/empty.compressed.18" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/empty.compressed.18" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/empty.compressed.18" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/empty.compressed.18" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/70 Testing: compatibility/tests/testdata/lcet10.txt.compressed
+56/70 Test: compatibility/tests/testdata/lcet10.txt.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/lcet10.txt.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/lcet10.txt.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/lcet10.txt.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/lcet10.txt.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/70 Testing: compatibility/tests/testdata/mapsdatazrh.compressed
+57/70 Test: compatibility/tests/testdata/mapsdatazrh.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/mapsdatazrh.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/mapsdatazrh.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/mapsdatazrh.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/mapsdatazrh.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/70 Testing: compatibility/tests/testdata/monkey.compressed
+58/70 Test: compatibility/tests/testdata/monkey.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/monkey.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/monkey.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/monkey.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/monkey.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/70 Testing: compatibility/tests/testdata/plrabn12.txt.compressed
+59/70 Test: compatibility/tests/testdata/plrabn12.txt.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/plrabn12.txt.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/plrabn12.txt.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/plrabn12.txt.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/plrabn12.txt.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/70 Testing: compatibility/tests/testdata/quickfox.compressed
+60/70 Test: compatibility/tests/testdata/quickfox.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/quickfox.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/quickfox.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/quickfox.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/quickfox.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/70 Testing: compatibility/tests/testdata/quickfox_repeated.compressed
+61/70 Test: compatibility/tests/testdata/quickfox_repeated.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/quickfox_repeated.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/quickfox_repeated.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/quickfox_repeated.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/quickfox_repeated.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/70 Testing: compatibility/tests/testdata/random_org_10k.bin.compressed
+62/70 Test: compatibility/tests/testdata/random_org_10k.bin.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/random_org_10k.bin.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/random_org_10k.bin.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/random_org_10k.bin.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/random_org_10k.bin.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/70 Testing: compatibility/tests/testdata/ukkonooa.compressed
+63/70 Test: compatibility/tests/testdata/ukkonooa.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/ukkonooa.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/ukkonooa.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/ukkonooa.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/ukkonooa.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/70 Testing: compatibility/tests/testdata/x.compressed
+64/70 Test: compatibility/tests/testdata/x.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/x.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/x.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/x.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/x.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+65/70 Testing: compatibility/tests/testdata/x.compressed.00
+65/70 Test: compatibility/tests/testdata/x.compressed.00
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/x.compressed.00" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/x.compressed.00" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/x.compressed.00" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/x.compressed.00" time elapsed: 00:00:00
+----------------------------------------------------------
+
+66/70 Testing: compatibility/tests/testdata/x.compressed.01
+66/70 Test: compatibility/tests/testdata/x.compressed.01
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/x.compressed.01" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/x.compressed.01" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/x.compressed.01" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/x.compressed.01" time elapsed: 00:00:00
+----------------------------------------------------------
+
+67/70 Testing: compatibility/tests/testdata/x.compressed.02
+67/70 Test: compatibility/tests/testdata/x.compressed.02
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/x.compressed.02" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/x.compressed.02" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/x.compressed.02" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/x.compressed.02" time elapsed: 00:00:00
+----------------------------------------------------------
+
+68/70 Testing: compatibility/tests/testdata/x.compressed.03
+68/70 Test: compatibility/tests/testdata/x.compressed.03
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/x.compressed.03" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/x.compressed.03" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/x.compressed.03" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/x.compressed.03" time elapsed: 00:00:00
+----------------------------------------------------------
+
+69/70 Testing: compatibility/tests/testdata/xyzzy.compressed
+69/70 Test: compatibility/tests/testdata/xyzzy.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/xyzzy.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/xyzzy.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/xyzzy.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/xyzzy.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+70/70 Testing: compatibility/tests/testdata/zeros.compressed
+70/70 Test: compatibility/tests/testdata/zeros.compressed
+Command: "/usr/bin/cmake" "-DBROTLI_WRAPPER=" "-DBROTLI_CLI=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out/brotli" "-DINPUT=/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/testdata/zeros.compressed" "-P" "/home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/tests/run-compatibility-test.cmake"
+Directory: /home/darren/Desktop/Proooooj/LabProject/Code/Libraries/brotli-master/out
+"compatibility/tests/testdata/zeros.compressed" start time: Jul 23 16:11 SAST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"compatibility/tests/testdata/zeros.compressed" end time: Jul 23 16:11 SAST
+"compatibility/tests/testdata/zeros.compressed" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 23 16:11 SAST
