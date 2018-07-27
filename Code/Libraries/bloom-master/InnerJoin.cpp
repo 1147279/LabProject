@@ -57,13 +57,16 @@ int main(int argc, char *argv[])
 
   string join_kv;
 
+  bool isFound;
+
 
   while (input_A >> kv_pair_A)
   {
 
+    isFound = 0;
     key_A= keyExtraction(delimiter, kv_pair_A);       //Extracting the key from the key-value pair read in from Table A.
     input_B.open("teble2.txt", ifstream::in);
-    while (input_B >> kv_pair_B)
+    while ((input_B >> kv_pair_B)&&(!isFound))
     {
 
 
@@ -74,6 +77,7 @@ int main(int argc, char *argv[])
         join_kv = hashJoin(key_A, kv_pair_A, kv_pair_B);
         //cout << join_kv << '\n';
         outFile << join_kv << endl;
+        isFound = true;
 
       }
 

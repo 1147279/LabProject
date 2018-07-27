@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
         //cout << join_kv << '\n';
         outFile << join_kv << endl;
         isFound = true;
-        
+
       }else
       {
         string tmp_kvpair = key_A+delimiter+"NULL";
