@@ -7,13 +7,13 @@
 	<cstdlib>
 	"Table.h"
 
-1532672863 c:\users\trust office\documents\elen4012code\query\include\table.h
+1532786331 c:\users\trust office\documents\elen4012code\query\include\table.h
 	<iostream>
 	<fstream>
 	<string>
 	<ctime>
 	<cstdlib>
 
-1532672863 source:c:\users\trust office\documents\elen4012code\query\src\table.cpp
+1532781498 source:c:\users\trust office\documents\elen4012code\query\src\table.cpp
 	"Table.h"
 

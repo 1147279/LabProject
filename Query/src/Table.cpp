@@ -7,6 +7,11 @@ Table::Table()
     _humidity = 0;
     _caseNum = 0;
 
+
+    _temperatureCondition = where::any;
+    _pressureCondition = where::any;
+    _humidityCondition = where::any;
+
 }
 
 Table::~Table()
@@ -60,6 +65,93 @@ void Table::select(WeatherAttributes att, WeatherAttributes att2)
         _caseNum = 6;
     }
 
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+void Table::getTemperatureConditions(where con, double value)
+{
+    _temperatureCondition = con;
+    _temperatureThreshold = value;
+}
+
+
+void Table::getPressureConditions(where con, double value)
+{
+    _pressureCondition = con;
+    _pressureThreshold = value;
+}
+
+void Table::getHumidityConditions(where con, double value)
+{
+    _humidityCondition = con;
+    _humidityThreshold = value;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+bool Table::temperatureConditions(double value)
+{
+    if(_temperatureCondition == where::any)
+    {
+        return true;
+    }else if(_temperatureCondition == where::lessThan)
+    {
+        if(_temperature < _temperatureThreshold)
+            return true;
+    }else if(_temperatureCondition == where::lessOrEqualTo)
+    {
+        if(_temperature <= _temperatureThreshold)
+            return true;
+    }else if(_temperatureCondition == where::equalTo)
+    {
+        if(_temperature == _temperatureThreshold)
+            return true;
+    }else if(_temperatureCondition == where::greaterOrEqualTo)
+    {
+         if(_temperature >= _temperatureThreshold)
+            return true;
+    }else if(_temperatureCondition == where::greaterThan)
+    {
+        if(_temperature > _temperatureThreshold)
+            return true;
+    }
+
+    return false;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+void Table::delimeterSeparator(string str, char delimeter, double& att1, double& att2, double& att3)
+{
+    string temp = "";
+    int delimeterCounter = 0;
+
+    for(int i = 0; i < str.size(); i++)
+    {
+        if(str.at(i) != delimeter)
+        {
+            temp += str.at(i);
+        }else if(str.at(i) == delimeter)
+        {
+            if(delimeterCounter == 0)
+            {
+                att1 = stod(temp);
+                delimeterCounter++;
+                temp = "";
+            }else if(delimeterCounter == 1)
+            {
+                att2 = stod(temp);
+                delimeterCounter++;
+                temp = "";
+            }
+        }else if(delimeterCounter == 2 && i == str.size() - 1)
+        {
+            att3 = stod(temp);
+        }
+    }
 }
 
 void Table::run()
