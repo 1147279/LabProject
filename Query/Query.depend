@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1532674537 source:c:\users\trust office\documents\elen4012code\query\main.cpp
+1532875041 source:c:\users\trust office\documents\elen4012code\query\main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -7,13 +7,13 @@
 	<cstdlib>
 	"Table.h"
 
-1532786331 c:\users\trust office\documents\elen4012code\query\include\table.h
+1532875296 c:\users\trust office\documents\elen4012code\query\include\table.h
 	<iostream>
 	<fstream>
 	<string>
 	<ctime>
 	<cstdlib>
 
-1532781498 source:c:\users\trust office\documents\elen4012code\query\src\table.cpp
+1532874949 source:c:\users\trust office\documents\elen4012code\query\src\table.cpp
 	"Table.h"
 

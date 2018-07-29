@@ -43,10 +43,10 @@ public:
     void getHumidityConditions(where con, double value);
 
 
-    bool temperatureConditions(double value);
-    bool pressureConditions(double value);
-    bool HumidityConditions(double value);
-
+    bool temperatureConditions();
+    bool pressureConditions();
+    bool humidityConditions();
+    bool conditionsMet();
 
     void delimeterSeparator(string str, char delimeter, double& att1, double& att2, double& att3);
     void run();

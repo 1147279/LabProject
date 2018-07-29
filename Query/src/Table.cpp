@@ -90,7 +90,7 @@ void Table::getHumidityConditions(where con, double value)
 
 
 
-bool Table::temperatureConditions(double value)
+bool Table::temperatureConditions()
 {
     if(_temperatureCondition == where::any)
     {
@@ -120,8 +120,80 @@ bool Table::temperatureConditions(double value)
     return false;
 }
 
+bool Table::pressureConditions()
+{
+    if(_pressureCondition == where::any)
+    {
+        return true;
+    }else if(_pressureCondition == where::lessThan)
+    {
+        if(_pressure < _pressureThreshold)
+            return true;
+    }else if(_pressureCondition == where::lessOrEqualTo)
+    {
+        if(_pressure <= _pressureThreshold)
+            return true;
+    }else if(_pressureCondition == where::equalTo)
+    {
+        if(_pressure == _pressureThreshold)
+            return true;
+    }else if(_pressureCondition == where::greaterOrEqualTo)
+    {
+         if(_pressure >= _pressureThreshold)
+            return true;
+    }else if(_pressureCondition == where::greaterThan)
+    {
+        if(_pressure > _pressureThreshold)
+            return true;
+    }
+
+    return false;
+}
 
 
+bool Table::humidityConditions()
+{
+    if(_humidityCondition == where::any)
+    {
+        return true;
+    }else if(_humidityCondition == where::lessThan)
+    {
+        if(_humidity < _humidityThreshold)
+            return true;
+    }else if(_humidityCondition == where::lessOrEqualTo)
+    {
+        if(_humidity <= _humidityThreshold)
+            return true;
+    }else if(_humidityCondition == where::equalTo)
+    {
+        if(_humidity == _humidityThreshold)
+            return true;
+    }else if(_humidityCondition == where::greaterOrEqualTo)
+    {
+         if(_humidity >= _humidityThreshold)
+            return true;
+    }else if(_humidityCondition == where::greaterThan)
+    {
+        if(_humidity > _humidityThreshold)
+            return true;
+    }
+
+    return false;
+}
+
+
+
+bool Table::conditionsMet()
+{
+    if(temperatureConditions() == false)
+        return false;
+    if(pressureConditions() == false)
+        return true;
+    if (humidityConditions() == false)
+        return false;
+
+    return true;
+}
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 void Table::delimeterSeparator(string str, char delimeter, double& att1, double& att2, double& att3)
@@ -167,6 +239,11 @@ void Table::run()
     while(input >> temperature  >> pressure  >> humidity)
     {
 
+
+        _temperature  = temperature;
+        _pressure =  pressure;
+        _humidity =  humidity;
+
         if(_caseNum == 1)
         {
             _att1 = temperature;
@@ -192,18 +269,30 @@ void Table::run()
             _att2 = humidity;
         }
 
-        if(_caseNum == 0)
+        if(_caseNum == 0 )
         {
-            output <<  temperature << "\t" << pressure << "\t" << humidity << endl;
-            cout << temperature << "\t" << pressure << "\t" << humidity << endl;
+            if(conditionsMet() == true)
+            {
+                output <<  temperature << "\t" << pressure << "\t" << humidity << endl;
+                cout << temperature << "\t" << pressure << "\t" << humidity << endl;
+            }
+
         }else if(_caseNum >=1 && _caseNum <= 3)
         {
-            output << _att1<< endl;
-            cout << _att1 << endl;
+            if(conditionsMet() == true)
+            {
+                output << _att1<< endl;
+                cout << _att1 << endl;
+            }
+
         } else if(_caseNum >=4 && _caseNum <= 6)
         {
-            output <<  _att1<< "\t" << _att2 << endl;
-            cout << _att1<< "\t" << _att2 << endl;
+            if(conditionsMet() == true)
+            {
+                output <<  _att1<< "\t" << _att2 << endl;
+                cout << _att1<< "\t" << _att2 << endl;
+            }
+
         }
 
     }
