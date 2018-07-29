@@ -188,7 +188,7 @@ bool Table::conditionsMet()
     if(temperatureConditions() == false)
         return false;
     if(pressureConditions() == false)
-        return true;
+        return false;
     if (humidityConditions() == false)
         return false;
 
