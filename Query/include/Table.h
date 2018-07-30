@@ -48,7 +48,13 @@ public:
     bool humidityConditions();
     bool conditionsMet();
 
-    void delimeterSeparator(string str, char delimeter, double& att1, double& att2, double& att3);
+    void getDelimeter(char del) {_delimeter = del;}
+
+    int numOfDelimters(string str, char delimeter);
+    double stringToDouble(string str);
+    double powerFunction(double multiplier, int power);
+    void delimeterSeparation(string str, double *arr, char delimeter, int delimeterCounter);
+
     void run();
 
 private:
@@ -74,6 +80,9 @@ private:
 
     double _att1;
     double _att2;
+
+
+    char _delimeter;
 };
 
 #endif // TABLE_H
