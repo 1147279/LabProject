@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 
   input_A.open("Weather.csv", ifstream::in);
-  outFile.open("resTimeSeriesCompression.txt",ofstream::out);
+  outFile.open("AreaA.txt",ofstream::out);
 
   int count = 0 ;
   int currentSum = 0;
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
     getline(input_A,events,'\n');
 
 
-      outFile << ID << delimiter << city << delimiter << date << delimiter << year <<
+      outFile << ID << delimiter << city << delimiter << year <<
       delimiter << month << delimiter << day << delimiter << avg_temp << endl ;
 
 
