@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 
   int linestoAVG, divisions;
 
-  cout << "Enter divisions" << endl;
+  cout << "Enter divisions (Minimum 6)" << endl;
   cin >> divisions;
 
   linestoAVG =  numOfLines/divisions;
