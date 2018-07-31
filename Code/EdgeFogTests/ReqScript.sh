@@ -1,5 +1,5 @@
 #!/usr/bin/expect -f
-spawn scp -r /home/darren/Desktop/Proooooj/LabProject/Code/CloudTests/Req.txt  darrenblanckensee@10.0.0.110:/home/u0_222/Desktop
+spawn scp -r /home/darren/Desktop/Proooooj/LabProject/Code/EdgeFogTests/Req.txt  darrenblanckensee@10.0.0.110:/Users/darrenblanckensee/Desktop/LabProject/LabProject/Code/EdgeFogTests/
 expect "password:"
 send "0116166224\r"
 expect "password:"
