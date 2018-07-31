@@ -6,6 +6,8 @@
 
 using namespace std;
 
+char delimiter = ',';
+
 int main()
 {
 
@@ -41,7 +43,7 @@ int main()
   string ID,city,date,year,month,day,avg_temp;
 
   // File is now receieved and ready to do calculations with
-  inFile.open("Result.txt",ifstream::in);
+  inFile.open("AreaA.txt",ifstream::in);
   double currentSum= 0;
   int count = 0;
 
