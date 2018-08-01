@@ -1,53 +1,65 @@
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
+//#include "mpi.h"
 #include <string>
+#include <bits/stdc++.h>
 #include <unistd.h>
+#include <ctime>
 
 using namespace std;
 
 char delimiter = ',';
 
-int main()
-{
+int main(int argc, char *argv[]){
 
-  system("sudo systemsetup -setremotelogin on");
+
   unsigned int milli ;//= 500000;
   milli = 100000;
 
-  double sum = 0;
 
+  // Initiate Communication
+  system("sudo service ssh start");
+
+  cout << "Sending Request..." << endl;
+
+
+  clock_t start;
+
+  start = clock();
+
+
+  // Runs script.sh which sends the file with the request to the Sensor
+  system("./ReqScript.sh");
+
+
+  cout << "Request Sent." << endl;
+
+  // Wait till file with results is sent back from sensor/s
   ifstream inFile;
 
+  cout << "Waiting For Data..." << endl;
 
-  cout << "Waiting For Request..." << endl;
 
   while(1)
   {
-    inFile.open("Req.txt",ifstream::in);
+    inFile.open("Result.txt",ifstream::in);
     if (inFile)
     {
       break;
     }
   }
 
-  string reqCity, reqMonth;
-
-  inFile >> reqCity >> reqMonth;
-
   inFile.close();
-
-  cout << "Data From " << reqCity << " in " << reqMonth << " required" << endl;
-  cout << "Request received." << endl;
 
   usleep(milli);
 
+  cout << "Data Received" << endl;
 
-  // File is now receieved and ready to do calculations with
   string ID,city,date,year,month,day,avg_temp;
 
   // File is now receieved and ready to do calculations with
-  inFile.open("AreaA.txt",ifstream::in);
+  inFile.open("Result.txt",ifstream::in);
   double currentSum= 0;
   int count = 0;
 
@@ -76,25 +88,16 @@ int main()
 
   double avg = currentSum/count;
 
-  ofstream outFile;
+  cout << avg << endl;
 
-  outFile.open("avgAreaA.txt",ofstream::out);
 
-  outFile << avg << endl;
-
+  cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
 
 
 
-  cout << "Sending Data..." << endl;
 
 
-  // Runs script.sh which sends the file with the request to the Sensor
-  system("./edgeScript.sh");
+  //system("sudo service ssh stop");
 
-  cout << "Data Sent." << endl;
-
-
-  //system("sudo systemsetup -setremotelogin off");
-
-
+  return 0;
 }

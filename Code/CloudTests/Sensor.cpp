@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 
-  system("sudo service ssh start");
+  system("sudo systemsetup -setremotelogin on");
   unsigned int milli ;//= 500000;
   milli = 100000;
 
@@ -45,7 +45,7 @@ int main()
   cout << "Data Sent." << endl;
 
 
-  system("sudo service ssh start");
+  //system("sudo systemsetup -setremotelogin off");
 
 
 }

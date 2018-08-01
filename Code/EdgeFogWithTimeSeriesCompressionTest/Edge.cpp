@@ -47,7 +47,7 @@ int main()
   string ID,city,date,year,month,day,avg_temp;
 
   // File is now receieved and ready to do calculations with
-  inFile.open("AreaA.txt",ifstream::in);
+  inFile.open("resTimeSeriesCompression.txt",ifstream::in);
   double currentSum= 0;
   int count = 0;
 
