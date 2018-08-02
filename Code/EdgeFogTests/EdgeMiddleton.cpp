@@ -52,7 +52,7 @@ int main()
   string ID,city,date,year,month,day,avg_temp;
 
   
-  inFile.open("AreaA.txt",ifstream::in);
+  inFile.open("AreaD.txt",ifstream::in);
   double currentSum= 0;
   int count = 0;
 
@@ -83,7 +83,7 @@ int main()
 
   ofstream outFile;
 
-  outFile.open("avgAreaA.txt",ofstream::out);
+  outFile.open("avgAreaD.txt",ofstream::out);
 
   outFile << avg << endl;
 
@@ -94,7 +94,7 @@ int main()
 
 
   // Runs script.sh which sends the file with the request to the Sensor
-  system("./edgeScript.sh");
+  system("./edgeScriptMiddleton.sh");
 
   cout << "Data Sent." << endl;
 
