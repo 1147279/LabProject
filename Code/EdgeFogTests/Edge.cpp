@@ -11,7 +11,7 @@ char delimiter = ',';
 int main()
 {
 
-  system("sudo systemsetup -setremotelogin on");
+  system("sudo service ssh start");
   unsigned int milli ;//= 500000;
   milli = 100000;
 
@@ -33,20 +33,25 @@ int main()
 
   string reqCity, reqMonth;
 
-  inFile >> reqCity >> reqMonth;
+	 usleep(milli);
 
+  getline(inFile,reqCity,delimiter);
+ 	getline(inFile,reqMonth,'\n');
+	string tmp = "\""+reqCity+"\"";
+
+	cout << tmp << endl;
   inFile.close();
 
-  cout << "Data From " << reqCity << " in " << reqMonth << " required" << endl;
+  cout << "Data From " << tmp << " in " << reqMonth << " required" << endl;
   cout << "Request received." << endl;
 
-  usleep(milli);
-
+  reqCity = tmp;
+	
 
   // File is now receieved and ready to do calculations with
   string ID,city,date,year,month,day,avg_temp;
 
-  // File is now receieved and ready to do calculations with
+  
   inFile.open("AreaA.txt",ifstream::in);
   double currentSum= 0;
   int count = 0;
@@ -64,7 +69,7 @@ int main()
 
 
     // If city is Auckland (AreaA)
-    if ((city == "\"Auckland\"") && (month == "9" ))
+    if ((city == reqCity) && (month == reqMonth ))
     {
 
       currentSum += stoi(avg_temp);
@@ -94,7 +99,7 @@ int main()
   cout << "Data Sent." << endl;
 
 
-  //system("sudo systemsetup -setremotelogin off");
+  //system("sudo service ssh stop");
 
 
 }
