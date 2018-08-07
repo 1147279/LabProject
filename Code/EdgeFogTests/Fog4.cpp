@@ -31,7 +31,7 @@ int main(int argc, char *argv[]){
 
   // Runs script.sh which sends the file with the request to the Sensor
   system("./ReqScriptJohn.sh");
-  //system("./ReqScriptRichard.sh");
+  system("./ReqScriptRichard.sh");
   system("./ReqScriptMiddleton.sh");
   system("./ReqScriptAudrey.sh");
 
@@ -39,12 +39,26 @@ int main(int argc, char *argv[]){
   cout << "Request Sent." << endl;
 
   // Wait till file with results is sent back from sensor/s
-  //ifstream inFileA;
+  ifstream inFileA;
   ifstream inFileB;
   ifstream inFileC;
   ifstream inFileD;
 
   cout << "Waiting For Data..." << endl;
+
+  while(1)
+  {
+    inFileA.open("avgAreaA.txt",ifstream::in);
+    //inFileB.open("avgAreaB.txt",ifstream::in);
+
+    //if ((inFileA)&&(inFileB)&&(inFileC)&&(inFileD))
+    if (inFileB)
+    {
+      break;
+    }
+  }
+
+  cout << "A File Received" << endl;
 
 
   while(1)
@@ -92,7 +106,7 @@ int main(int argc, char *argv[]){
   cout << "D File Received" << endl;
 
 
-  //inFileA.close();
+  inFileA.close();
   inFileB.close();
   inFileC.close();
   inFileD.close();
@@ -107,26 +121,27 @@ int main(int argc, char *argv[]){
   double avgA,avgB,avgC,avgD,avg;
 
   // File is now receieved and ready to do calculations with
-  //inFileA.open("avgAreaA.txt",ifstream::in);
+  inFileA.open("avgAreaA.txt",ifstream::in);
   inFileB.open("avgAreaB.txt",ifstream::in);
   inFileC.open("avgAreaC.txt",ifstream::in);
   inFileD.open("avgAreaD.txt",ifstream::in);
 
   cout << "Doing Calcs" << endl;
 
-  //inFileA >> avgA;
+  inFileA >> avgA;
   inFileB >> avgB;
   inFileC >> avgC;
   inFileD >> avgD;
 
-  //avg = (avgA+avgB+avgC+avgD)/4;
-  avg = (avgB+avgC+avgD)/3;
+  avg = (avgA+avgB+avgC+avgD)/4;
+  //avg = (avgB+avgC+avgD)/3;
 
   cout << avg << endl;
 
 
   cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
 
+  inFileA.close();
   inFileB.close();
   inFileC.close();
   inFileD.close();

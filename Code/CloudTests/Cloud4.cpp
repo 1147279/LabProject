@@ -31,9 +31,9 @@ int main(int argc, char *argv[]){
 
   // Runs script.sh which sends the file with the request to the Sensor
   system("./ReqScriptJohn.sh");
-  //system("./ReqScriptRichard.sh");
+  system("./ReqScriptRichard.sh");
   system("./ReqScriptMiddleton.sh");
-  //system("./ReqScriptAudrey.sh");
+  system("./ReqScriptAudrey.sh");
 
 
   cout << "Request Sent." << endl;
@@ -42,15 +42,15 @@ int main(int argc, char *argv[]){
 
   ifstream inFileA;
   ifstream inFileB;
-  //ifstream inFileC;
-  //ifstream inFileD;
+  ifstream inFileC;
+  ifstream inFileD;
 
   cout << "Waiting For Data..." << endl;
 
 
   while(1)
   {
-    inFileA.open("AreaB.txt",ifstream::in);
+    inFileA.open("AreaA.txt",ifstream::in);
     if (inFileA)
     {
       break;
@@ -72,9 +72,9 @@ int main(int argc, char *argv[]){
 
   inFileB.close();
 
-  cout << "B Received" << endl;
+  cout << "D Received" << endl;
 
-/*
+
 
   while(1)
   {
@@ -93,7 +93,7 @@ int main(int argc, char *argv[]){
 
   while(1)
   {
-    inFileD.open("AreaD.txt",ifstream::in);
+    inFileD.open("AreaB.txt",ifstream::in);
     if (inFileD)
     {
       break;
@@ -102,8 +102,8 @@ int main(int argc, char *argv[]){
 
   inFileD.close();
 
-  cout << "D Received" << endl;
- */
+  cout << "B Received" << endl;
+
   usleep(milli);
 
 
@@ -167,7 +167,7 @@ int main(int argc, char *argv[]){
 
   }
 
-/*
+
 
   inFileC.open("AreaC.txt",ifstream::in);
 
@@ -195,8 +195,8 @@ int main(int argc, char *argv[]){
 
   }
 
-  s
-  inFileD.open("AreaD.txt",ifstream::in);
+
+  inFileD.open("AreaA.txt",ifstream::in);
 
 
   cout << "Doing Calcs" << endl;
@@ -222,8 +222,11 @@ int main(int argc, char *argv[]){
 
   }
 
-  */
 
+  inFileA.close();
+  inFileB.close();
+  inFileC.close();
+  inFileD.close();
 
 
 

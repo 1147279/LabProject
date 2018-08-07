@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
   // Runs script.sh which sends the file with the request to the Sensor
   system("./ReqScriptJohn.sh");
   //system("./ReqScriptRichard.sh");
-  system("./ReqScriptMiddleton.sh");
+  //system("./ReqScriptMiddleton.sh");
   //system("./ReqScriptAudrey.sh");
 
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
   // Wait till file with results is sent back from sensor/s
 
   ifstream inFileA;
-  ifstream inFileB;
+  //ifstream inFileB;
   //ifstream inFileC;
   //ifstream inFileD;
 
@@ -61,6 +61,7 @@ int main(int argc, char *argv[]){
 
   cout << "A Received" << endl;
 
+/*
   while(1)
   {
     inFileB.open("AreaD.txt",ifstream::in);
@@ -74,7 +75,7 @@ int main(int argc, char *argv[]){
 
   cout << "B Received" << endl;
 
-/*
+
 
   while(1)
   {
@@ -139,7 +140,7 @@ int main(int argc, char *argv[]){
 
   }
 
-
+/*
   inFileB.open("AreaD.txt",ifstream::in);
 
 
@@ -167,7 +168,7 @@ int main(int argc, char *argv[]){
 
   }
 
-/*
+
 
   inFileC.open("AreaC.txt",ifstream::in);
 

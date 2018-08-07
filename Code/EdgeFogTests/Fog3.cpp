@@ -31,9 +31,9 @@ int main(int argc, char *argv[]){
 
   // Runs script.sh which sends the file with the request to the Sensor
   system("./ReqScriptJohn.sh");
-  //system("./ReqScriptRichard.sh");
+  system("./ReqScriptRichard.sh");
   system("./ReqScriptMiddleton.sh");
-  system("./ReqScriptAudrey.sh");
+  //system("./ReqScriptAudrey.sh");
 
 
   cout << "Request Sent." << endl;
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]){
   {
     //inFileA.open("avgAreaA.txt",ifstream::in);
     //inFileB.open("avgAreaB.txt",ifstream::in);
-    inFileC.open("avgAreaC.txt",ifstream::in);
+    inFileC.open("avgAreaA.txt",ifstream::in);
     //inFileD.open("avgAreaD.txt",ifstream::in);
     //if ((inFileA)&&(inFileB)&&(inFileC)&&(inFileD))
     if (inFileC)
@@ -109,7 +109,7 @@ int main(int argc, char *argv[]){
   // File is now receieved and ready to do calculations with
   //inFileA.open("avgAreaA.txt",ifstream::in);
   inFileB.open("avgAreaB.txt",ifstream::in);
-  inFileC.open("avgAreaC.txt",ifstream::in);
+  inFileC.open("avgAreaA.txt",ifstream::in);
   inFileD.open("avgAreaD.txt",ifstream::in);
 
   cout << "Doing Calcs" << endl;

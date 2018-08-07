@@ -30,7 +30,7 @@ int main(int argc, char *argv[]){
 
 
   // Runs script.sh which sends the file with the request to the Sensor
-  system("./ReqScript.sh");
+  system("./ReqScriptTSC.sh");
 
 
   cout << "Request Sent." << endl;
