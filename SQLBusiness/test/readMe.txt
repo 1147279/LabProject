@@ -1,0 +1,1 @@
+g++ main.cpp -l sqlite3 -o main
