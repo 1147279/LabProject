@@ -11,7 +11,7 @@
 # http://www.opensource.org/licenses/MIT
 #
 
-COMPILER         = -mpic++
+COMPILER         = g++
 #COMPILER        = -clang
 OPTIMIZATION_OPT = -O3
 OPTIONS          = #-pedantic-errors -ansi -Wall -Wextra -Werror -Wno-long-long $(OPTIMIZATION_OPT)
@@ -21,8 +21,9 @@ BUILD_LIST+=bloom_filter_example01
 BUILD_LIST+=bloom_filter_example02
 BUILD_LIST+=bloom_filter_example03
 BUILD_LIST+=smallDataSet
-BUILD_LIST+=MPIedge
-BUILD_LIST+=MPIedgeNotCloud
+#BUILD_LIST+=MPIedge
+#BUILD_LIST+=MPIedgeNotCloud
+BUILD_LIST+=ViewBF
 
 all: $(BUILD_LIST)
 

@@ -27,12 +27,6 @@
 #include <limits>
 #include <string>
 #include <vector>
-#include <fstream>
-
-
-std::ofstream outFile("TEST.txt",std::ofstream::out);
-std::vector<char> bitstring;
-
 
 
 static const std::size_t bits_per_char = 0x08;    // 8 bits in 1 char(unsigned)
@@ -198,7 +192,6 @@ public:
       generate_unique_salt();
 
       bit_table_.resize(table_size_ / bits_per_char, static_cast<unsigned char>(0x00));
-      bitstring.resize(table_size_ / bits_per_char, '0');
    }
 
    bloom_filter(const bloom_filter& filter)
@@ -258,21 +251,19 @@ public:
       return (0 == table_size_);
    }
 
-
    void displayFilter()
    {
-     for (std::size_t i = 0; i < bitstring.size(); ++i)
+     for (std::size_t i = 0; i < bit_table_.size(); ++i)
      {
-        outFile << bitstring[i] ;//<< std::endl;
+        std::cout << typeid(bit_table_[i]).name() << std::endl;
      }
-
+     std::cout << "oi"<<std::endl;
    }
 
 
    inline void clear()
    {
       std::fill(bit_table_.begin(), bit_table_.end(), static_cast<unsigned char>(0x00));
-      std::fill(bitstring.begin(), bitstring.end(), static_cast<unsigned char>(0x00));
       inserted_element_count_ = 0;
    }
 
@@ -286,8 +277,6 @@ public:
          compute_indices(hash_ap(key_begin, length, salt_[i]), bit_index, bit);
 
          bit_table_[bit_index / bits_per_char] |= bit_mask[bit];
-
-         bitstring[bit_index / bits_per_char] = bit_mask[bit];
       }
 
       ++inserted_element_count_;
@@ -339,24 +328,6 @@ public:
       return true;
    }
 
-   inline virtual bool containsbitstring(const unsigned char* key_begin, const std::size_t length) const
-   {
-      std::size_t bit_index = 0;
-      std::size_t bit       = 0;
-
-      for (std::size_t i = 0; i < salt_.size(); ++i)
-      {
-         compute_indices(hash_ap(key_begin, length, salt_[i]), bit_index, bit);
-
-         if ((bitstring[bit_index / bits_per_char] &  bit_mask[bit]) != bit_mask[bit])
-         {
-            return false;
-         }
-      }
-
-      return true;
-   }
-
    template <typename T>
    inline bool contains(const T& t) const
    {
@@ -366,11 +337,6 @@ public:
    inline bool contains(const std::string& key) const
    {
       return contains(reinterpret_cast<const unsigned char*>(key.c_str()),key.size());
-   }
-
-   inline bool containsbitstring(const std::string& key) const
-   {
-      return containsbitstring(reinterpret_cast<const unsigned char*>(key.c_str()),key.size());
    }
 
    inline bool contains(const char* data, const std::size_t& length) const
