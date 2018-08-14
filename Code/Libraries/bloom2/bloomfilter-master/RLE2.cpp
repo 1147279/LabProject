@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int wordlength = 15;
+int wordlength = 12;
 string compressedString;
 
 
@@ -20,7 +20,7 @@ int main()
   outFile.open("compressedbitstring.txt",ofstream::out);
 
 
-  char word [15] ;
+  char word [12] ;
 
   string bitstring;
 
@@ -42,7 +42,7 @@ int main()
 
         //cout << "word in count > wordlength: " << word << endl;
         //cout << "count: " << count <<endl;
-        compressedString = bitset<13>(count).to_string();
+        compressedString = bitset<10>(count).to_string();
         //cout << "binary num: " << compressedString << endl;
         for (int j = 2; j < wordlength ; j++)
         {
@@ -83,7 +83,7 @@ int main()
     if ((bitstring[i+1] == bitstring[i])&&(count < pow(2,(wordlength-2))-1))
     {
 
-      cout << " count : "<<count << endl;
+      //cout << " count : "<<count << endl;
       count++;
 
 
@@ -95,7 +95,7 @@ int main()
 
       //cout << "word in count > wordlength: " << word << endl;
       //cout << "count: " << count <<endl;
-      compressedString = bitset<13>(count).to_string();
+      compressedString = bitset<10>(count).to_string();
       //cout << "binary num: " << compressedString << endl;
       for (int j = 2; j < wordlength ; j++)
       {
@@ -104,13 +104,10 @@ int main()
       }
       cout << word << endl;
       outFile << word;
-      cout << " count : "<<count << endl;
+      //cout << " count : "<<count << endl;
       cout << "------------------------------------------: " << endl;
       count =1;
     }
-
-
-
 
 
 
