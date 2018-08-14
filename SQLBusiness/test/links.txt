@@ -1,1 +1,2 @@
 https://www.tutorialspoint.com/sqlite/sqlite_c_cpp.htm
+https://www.quora.com/How-can-I-install-SQLite-in-Ubuntu-14-04-2-LTS
