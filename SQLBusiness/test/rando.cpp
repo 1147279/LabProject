@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
   double rnew;
   for (int i = 0 ; i < 30 ; i ++ )
   {
+    while (abs(rnew - rold)>2)
 
   }
 

@@ -5,6 +5,7 @@
 #include "AbstractBloomFilter.hpp"
 #include <iostream>
 #include <fstream>
+#include <string>
 
 // forward decl
 namespace bloom {
@@ -56,6 +57,23 @@ public:
 
       for(int i = 0; i < super::GetNumBits(); i++){
           outputFile << m_bitarray[i] ;
+          std::cout << m_bitarray[i] ;
+      }
+      std::cout << std::endl;
+    }
+
+
+    virtual void setFilter(){
+
+      std::ifstream inputFile;
+      inputFile.open("bitstring.txt",std::ifstream::in);
+
+      std::string tempbit = "";
+
+      inputFile >> tempbit;
+
+      for(unsigned int i = 0; i < tempbit.length() ; i++){
+        m_bitarray[i] = tempbit[i];
       }
       std::cout << std::endl;
     }

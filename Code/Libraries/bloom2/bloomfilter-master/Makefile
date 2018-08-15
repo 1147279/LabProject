@@ -1,4 +1,4 @@
-CFLAGS=-Wall -Wpedantic -Werror -std=gnu++14 -Iinc/
+CFLAGS=-Wall -Wpedantic  -std=gnu++14 -Iinc/
 HEADERS=$(wildcard inc/*.hpp)
 TESTSRC=$(wildcard tests/*.cpp)
 TESTS=$(TESTSRC:.cpp=)
@@ -24,7 +24,7 @@ val_%: tests/%
 	@valgrind -q --error-exitcode=1 --leak-check=full $^ > /dev/null && echo \ * $@: pass || echo \ * $@: fail
 
 tests/%: tests/%.cpp $(HEADERS)
-	$(CXX) $(CFLAGS) -o $@ $<
+	$(CXX) $(CFLAGS)  -o $@  $<  -l sqlite3
 
 docs:
 	mkdir -p docs
@@ -32,4 +32,3 @@ docs:
 
 clean:
 	rm -rf $(TESTS) docs
-

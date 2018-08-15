@@ -125,23 +125,33 @@ int main()
         tempstringA = "";
         tempstringB = "";
 
-        for (int l = 0 ; l < wordlength-2 ; l ++)
+        if (compressedStringB[iB+wordlength] == '1')
         {
-          tempstringB += compressedStringB[iB+wordlength+2+l];
-        }
 
-        while ((Bsofar+convertToDecimal(tempstringB) <= outSofar)&&(Bsofar >0))
-        {
-          cout << "tmpstring: " << convertToDecimal(tempstringB) << endl;
-          Bsofar += convertToDecimal(tempstringB);
-          iB += wordlength;
-          tempstringB = "";
           for (int l = 0 ; l < wordlength-2 ; l ++)
           {
             tempstringB += compressedStringB[iB+wordlength+2+l];
           }
-          cout << "bsofar: " << Bsofar << endl;
 
+          while ((Bsofar+convertToDecimal(tempstringB) <= outSofar)&&(Bsofar >0)&&(compressedStringB[iB+wordlength] == '1'))
+          {
+            cout << "tmpstring: " << convertToDecimal(tempstringB) << endl;
+            Bsofar += convertToDecimal(tempstringB);
+            iB += wordlength;
+            tempstringB = "";
+            for (int l = 0 ; l < wordlength-2 ; l ++)
+            {
+              tempstringB += compressedStringB[iB+wordlength+2+l];
+            }
+            cout << "bsofar: " << Bsofar << endl;
+            cout << "asofar: " << Asofar << endl;
+
+          }
+          if ((compressedStringB[iB+wordlength] == '0')&&(Bsofar+(wordlength-2) < outSofar))
+          {
+              iB+= wordlength;
+              bsofar += wordlength-2;
+          }
         }
         tempstringB = "";
         //Bsofar = outSofar ;
@@ -168,7 +178,6 @@ int main()
 
         while (Asofar+convertToDecimal(tempstringA) <= outSofar)
         {
-
           Asofar += convertToDecimal(tempstringA);
           iA += wordlength;
           tempstringA = "";
@@ -180,8 +189,6 @@ int main()
         }
         tempstringA = "";
       }
-
-
 
 
     }else if ((comp0A)&&(comp1B))
@@ -222,7 +229,6 @@ int main()
 
         while (Bsofar+convertToDecimal(tempstringB) <= outSofar)
         {
-
           Bsofar += convertToDecimal(tempstringB);
           iB += wordlength;
           tempstringB = "";
@@ -233,9 +239,6 @@ int main()
           cout << "bsofar: " << Bsofar << endl;
         }
 
-
-
-
       } else
       {
         word += compressedStringB[i+0];
@@ -245,7 +248,6 @@ int main()
         outFile << word;
         word = "";
         outSofar += decNumA;
-
       }
 
     }else if ((comp0A)&&(mixedB))
