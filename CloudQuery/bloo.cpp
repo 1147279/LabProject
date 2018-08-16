@@ -82,9 +82,6 @@ int main(int argc, char** argv) {
 
 
 
-
-
-
   string tempString = "";
 
   int ID = 0;
@@ -102,22 +99,6 @@ int main(int argc, char** argv) {
     getCurrentDateAndTime( year, month, day, hour, minute, second );
 
 
-
-
-
-    /* Create SQL statement */
-
-    /*CREATE TABLE WEATHER(
-       ...> ID INT PRIMARY KEY NOT NULL,
-       ...> YEAR INT NOT NULL,
-       ...> MONTH INT NOT NULL,
-       ...> DAY INT NOT NULL,
-       ...> HOUR INT NOT NULL,
-       ...> MINUTE INT NOT NULL,
-       ...> SECOND INT NOT NULL,
-       ...> LOCATION CHAR(50) NOT NULL,
-       ...> TEMPERATURE INT NOT NULL);
-    */
 
     randTemperatureold = randomTemperatureGenerator();
     while (abs(randTemperaturenew-randTemperatureold) > 2)
@@ -186,11 +167,14 @@ int main(int argc, char** argv) {
 
   system("mv bitstringprint.txt bitstringread.txt");
 
-
-
-
-
 	sqlite3_close(db);
 	input.close();
+
+
+  system("./sendBloom");
+
+
+
+
 return 0;
 }
