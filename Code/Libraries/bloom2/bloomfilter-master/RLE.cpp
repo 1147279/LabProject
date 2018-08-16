@@ -4,11 +4,22 @@
 #include <ctime>
 #include <cmath>
 #include <bitset>
+#include <string.h>
 
 using namespace std;
 
-int wordlength = 9;
+int wordlength = 5;
 string compressedString;
+
+
+void padd(string lastword)
+{
+  int length = lastword.length();
+
+
+}
+
+
 
 
 int main()
@@ -19,8 +30,11 @@ int main()
   ofstream outFile;
   outFile.open("compressedbitstring.txt",ofstream::out);
 
+  int newwordnum;
+  string newword = "";
 
-  char word [9] ;
+
+  char word [5] ;
 
   string bitstring;
 
@@ -36,20 +50,20 @@ int main()
     if (bitstring[i+1] != word[1])
     {
 
-      if ((count > wordlength)&&(count < pow(2,(wordlength-2))-1))
+      if ((count >= wordlength)&&(count <= pow(2,(wordlength-2))-1))
       {
         word[0] = '1';
 
         //cout << "word in count > wordlength: " << word << endl;
         //cout << "count: " << count <<endl;
-        compressedString = bitset<7>(count).to_string();
+        compressedString = bitset<3>(count).to_string();
         //cout << "binary num: " << compressedString << endl;
         for (int j = 2; j < wordlength ; j++)
         {
           word[j] = compressedString[j-2];
           //cout << "word in count > wordlength in in: " << word << endl;
         }
-        cout << word << endl;
+        cout << "A: " <<word << endl;
         outFile << word;
         cout << "------------------------------------------: " << endl;
 
@@ -72,9 +86,29 @@ int main()
           //cout << "word in count < wordlength in in in " << word << endl;
           i++;
         }
-        cout << word << endl;
-        outFile << word;
-        cout << "------------------------------------------: " << endl;
+
+        if (strlen(word) != wordlength)
+        {
+          newwordnum = strlen(word) - 2;
+          cout << "newwordnum " << newwordnum<< endl;
+          for (int p = 0; p < newwordnum ; p++)
+          {
+            newword = "";
+            newword += "1";
+            newword += word[p+2];
+            newword += "001";
+            cout << newword << endl;
+            outFile << newword;
+
+            cout << "------------------------------------------: " << endl;
+
+          }
+        }else
+        {
+          cout << "B: " << word << endl;
+          outFile << word;
+          cout << "------------------------------------------: " << endl;
+        }
       }
 
       count = 1;
@@ -83,7 +117,7 @@ int main()
     if ((bitstring[i+1] == bitstring[i])&&(count < pow(2,(wordlength-2))-1))
     {
 
-      cout << " count : "<<count << endl;
+      //cout << " count : "<<count << endl;
       count++;
 
 
@@ -95,22 +129,19 @@ int main()
 
       //cout << "word in count > wordlength: " << word << endl;
       //cout << "count: " << count <<endl;
-      compressedString = bitset<7>(count).to_string();
+      compressedString = bitset<3>(count).to_string();
       //cout << "binary num: " << compressedString << endl;
       for (int j = 2; j < wordlength ; j++)
       {
         word[j] = compressedString[j-2];
         //cout << "word in count > wordlength in in: " << word << endl;
       }
-      cout << word << endl;
+      cout <<"C: " << word << endl;
       outFile << word;
-      cout << " count : "<<count << endl;
+      //cout << " count : "<<count << endl;
       cout << "------------------------------------------: " << endl;
       count =1;
     }
-
-
-
 
 
 

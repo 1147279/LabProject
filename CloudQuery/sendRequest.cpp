@@ -18,7 +18,7 @@ int main(int argc, char** argv)
   string query = "";
   string write = "";
   string temp;
-  bool done;
+  bool done = false;
 
 
   while (!done)
@@ -42,10 +42,10 @@ int main(int argc, char** argv)
     start = clock();
 
 
-    system("./sendReqAudrey");
+    system("./sendReqAudrey.sh");
     //system("./sendReqJohn");
-    //system("./sendReqRichard");
-    //system("./sendReqMiddleton");
+    system("./sendReqRichard");
+    system("./sendReqMiddleton");
 
 
     cout << "Requests Sent." << endl;
@@ -54,8 +54,8 @@ int main(int argc, char** argv)
 
     ifstream inFileA;
     //ifstream inFileB;
-    //ifstream inFileC;
-    //ifstream inFileD;
+    ifstream inFileC;
+    ifstream inFileD;
 
     cout << "Waiting For Data..." << endl;
 
@@ -73,9 +73,54 @@ int main(int argc, char** argv)
 
     cout << "A Received" << endl;
 
+    /*
+
+    while(1)
+    {
+      inFileB.open("outTempJohn.csv",ifstream::in);
+      if (inFileB)
+      {
+        break;
+      }
+    }
+
+    inFileB.close();
+
+    cout << "B Received" << endl;
+
+    */
+
+    while(1)
+    {
+      inFileC.open("outTempMiddleton.csv",ifstream::in);
+      if (inFileA)
+      {
+        break;
+      }
+    }
+
+    inFileC.close();
+
+    cout << "C Received" << endl;
+
+    while(1)
+    {
+      inFileD.open("outTempRichard.csv",ifstream::in);
+      if (inFileD)
+      {
+        break;
+      }
+    }
+
+    inFileD.close();
+
+    cout << "D Received" << endl;
+
+
+
     usleep(milli);
     ofstream outFile;
-    inFileA.open("outTempAudrey.txt",ifstream::in);
+    inFileA.open("outTempAudrey.csv",ifstream::in);
     outFile.open("QueryResult.txt",ofstream::out);
 
     while (inFileA >> temp)
