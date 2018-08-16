@@ -123,10 +123,28 @@ int main(int argc, char** argv)
     inFileA.open("outTempAudrey.csv",ifstream::in);
     outFile.open("QueryResult.txt",ofstream::out);
 
-    while (inFileA >> temp)
+    while (inFileA.good())
     {
-      outFile << temp;
+      getline(inFileA,temp,'\n');
+      cout << "A:" << temp << endl;
+      outFile << temp << endl;
+
     }
+    while (inFileC.good())
+    {
+      getline(inFileC,temp,'\n');
+      cout << "B:" << temp << endl;
+      outFile << temp << endl;
+
+    }
+    while (inFileD.good())
+    {
+      getline(inFileD,temp,'\n');
+      cout << "C:" << temp << endl;
+      outFile << temp << endl;
+
+    }
+
 
     inFileA.close();
     outFile.close();
