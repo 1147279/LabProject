@@ -62,7 +62,7 @@ int main(int argc, char** argv)
 
     while(1)
     {
-      inFileA.open("outTempAudrey.txt",ifstream::in);
+      inFileA.open("outTempAudrey.csv",ifstream::in);
       if (inFileA)
       {
         break;
@@ -89,7 +89,7 @@ int main(int argc, char** argv)
 
   }
 
-  
+
 
 
   return 0;

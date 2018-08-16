@@ -171,7 +171,7 @@ int main(int argc, char** argv) {
 	input.close();
 
 
-  system("./sendBloom");
+
 
 
 
