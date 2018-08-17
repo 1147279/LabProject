@@ -1,139 +1,34 @@
 #include <iostream>
+#include <string>
 #include <fstream>
 #include <ctime>
 #include <cmath>
 #include <bitset>
-#include <string>
 #include <string.h>
 
 using namespace std;
-
-int powerFunction(int base, int power); // works
-int binaryStringToDecimal(string str);
-string decompressString(string str);
-string logicalEnd(string str1, string str2);
-string compressString(string bitstring);
-
-
 
 int wordlength = 5;
 string compressedString;
 
 
-
-
-int main ()
+void padd(string lastword)
 {
-	cout << compressString("11111110000000")<< endl;
+  int length = lastword.length();
+
+
 }
 
 
 
 
-int powerFunction(int base, int power)
+int main()
 {
-	int number = base;
-
-	if(power == 0)
-	{
-		return 1;
-	}else if (power > 0)
-	{
-		for (int i = 0; i < power - 1 ; i++)
-		{
-			number *= base;
-		}
-	}
-	return number;
-}
-
-
-
-int binaryStringToDecimal(string str)
-{
-	int stringSize = str.size();
-	int temp;
-	int sum = 0;
-	for(int i = 0; i < stringSize; i++)
-	{
-		temp = str.at(stringSize - i - 1) - '0';
-		temp = temp*powerFunction(2, i);
-		sum += temp;
-	}
-
-	return sum;
-}
-
-
-string decompressString(string str)
-{
-	string temp = "";
-	string word = "";
-	int stringSize = str.size();
-	bool isCompressed = false;
-
-	if(str.at(0) == '1')
-		isCompressed = true;
-
-	if(isCompressed == false)
-	{
-		for(int i = 2; i < stringSize; i++)
-		{
-			word += str.at(i);
-		}
-		return word;
-	}else
-	{
-		temp = str.at(1);
-
-		for(int i = 2; i < stringSize; i++)
-			word = word + str.at(i);
-
-		int numOfBits = binaryStringToDecimal(word);
-		word = "";
-		cout << "Number of ones " << numOfBits << endl;
-
-		for(int i = 0; i < numOfBits; i++)
-			word = word + temp;
-		return word;
-	}
-
-}
-
-
-string logicalEnd(string str1, string str2)
-{
-	if(str1.size() != str2.size())
-		return "";
-
-	int stringSize = str1.size();
-	string result = "";
-
-	for(int i = 0; i < stringSize; i++)
-		result += "0";
-
-	for(int i = 0; i < stringSize; i++)
-	{
-		if(str1.at(i) == '1' && str2.at(i) == '1')
-			result.at(i) = '1';
-		else
-			result.at(i) = '0';
-	}
-
-	return result;
-
-}
-
-string compressString(string bitstring)
-{
-
-	ifstream inFile;
+  ifstream inFile;
   inFile.open("bitstring.txt",ifstream::in);
 
   ofstream outFile;
   outFile.open("compressedbitstring.txt",ofstream::out);
-
-	string result = "";
 
   int newwordnum;
   string newword = "";
@@ -141,6 +36,9 @@ string compressString(string bitstring)
 
   char word [5] ;
 
+  string bitstring;
+
+  inFile >> bitstring;
 
   int i = 0;
   word[1] = bitstring[i];
@@ -166,7 +64,7 @@ string compressString(string bitstring)
           //cout << "word in count > wordlength in in: " << word << endl;
         }
         cout << "A: " <<word << endl;
-        result += word;
+        outFile << word;
         cout << "------------------------------------------: " << endl;
 
       }else
@@ -200,7 +98,7 @@ string compressString(string bitstring)
             newword += word[p+2];
             newword += "001";
             cout << newword << endl;
-            result += newword;
+            outFile << newword;
 
             cout << "------------------------------------------: " << endl;
 
@@ -208,7 +106,7 @@ string compressString(string bitstring)
         }else
         {
           cout << "B: " << word << endl;
-          result += word;
+          outFile << word;
           cout << "------------------------------------------: " << endl;
         }
       }
@@ -239,7 +137,7 @@ string compressString(string bitstring)
         //cout << "word in count > wordlength in in: " << word << endl;
       }
       cout <<"C: " << word << endl;
-      result += word;
+      outFile << word;
       //cout << " count : "<<count << endl;
       cout << "------------------------------------------: " << endl;
       count =1;
@@ -259,6 +157,5 @@ string compressString(string bitstring)
   cout << endl;
   cout << endl;
 
-	return result;
 
 }
