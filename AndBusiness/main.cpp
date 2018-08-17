@@ -24,7 +24,7 @@ string compressedString;
 
 int main ()
 {
-	cout << compressString("11111110000000")<< endl;
+	cout << compressString("10")<< endl;
 }
 
 

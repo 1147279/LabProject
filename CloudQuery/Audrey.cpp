@@ -48,18 +48,33 @@ int main(int argc, char** argv)
     }
   }
 
+  inFileA.close();
   usleep(milli);
 
   inFileA.open("reqQuery.txt",ifstream::in);
 
-  inFileA >> query;
-
-  cout << query << endl;
-
-  rc = sqlite3_open("test2.db", &db);
 
 
-  system("sqlite3 -header -csv 'test2.db' 'select * from WEATHER;' > outTempAudrey.csv");
+  rc = sqlite3_open("AA.db", &db);
+
+  char req[256];
+
+  inFileA.getline (req,256);
+
+  string write ="";
+
+
+
+  cout << write << endl;
+
+
+  write += "sqlite3 -header -csv \'AA.db\' \'";
+  write += req;
+  write += "\' > outTempAudrey.csv";
+  cout << write << endl;
+
+
+  system(write.c_str());
 
 
   system("sudo service ssh start");
@@ -70,7 +85,7 @@ int main(int argc, char** argv)
 
 
 	sqlite3_close(db);
-	input.close();
+	inFileA.close();
 
 
 
