@@ -72,7 +72,9 @@ int main(int argc, char** argv) {
   while (1)
   {
 
+
     rc = sqlite3_open("AA.db", &db);
+
     getCurrentDateAndTime( year, month, day, hour, minute, second );
 
 
@@ -134,7 +136,9 @@ int main(int argc, char** argv) {
     usleep(milli);
 
 
+
     system("sqlite3 -header -csv 'AA.db' 'select * from WEATHER;' > outTemp.csv");
+
   }
 
 
