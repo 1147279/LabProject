@@ -24,16 +24,42 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 
 void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &minute, int &second )
 {
-   time_t timevar;
-   time( &timevar );
-   tm TM = *localtime( &timevar );
 
-   year    = TM.tm_year + 1900;
-   month   = TM.tm_mon + 1;
-   day     = TM.tm_mday;
-   hour    = TM.tm_hour;
-   minute    = TM.tm_min ;
-   second    = TM.tm_sec ;
+   if (second%60 == 0)
+   {
+     second = 1;
+     if (minute%60 == 0)
+     {
+       minute = 1;
+       if (hour%24 == 0)
+       {
+         hour = 1;
+         if (day%365 == 0)
+         {
+           day = 1;
+           if (month%12)
+           {
+             month = 1;
+           }else
+           {
+             month++;
+           }
+         }else
+         {
+           day++;
+         }
+       }else
+       {
+         hour ++;
+       }
+     }else
+     {
+       minute++;
+     }
+   }else
+   {
+     second++;
+   }
 
 }
 
@@ -51,6 +77,12 @@ int main(int argc, char** argv) {
 	ifstream input;
 	input.open("input.txt");
   int year, month, day, hour, minute, second;
+  year = 2018;
+  month = 8;
+  day = 16;
+  hour = 1;
+  minute = 1;
+  second = 1;
 	sqlite3 *db;
 	char *zErrMsg = NULL;
 	int rc;
@@ -63,7 +95,7 @@ int main(int argc, char** argv) {
 
   int ID = 0;
   unsigned int milli ;//= 500000;
-  milli = 200000;
+  milli = 2;
   string Location = "\'Braamfontein\'";
   srand(time(NULL));
   randTemperatureold = randomTemperatureGenerator();
@@ -131,7 +163,7 @@ int main(int argc, char** argv) {
     tempString="";
     ID++;
     sqlite3_close(db);
-    usleep(milli);
+
 
 
     system("sqlite3 -header -csv 'AA.db' 'select * from WEATHER;' > outTemp.csv");
