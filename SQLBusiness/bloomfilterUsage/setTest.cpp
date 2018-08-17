@@ -16,7 +16,7 @@ namespace std {
 
 int main(int argc, char *argv[]){
 
-    std::string t1 = "\'FakePlace\'2018815211150";
+    std::string t1 = "\'FakePlace\'201881602125";
 
 
     bloom::OrdinaryBloomFilter<std::string> bf(4, 900000);
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
     bf.setFilter();
 
 
-    bf.printFilterh();
+    bf.printFilter();
 
 
     if(bf.Query(t1)){
