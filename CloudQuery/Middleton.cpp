@@ -58,8 +58,16 @@ int main(int argc, char** argv)
 
   rc = sqlite3_open("MM.db", &db);
 
+  string terminal = "";
+  terminal += "sqlite3 -header -csv \'MM.db\' \'";
+  terminal += query;
+  terminal += "\' > outTempMiddleton.csv";
 
-  system("sqlite3 -header -csv 'MM.db' 'select * from WEATHER;' > outTempMiddleton.csv");
+  cout << terminal << endl;
+
+  system(terminal.c_str());
+
+
 
 
   system("sudo service ssh start");

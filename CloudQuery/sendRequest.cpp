@@ -16,18 +16,22 @@ int main(int argc, char** argv)
   unsigned int milli ;//= 500000;
   milli = 100000;
   string query = "";
-  string write = "";
-  string temp;
-  bool done = false;
+  char query[256];
+
+  cin.getline (query,256);
+
+  string write ="";
 
 
 
-    cin >> query;
+  cout << query << endl;
 
-    write += "echo \'";
-    write += query;
-    write += "\' > reqQuery.txt";
-    system(write.c_str());
+
+  write += "echo \'";
+  write += query;
+  write += "\' > reqQuery.txt";
+  cout << write << endl;
+  system(write.c_str());
 
     system("sudo service ssh start");
 
