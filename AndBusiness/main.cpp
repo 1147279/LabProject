@@ -126,7 +126,7 @@ string logicalEnd(string str1, string str2)
 
 string compressString(string bitstring)
 {
-
+/*
 	ifstream inFile;
   inFile.open("bitstring.txt",ifstream::in);
 
