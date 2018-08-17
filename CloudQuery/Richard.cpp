@@ -48,25 +48,33 @@ int main(int argc, char** argv)
     }
   }
 
+  inFileA.close();
   usleep(milli);
 
   inFileA.open("reqQuery.txt",ifstream::in);
 
-  inFileA >> query;
 
-  cout << query << endl;
 
   rc = sqlite3_open("RR.db", &db);
 
-  string terminal = "";
-  terminal += "sqlite3 -header -csv \'RR.db\' \'";
-  terminal += query;
-  terminal += "\' > outTempRichard.csv";
+  char req[256];
 
-  cout << terminal << endl;
+  inFileA.getline (req,256);
 
-  system(terminal.c_str());
+  string write ="";
 
+
+
+  cout << write << endl;
+
+
+  write += "sqlite3 -header -csv \'RR.db\' \'";
+  write += req;
+  write += "\' > outTempRichard.csv";
+  cout << write << endl;
+
+
+  system(write.c_str());
 
 
   system("sudo service ssh start");

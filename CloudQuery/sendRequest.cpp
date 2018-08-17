@@ -15,7 +15,7 @@ int main(int argc, char** argv)
 
   unsigned int milli ;//= 500000;
   milli = 100000;
-  string query = "";
+  string temp = "";
   char query[256];
 
   cin.getline (query,256);
