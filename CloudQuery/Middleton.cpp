@@ -56,21 +56,21 @@ int main(int argc, char** argv)
 
   cout << query << endl;
 
-  rc = sqlite3_open("test2.db", &db);
+  rc = sqlite3_open("MM.db", &db);
 
 
-  system("sqlite3 -header -csv 'test2.db' 'select * from WEATHER;' > outTempAudrey.csv");
+  system("sqlite3 -header -csv 'MM.db' 'select * from WEATHER;' > outTempMiddleton.csv");
 
 
   system("sudo service ssh start");
 
-  system("./audreyReply.sh");
+  system("./middletonReply.sh");
 
 
 
 
 	sqlite3_close(db);
-	input.close();
+	inFileA.close();
 
 
 

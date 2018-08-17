@@ -56,10 +56,10 @@ int main(int argc, char** argv)
 
   cout << query << endl;
 
-  rc = sqlite3_open("audrey.db", &db);
+  rc = sqlite3_open("AA.db", &db);
 
 
-  system("sqlite3 -header -csv 'audrey.db' 'select * from WEATHER;' > outTempAudrey.csv");
+  system("sqlite3 -header -csv 'AA.db' 'select * from WEATHER;' > outTempAudrey.csv");
 
 
   system("sudo service ssh start");

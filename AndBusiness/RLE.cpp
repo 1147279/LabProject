@@ -12,16 +12,6 @@ int wordlength = 5;
 string compressedString;
 
 
-void padd(string lastword)
-{
-  int length = lastword.length();
-
-
-}
-
-
-
-
 int main()
 {
   ifstream inFile;

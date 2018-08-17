@@ -21,14 +21,9 @@ int main(int argc, char** argv)
   bool done = false;
 
 
-  while (!done)
-  {
+
     cin >> query;
-    if (query == "quit")
-    {
-      done = true;
-      break;
-    }
+
     write += "echo \'";
     write += query;
     write += "\' > reqQuery.txt";
@@ -44,8 +39,8 @@ int main(int argc, char** argv)
 
     system("./sendReqAudrey.sh");
     //system("./sendReqJohn");
-    system("./sendReqRichard");
-    system("./sendReqMiddleton");
+    system("./sendReqRichard.sh");
+    system("./sendReqMiddleton.sh");
 
 
     cout << "Requests Sent." << endl;
@@ -93,7 +88,7 @@ int main(int argc, char** argv)
     while(1)
     {
       inFileC.open("outTempMiddleton.csv",ifstream::in);
-      if (inFileA)
+      if (inFileC)
       {
         break;
       }
@@ -121,6 +116,8 @@ int main(int argc, char** argv)
     usleep(milli);
     ofstream outFile;
     inFileA.open("outTempAudrey.csv",ifstream::in);
+    inFileC.open("outTempMiddleton.csv",ifstream::in);
+    inFileD.open("outTempRichard.csv",ifstream::in);
     outFile.open("QueryResult.txt",ofstream::out);
 
     while (inFileA.good())
@@ -133,14 +130,14 @@ int main(int argc, char** argv)
     while (inFileC.good())
     {
       getline(inFileC,temp,'\n');
-      cout << "B:" << temp << endl;
-      outFile << temp << endl;
+      cout << "C:" << temp << endl;
+      outFile << temp << endl ;
 
     }
     while (inFileD.good())
     {
       getline(inFileD,temp,'\n');
-      cout << "C:" << temp << endl;
+      cout << "D:" << temp << endl;
       outFile << temp << endl;
 
     }
@@ -150,7 +147,8 @@ int main(int argc, char** argv)
     outFile.close();
 
 
-  }
+    cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+
 
 
 
