@@ -16,15 +16,16 @@ string compressString(string bitstring);
 
 
 
-int wordlength = 5;
-string compressedString;
+
+
 
 
 
 
 int main ()
 {
-	cout << compressString("10")<< endl;
+
+	cout << compressString("11111")<< endl;
 }
 
 
@@ -132,14 +133,15 @@ string compressString(string bitstring)
 
   ofstream outFile;
   outFile.open("compressedbitstring.txt",ofstream::out);
-
+*/
+	string compressedString;
 	string result = "";
-
+	int wordlength = 6;
   int newwordnum;
   string newword = "";
 
 
-  char word [5] ;
+  char word [20] ;
 
 
   int i = 0;
