@@ -41,6 +41,9 @@ int main ()
 	int strSize = stringBSize;
 	int divisions = strSize/wordLength;
 	
+	
+	
+	
 	int N = 0;
 	
 	if(stringASize == stringBSize)
@@ -79,8 +82,7 @@ int main ()
 	string temp = "";
 	temp = logicalEnd(tempA, tempB);
 	
-	//tempA = "";
-	//tempB = "";
+	
 	
 	cout <<"string A " <<  tempA << endl;
 	cout <<"string B " <<  tempB << endl;
@@ -89,6 +91,9 @@ int main ()
 	string tempA1;
 	string tempB1;
 	
+	tempA = "";
+	tempB = "";
+	
 	/*
 	for(int i = 0; i < divisions; i++)
 	{
@@ -96,28 +101,75 @@ int main ()
 	}
 	*/
 	
-	int decryptedWordLength = wordLength - 2;
+	int decompresseddedWordLength = wordLength - 2;
+	temp = "";
 	
+	int stringTempASize = 0;
+	int stringTempBSize = 0;
+	//cout << "Divisions " << divisions<< endl;
 	for(int i = 0; i < divisions; i++)
 	{
-		tempA =   decompressor(i, decryptedWordLength,  wordStorageA) + tempA;
-		tempB =   decompressor(i, decryptedWordLength,  wordStorageB) + tempB;
+		tempA =   decompressor(i, decompresseddedWordLength,  wordStorageA) + tempA;
+		tempB =   decompressor(i, decompresseddedWordLength,  wordStorageB) + tempB;
+		
 		
 		if(i < divisions - 1)
 		{
-			/*
-			if(tempA.size() >= wordLength && tempA.size() >= wordLength)
+			while(true)
 			{
-				temp = logicalEnd(tempA, tempB);
-			}*/
-			
-			tempA1 = tempA.substr(tempA.size() - 1- decryptedWordLength, decryptedWordLength);
-			cout  << tempA1 << endl;
-			tempA = tempA.substr(0, tempA.size() - decryptedWordLength);
+				if(tempA.size() == decompresseddedWordLength && tempB.size() == decompresseddedWordLength)
+				{
+					temp = logicalEnd(tempA, tempB) + temp;
+					tempA = "";
+					tempB = "";
+					break;
+					
+				}else if(tempA.size() > decompresseddedWordLength && tempB.size() > decompresseddedWordLength)
+				{
+					stringTempASize = tempA.size();
+					tempA1 = tempA.substr(stringTempASize - decompresseddedWordLength, decompresseddedWordLength);
+					tempA = tempA.substr(0, stringTempASize - decompresseddedWordLength);
+					
+					stringTempBSize = tempB.size();
+					tempB1 = tempB.substr(stringTempBSize - decompresseddedWordLength, decompresseddedWordLength);
+					tempB = tempB.substr(0, stringTempBSize - decompresseddedWordLength);
+					
+					temp = logicalEnd(tempA1, tempB1) + temp;
+					
+				}else if(tempA.size() > decompresseddedWordLength && tempB.size() == decompresseddedWordLength)
+				{
+					stringTempASize = tempA.size();
+					tempA1 = tempA.substr(stringTempASize - decompresseddedWordLength, decompresseddedWordLength);
+					tempA = tempA.substr(0, stringTempASize - decompresseddedWordLength);
+					
+					temp = logicalEnd(tempA1, tempB) + temp;
+					tempB = "";
+					break;
+					
+				}else if(tempA.size() == decompresseddedWordLength && tempB.size() >  decompresseddedWordLength)
+				{
+					stringTempBSize = tempB.size();
+					tempB1 = tempB.substr(stringTempBSize - decompresseddedWordLength, decompresseddedWordLength);
+					tempB = tempB.substr(0, stringTempBSize - decompresseddedWordLength);
+					
+					temp = logicalEnd(tempA1, tempB) + temp;
+					tempA = "";
+					break;
+				}else
+				{
+					break;
+				}
+			}
+		}else if(i == divisions - 1)
+		{
+			temp = logicalEnd(tempA, tempB) + temp;
+			tempA = "";
+			tempB = "";
+			break;
 		}
 		
 	}
-	
+	cout <<"String Q "<< temp << endl;
 	input.close();
 	output.close();
 	
