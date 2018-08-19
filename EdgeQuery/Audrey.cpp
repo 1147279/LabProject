@@ -55,7 +55,7 @@ int main(int argc, char** argv)
 
 
 
-  rc = sqlite3_open("RR.db", &db);
+  rc = sqlite3_open("AA.db", &db);
 
   char req[256];
 
@@ -68,9 +68,9 @@ int main(int argc, char** argv)
   cout << write << endl;
 
 
-  write += "sqlite3 -header -csv \'RR.db\' \'";
-  write += "select * from WEATHER;";
-  write += "\' > outTempRichard.csv";
+  write += "sqlite3 -header -csv \'AA.db\' \'";
+  write += req;
+  write += "\' > outTempAudrey.csv";
   cout << write << endl;
 
 
@@ -79,7 +79,7 @@ int main(int argc, char** argv)
 
   system("sudo service ssh start");
 
-  system("./richardReply.sh");
+  system("./audreyReply.sh");
 
 
 

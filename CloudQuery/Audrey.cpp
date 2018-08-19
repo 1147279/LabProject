@@ -69,7 +69,7 @@ int main(int argc, char** argv)
 
 
   write += "sqlite3 -header -csv \'AA.db\' \'";
-  write += req;
+  write += "select * from WEATHER;";
   write += "\' > outTempAudrey.csv";
   cout << write << endl;
 
