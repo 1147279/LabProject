@@ -5,27 +5,122 @@
 #include <bitset>
 #include <string>
 #include <string.h>
+#include <vector>
 
 using namespace std;
 
-int powerFunction(int base, int power); // works
+int powerFunction(int base, int power);
 int binaryStringToDecimal(string str);
 string decompressString(string str);
 string logicalEnd(string str1, string str2);
 string compressString(string bitstring);
-
-
-
-
-
-
-
-
+string decompressor(int index, int wordLength, vector<string>& wordStorage);
+void loadWords(vector<string>& wordContainer, string& str, int wordLength);
 
 int main ()
 {
-
-	cout << compressString("11111")<< endl;
+	ifstream input;
+	input.open("input.txt");
+	
+	ofstream output;
+	output.open("output.txt");
+	
+	string strA = "";
+	string strB = "";
+	
+	input >> strA >> strB;
+	
+	
+	int stringASize = strA.size();
+	int stringBSize = strB.size();
+	
+	vector<string> wordStorageA;
+	vector<string> wordStorageB;
+	
+	int wordLength = 6;
+	int strSize = stringBSize;
+	int divisions = strSize/wordLength;
+	
+	int N = 0;
+	
+	if(stringASize == stringBSize)
+	{
+		N = stringBSize;
+		//cout << N << endl;
+	}else
+	{
+		return 0;
+	}
+	//cout << compressString("11111")<< endl;
+	string tempA = "";
+	string tempB = "";
+	
+	loadWords(wordStorageA, strA,wordLength);
+	loadWords(wordStorageB, strB,wordLength);
+	
+	
+	
+	for(int i = 0; i < divisions; i++)
+	{
+		tempA =   decompressor(i, wordLength,  wordStorageA) + tempA;
+		//cout << tempA << endl;
+	}
+	//cout <<"Size of A " <<  tempA.size() << endl;
+	
+	
+	for(int i = 0; i < divisions; i++)
+	{
+		tempB =   decompressor(i, wordLength,  wordStorageB) + tempB;
+		//cout << tempB << endl;
+	}
+	//cout <<"Size of B " <<  tempB.size() << endl;
+	
+	
+	string temp = "";
+	temp = logicalEnd(tempA, tempB);
+	
+	//tempA = "";
+	//tempB = "";
+	
+	cout <<"string A " <<  tempA << endl;
+	cout <<"string B " <<  tempB << endl;
+	cout <<"string R " <<  temp << endl;
+	
+	string tempA1;
+	string tempB1;
+	
+	/*
+	for(int i = 0; i < divisions; i++)
+	{
+		
+	}
+	*/
+	
+	int decryptedWordLength = wordLength - 2;
+	
+	for(int i = 0; i < divisions; i++)
+	{
+		tempA =   decompressor(i, decryptedWordLength,  wordStorageA) + tempA;
+		tempB =   decompressor(i, decryptedWordLength,  wordStorageB) + tempB;
+		
+		if(i < divisions - 1)
+		{
+			/*
+			if(tempA.size() >= wordLength && tempA.size() >= wordLength)
+			{
+				temp = logicalEnd(tempA, tempB);
+			}*/
+			
+			tempA1 = tempA.substr(tempA.size() - 1- decryptedWordLength, decryptedWordLength);
+			cout  << tempA1 << endl;
+			tempA = tempA.substr(0, tempA.size() - decryptedWordLength);
+		}
+		
+	}
+	
+	input.close();
+	output.close();
+	
 }
 
 
@@ -92,7 +187,7 @@ string decompressString(string str)
 
 		int numOfBits = binaryStringToDecimal(word);
 		word = "";
-		cout << "Number of ones " << numOfBits << endl;
+		//cout << "Number of ones " << numOfBits << endl;
 
 		for(int i = 0; i < numOfBits; i++)
 			word = word + temp;
@@ -127,26 +222,20 @@ string logicalEnd(string str1, string str2)
 
 string compressString(string bitstring)
 {
-/*
-	ifstream inFile;
-  inFile.open("bitstring.txt",ifstream::in);
 
-  ofstream outFile;
-  outFile.open("compressedbitstring.txt",ofstream::out);
-*/
 	string compressedString;
 	string result = "";
 	int wordlength = 6;
-  int newwordnum;
-  string newword = "";
+	int newwordnum;
+	string newword = "";
 
 
-  char word [20] ;
+	char word [20] ;
 
 
-  int i = 0;
-  word[1] = bitstring[i];
-  int count = 1;
+	int i = 0;
+	word[1] = bitstring[i];
+	int count = 1;
 
   while (i< bitstring.length())// != '\n')
   {
@@ -247,20 +336,42 @@ string compressString(string bitstring)
       count =1;
     }
 
-
-
     i++;
 
     word[1] = bitstring[i];
 
-    //cout << "We've had " << count << " " << word[1] << "'s" << endl;
   }
-
-  cout << endl;
-  cout << endl;
-  cout << endl;
-  cout << endl;
-
 	return result;
-
 }
+
+string decompressor(int index, int wordLength, vector<string>& wordStorage)
+{
+	
+	string temp = "";
+	
+	temp = wordStorage.at(wordStorage.size() - 1 - index);
+	temp = decompressString(temp);
+	return temp;
+	
+}
+
+void loadWords(vector<string>& wordContainer, string& str, int wordLength)
+{
+	int divisions = str.size()/wordLength;
+	
+	for(int i = 0; i < divisions; i++)
+	{
+		wordContainer.push_back(str.substr(i*wordLength, wordLength));
+		//cout << wordContainer.at(i) << "\t" ;
+	}
+	
+	/*
+	for(int i = 0; i < wordContainer.size(); i++)
+	{
+		cout << wordContainer.at(i) << "\t" ;
+	}*/
+	
+	cout << endl;
+}
+
+
