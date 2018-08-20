@@ -93,18 +93,19 @@ int main(int argc, char** argv) {
 
   string tempString = "";
 
-  int ID = 0;
+  int ID = 48105;
   unsigned int milli ;//= 500000;
   milli = 2;
   string Location = "\'Braamfontein\'";
   srand(time(NULL));
   randTemperatureold = randomTemperatureGenerator();
   randTemperaturenew = randTemperatureold;
+	rc = sqlite3_open("TRich.db", &db);
 
-  while (1)
+  while (ID < 102000)
   {
 
-    rc = sqlite3_open("TRich.db", &db);
+    
     getCurrentDateAndTime( year, month, day, hour, minute, second );
 
 
@@ -162,14 +163,14 @@ int main(int argc, char** argv) {
   	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     tempString="";
     ID++;
-    sqlite3_close(db);
+  // sqlite3_close(db);
 
 
 
-    system("sqlite3 -header -csv 'TRich.db' 'select * from WEATHER;' > RoutTemp.csv");
+    
   }
 
-
+	system("sqlite3 -header -csv 'TRich.db' 'select * from WEATHER;' > RoutTemp.csv");
 
 
 

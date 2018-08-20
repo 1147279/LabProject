@@ -65,7 +65,7 @@ void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &min
 
 double randomTemperatureGenerator()
 {
-  return ceilf(((rand()%33 +8)+((rand()%100)/27.5))* 100) / 100;
+  return ceilf(((rand()%33 -10)+((rand()%100)/37.5))* 100) / 100;
 }
 
 
@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
   while (1)
   {
 
-    rc = sqlite3_open("AA.db", &db);
+    rc = sqlite3_open("TRich.db", &db);
     getCurrentDateAndTime( year, month, day, hour, minute, second );
 
 
@@ -166,7 +166,7 @@ int main(int argc, char** argv) {
 
 
 
-    system("sqlite3 -header -csv 'AA.db' 'select * from WEATHER;' > outTemp.csv");
+    system("sqlite3 -header -csv 'TRich.db' 'select * from WEATHER;' > RoutTemp.csv");
   }
 
 
