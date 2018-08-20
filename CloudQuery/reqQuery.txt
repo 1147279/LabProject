@@ -1,1 +1,1 @@
-select * from WEATHER where LOCATION = "Rosebank";
+select * from WEATHER;

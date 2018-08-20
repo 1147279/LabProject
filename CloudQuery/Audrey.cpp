@@ -55,28 +55,6 @@ int main(int argc, char** argv)
 
 
 
-  rc = sqlite3_open("AA.db", &db);
-
-  char req[256];
-
-  inFileA.getline (req,256);
-
-  string write ="";
-
-
-
-  cout << write << endl;
-
-
-  write += "sqlite3 -header -csv \'AA.db\' \'";
-  write += "select * from WEATHER;";
-  write += "\' > outTempAudrey.csv";
-  cout << write << endl;
-
-
-  system(write.c_str());
-
-
   system("sudo service ssh start");
 
   system("./audreyReply.sh");
