@@ -94,7 +94,7 @@ int main()
 
 
   // Runs script.sh which sends the file with the request to the Sensor
-  system("./edgeScript.sh");
+  system("./edgeScriptRichard.sh");
 
   cout << "Data Sent." << endl;
 
