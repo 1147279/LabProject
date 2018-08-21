@@ -61,7 +61,7 @@ int main(int argc, char** argv)
   cout << write << endl;
 
 
-  write += "sqlite3 -header -csv \'JJ.db\' \'";
+  write += "sqlite3 -header -csv \'TJohn.db\' \'";
   write += "select * from WEATHER;";
   write += "\' > outTempJohn.csv";
   cout << write << endl;
