@@ -13,8 +13,9 @@ int powerFunction(int base, int power);
 int binaryStringToDecimal(string str);
 string decompressString(string str);
 string logicalEnd(string str1, string str2);
-string compressString(string bitstring);
+string compressString(string bitstring, int wordlength);
 string decompressor(int index, int wordLength, string& str);
+string decimalToBinary(int num, int bitStreamLength);
 
 int main ()
 {
@@ -166,7 +167,26 @@ int main ()
 		}
 		
 	}
-	cout <<"String Q "<< temp << endl;
+	cout << "String T "<< temp<<endl;
+	string strC = compressString(temp, wordLength);
+	//cout <<"String Q "<< strC << endl;
+	
+	
+	int stringCSize = strC.size();
+	int strCSize = stringCSize;
+	int divisionsC = strCSize/wordLength;
+	
+	string tempC = "";
+	
+	
+	
+	for(int i = 0; i < stringCSize/wordLength; i++)
+	{
+		tempC =   decompressor(i, wordLength,  strC) + tempC;
+	}
+	
+	cout <<"string C " <<  tempC << endl;
+	
 	input.close();
 	output.close();
 	
@@ -268,22 +288,20 @@ string logicalEnd(string str1, string str2)
 	return result;
 }
 
-string compressString(string bitstring)
+string compressString(string bitstring, int wordlength)
 {
 
+  int newwordnum;
+  string newword = "";
 	string compressedString;
-	string result = "";
-	int wordlength = 6;
-	int newwordnum;
-	string newword = "";
 
+  char word [5] ;
 
-	char word [20] ;
+  string result = "";
 
-
-	int i = 0;
-	word[1] = bitstring[i];
-	int count = 1;
+  int i = 0;
+  word[1] = bitstring[i];
+  int count = 1;
 
   while (i< bitstring.length())// != '\n')
   {
@@ -297,16 +315,16 @@ string compressString(string bitstring)
 
         //cout << "word in count > wordlength: " << word << endl;
         //cout << "count: " << count <<endl;
-        compressedString = bitset<3>(count).to_string();
+        compressedString = decimalToBinary(count, wordlength-2);
         //cout << "binary num: " << compressedString << endl;
         for (int j = 2; j < wordlength ; j++)
         {
           word[j] = compressedString[j-2];
           //cout << "word in count > wordlength in in: " << word << endl;
         }
-        cout << "A: " <<word << endl;
+        //cout << "A: " <<word << endl;
         result += word;
-        cout << "------------------------------------------: " << endl;
+        //cout << "------------------------------------------: " << endl;
 
       }else
       if (count < wordlength)
@@ -331,24 +349,29 @@ string compressString(string bitstring)
         if (strlen(word) != wordlength)
         {
           newwordnum = strlen(word) - 2;
-          cout << "newwordnum " << newwordnum<< endl;
+          //cout << "newwordnum " << newwordnum<< endl;
           for (int p = 0; p < newwordnum ; p++)
           {
             newword = "";
             newword += "1";
             newword += word[p+2];
-            newword += "001";
-            cout << newword << endl;
+            //newword += "001";
+            for (int h = 2 ; h < wordlength-1 ; h++)
+            {
+              newword += "0";
+            }
+            newword+="1";
+            //cout << newword << endl;
             result += newword;
 
-            cout << "------------------------------------------: " << endl;
+            //cout << "------------------------------------------: " << endl;
 
           }
         }else
         {
-          cout << "B: " << word << endl;
+          //cout << "B: " << word << endl;
           result += word;
-          cout << "------------------------------------------: " << endl;
+          //cout << "------------------------------------------: " << endl;
         }
       }
 
@@ -370,26 +393,29 @@ string compressString(string bitstring)
 
       //cout << "word in count > wordlength: " << word << endl;
       //cout << "count: " << count <<endl;
-      compressedString = bitset<3>(count).to_string();
+      compressedString = decimalToBinary(count, wordlength-2);
       //cout << "binary num: " << compressedString << endl;
       for (int j = 2; j < wordlength ; j++)
       {
         word[j] = compressedString[j-2];
         //cout << "word in count > wordlength in in: " << word << endl;
       }
-      cout <<"C: " << word << endl;
+      //cout <<"C: " << word << endl;
       result += word;
       //cout << " count : "<<count << endl;
-      cout << "------------------------------------------: " << endl;
+      //cout << "------------------------------------------: " << endl;
       count =1;
     }
+
+
 
     i++;
 
     word[1] = bitstring[i];
 
+    //cout << "We've had " << count << " " << word[1] << "'s" << endl;
   }
-	return result;
+  return result;
 }
 
 string decompressor(int index, int wordLength, string& str)
@@ -401,3 +427,23 @@ string decompressor(int index, int wordLength, string& str)
 	return temp;
 }
 
+string decimalToBinary(int num, int bitStreamLength)
+{
+	int temp = num;
+	string result = "";
+	char storage;
+	while(temp > 0)
+	{
+		storage = temp%2 + '0';
+		result = storage + result;
+		temp /= 2;
+	}
+	
+	
+	for(int i = result.size(); i < bitStreamLength; i++)
+	{
+		result = '0' + result;
+	}
+	
+	return result;
+}

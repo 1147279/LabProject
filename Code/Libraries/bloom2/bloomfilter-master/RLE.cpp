@@ -96,7 +96,12 @@ int main()
             newword = "";
             newword += "1";
             newword += word[p+2];
-            newword += "001";
+            //newword += "001";
+            for (int h = 2 ; h < wordlength-1 ; h++)
+            {
+              newword += "0";
+            }
+            newword+="1";
             cout << newword << endl;
             outFile << newword;
 
