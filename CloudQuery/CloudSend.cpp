@@ -150,21 +150,29 @@ int main(int argc, char** argv)
   	const char *sql;
     rc = sqlite3_open("Result.db", &db);
 
-      tempString = "sqlite3 Result.db 'attach database 'AA.db' as copysa; insert into main.WEATHER select * from copysa.WEATHER;'";
+      tempString = "sqlite3 Result.db \"attach database 'AA.db' as copysa; insert into main.WEATHER select * from copysa.WEATHER;\"";
+      system(tempString.c_str());
+      cout << tempString << endl;
+
+      tempString = "sqlite3 Result.db \"attach database 'RR.db' as copysr; insert into main.WEATHER select * from copysr.WEATHER;\"";
       system(tempString.c_str());
 
-      tempString = "sqlite3 Result.db 'attach database 'RR.db' as copysr; insert into main.WEATHER select * from copysr.WEATHER;'";
+      tempString = "sqlite3 Result.db \"attach database 'MM.db' as copysm; insert into main.WEATHER select * from copysm.WEATHER;\"";
       system(tempString.c_str());
 
-      tempString = "sqlite3 Result.db 'attach database 'MM.db' as copysm; insert into main.WEATHER select * from copysm.WEATHER;'";
+      tempString = "sqlite3 Result.db \"attach database 'JJ.db' as copysj; insert into main.WEATHER select * from copysj.WEATHER;\"";
       system(tempString.c_str());
 
-      tempString = "sqlite3 Result.db 'attach database 'JJ.db' as copysj; insert into main.WEATHER select * from copysj.WEATHER;'";
-      system(tempString.c_str());
+      write = "";
+      write += "sqlite3 -header -csv \'Result.db\' \'";
+      write += query;
+      write += "\' > FinalResult.csv";
+      cout << write << endl;
 
 
+      system(write.c_str());
 
-
+      //attach database 'AA.db' as gg;insert into main.WEATHER select * from gg.WEATHER;
 
 
 
