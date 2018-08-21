@@ -54,6 +54,20 @@ int main(int argc, char** argv)
   inFileA.open("reqQuery.txt",ifstream::in);
 
 
+  string write ="";
+
+
+
+  cout << write << endl;
+
+
+  write += "sqlite3 -header -csv \'JJ.db\' \'";
+  write += "select * from WEATHER;";
+  write += "\' > outTempJohn.csv";
+  cout << write << endl;
+
+  system(write.c_str());
+
   system("sudo service ssh start");
 
   system("./johnReply.sh");

@@ -150,18 +150,22 @@ int main(int argc, char** argv)
   	const char *sql;
     rc = sqlite3_open("Result.db", &db);
 
-      tempString = "sqlite3 Result.db \"attach database 'AA.db' as copysa; insert into main.WEATHER select * from copysa.WEATHER;\"";
+      tempString = "sqlite3 Result.db '.mode csv;.import outTempJohn.csv WEATHER;'";
       system(tempString.c_str());
       cout << tempString << endl;
 
-      tempString = "sqlite3 Result.db \"attach database 'RR.db' as copysr; insert into main.WEATHER select * from copysr.WEATHER;\"";
+      tempString = "sqlite3 Result.db '.mode csv;.import outTempRichard.csv WEATHER;'";
       system(tempString.c_str());
+      cout << tempString << endl;
 
-      tempString = "sqlite3 Result.db \"attach database 'MM.db' as copysm; insert into main.WEATHER select * from copysm.WEATHER;\"";
+      tempString = "sqlite3 Result.db '.mode csv;.import outTempMiddleton.csv WEATHER;'";
       system(tempString.c_str());
+      cout << tempString << endl;
 
-      tempString = "sqlite3 Result.db \"attach database 'JJ.db' as copysj; insert into main.WEATHER select * from copysj.WEATHER;\"";
+      tempString = "sqlite3 Result.db '.mode csv;.import outTempAudrey.csv WEATHER;'";
       system(tempString.c_str());
+      cout << tempString << endl;
+
 
       write = "";
       write += "sqlite3 -header -csv \'Result.db\' \'";
