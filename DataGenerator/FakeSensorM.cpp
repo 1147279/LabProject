@@ -103,10 +103,10 @@ int main(int argc, char** argv) {
 
 	rc = sqlite3_open("TMiddle.db", &db);
 
-  while (ID < 102000)
+  while (ID < 25000)
   {
 
-    
+
     getCurrentDateAndTime( year, month, day, hour, minute, second );
 
 
@@ -168,7 +168,7 @@ int main(int argc, char** argv) {
 
 
 
-    
+
   }
 
 
