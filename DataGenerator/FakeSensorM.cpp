@@ -79,7 +79,7 @@ int main(int argc, char** argv) {
   int year, month, day, hour, minute, second;
   year = 2018;
   month = 8;
-  day = 18;
+  day = 16;
   hour = 1;
   minute = 1;
   second = 1;
@@ -93,7 +93,7 @@ int main(int argc, char** argv) {
 
   string tempString = "";
 
-  int ID = 49238;
+  int ID = 0;
   unsigned int milli ;//= 500000;
   milli = 2;
   string Location = "\'Braamfontein\'";
