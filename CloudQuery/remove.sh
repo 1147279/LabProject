@@ -1,1 +1,1 @@
-rm AA.db RR.db JJ.db MM.db reqQuery.txt FinalResult.csv 
+rm outTempAudrey.csv outTempJohn.csv outTempRichard.csv outTempMiddleton.csv reqQuery.txt FinalResult.csv 
