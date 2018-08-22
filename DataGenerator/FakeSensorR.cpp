@@ -102,7 +102,7 @@ int main(int argc, char** argv) {
   randTemperaturenew = randTemperatureold;
 	rc = sqlite3_open("TRich.db", &db);
 
-  while (ID < 110000)
+  while (ID < 25000)
   {
 
 

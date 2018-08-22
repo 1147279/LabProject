@@ -55,7 +55,7 @@ int main(int argc, char** argv)
 
 
 
-  rc = sqlite3_open("RR.db", &db);
+  rc = sqlite3_open("TRich.db", &db);
 
   char req[256];
 
@@ -68,7 +68,7 @@ int main(int argc, char** argv)
   cout << write << endl;
 
 
-  write += "sqlite3 -header -csv \'RR.db\' \'";
+  write += "sqlite3 -header -csv \'TRich.db\' \'";
   write += req;
   write += "\' > outTempRichard.csv";
   cout << write << endl;

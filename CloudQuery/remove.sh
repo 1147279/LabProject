@@ -1,1 +1,1 @@
-rm outTempAudrey.csv outTempJohn.csv outTempRichard.csv outTempMiddleton.csv reqQuery.txt FinalResult.csv 
+rm outTempJohn.csv outTempAudrey.csv outTempRichard.csv outTempMiddleton.csv reqQuery.txt FinalResult.csv 
