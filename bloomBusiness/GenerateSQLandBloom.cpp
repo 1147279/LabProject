@@ -7,22 +7,26 @@
 #include <cstdlib>
 #include <math.h>
 #include <cmath>
-#include "OrdinaryBloomFilter.hpp"
-#include "FnvHash.hpp"
+//#include "OrdinaryBloomFilter.hpp"
+//#include "FnvHash.hpp"
 
-namespace std {
-    template<> struct hash<bloom::HashParams<std::string>> {
-        size_t operator()(bloom::HashParams<std::string> const& s) const {
-            bloom::FnvHash32 h;
-            h.Update(&s.b, sizeof(uint8_t));
-            h.Update((const uint8_t *) s.a.data(), s.a.length());
-            return h.Digest();
-        }
-    };
-}
+
 
 
 using namespace std;
+
+
+
+
+int asciiSum(string str);
+int powerFunction(int base, int power);
+int moding(int& num, string& str);
+void bloomFilterInsert (string& str, string& bitString);
+bool bloomFilterContains (string& str, string& bitString);
+void exportToFile(string fileName, string& str);
+
+
+
 
 static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 {
@@ -83,6 +87,8 @@ double randomTemperatureGenerator()
 }
 
 
+void initialiseString(string& str, int strSize);
+
 
 int main(int argc, char** argv) {
 
@@ -96,11 +102,12 @@ int main(int argc, char** argv) {
 	char *zErrMsg = NULL;
 	int rc;
 	const char *sql;
-  bloom::OrdinaryBloomFilter<std::string> bf(4, 900000);
+  string bloomfilter ;
 
   //bf.printFilter();
 
   string bloomKey = "";
+  initialiseString(bloomfilter, 1000000);
 
 
   //bf.Insert(t1);
@@ -114,18 +121,18 @@ int main(int argc, char** argv) {
 
   string tempString = "";
 
-  
+
   unsigned int milli ;//= 500000;
   milli = 2;
-  string Location = "\'FakePlace\'";
+  string Location = "\'Kensington\'";
   srand(time(NULL));
   randTemperatureold = randomTemperatureGenerator();
   randTemperaturenew = randTemperatureold;
-  int l=200;
-  
+  int l=0;
+  string check;
    rc = sqlite3_open("test2.db", &db);
   tempString += "DELETE FROM WEATHER WHERE ID >= 0;";
-	
+
 	sql = tempString.c_str();
     cout << sql << endl;
 
@@ -133,13 +140,13 @@ int main(int argc, char** argv) {
 
 
   	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	
-  
-  while (l<100)
+
+
+  while (l<1000)
   {
-	
-	
-   
+
+
+
     getCurrentDateAndTime( year, month, day, hour, minute, second );
 
 
@@ -209,31 +216,155 @@ int main(int argc, char** argv) {
     cout << bloomKey << endl;
     cout << "---------------" << endl;
 
-    bf.Insert(bloomKey);
-
+    //bf.Insert(bloomKey);
+	bloomFilterInsert(bloomKey, bloomfilter);
 
     tempString="";
     bloomKey = "";
     ID++;
-    
-    usleep(milli);
+
+    //usleep(milli);
 
 
-    
+
     l++;
   }
 	sqlite3_close(db);
 	system("sqlite3 -header -csv 'test2.db' 'select * from WEATHER;' > outTemp.csv");
 
-  bf.printFilter();
-
-  system("mv bitstringprint.txt bitstringread.txt");
-
-
+  //bf.printFilter();
+	exportToFile("bitstringOUT.txt", bloomfilter);
+  //system("mv bitstringprint.txt bitstringread.txt");
 
 
 
-	sqlite3_close(db);
+
+
+	//sqlite3_close(db);
 	input.close();
 return 0;
+}
+
+
+void initialiseString(string& str, int strSize)
+{
+	str = "";
+	for(int i = 0; i < strSize; i++)
+		str += "0";
+}
+
+
+int asciiSum(string str)
+{
+	int sum = 0;
+
+	for(int i = 0; i < str.size(); i++)
+	{
+		sum += str.at(i);
+	}
+
+	return sum;
+}
+
+
+
+int powerFunction(int base, int power)
+{
+	int number = base;
+
+	if(power == 0)
+	{
+		return 1;
+	}else if (power > 0)
+	{
+		for (int i = 0; i < power - 1 ; i++)
+		{
+			number *= base;
+		}
+	}
+	return number;
+}
+
+
+int moding(int& num, string& str)
+{
+	int result = 0;
+
+	result = num%str.size();
+	return result;
+
+}
+
+
+void bloomFilterInsert (string& str, string& bitString)
+{
+	int hash1;
+	int hash2;
+	int hash3;
+	int asciNum = asciiSum(str);
+  int num1 = powerFunction(asciNum, 4)-powerFunction((asciNum/2+powerFunction(asciNum, 2)),2)+3*(asciNum/23);
+	int num2 = powerFunction(asciNum, 5)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/733);
+	int num3 = powerFunction(asciNum, 6)-powerFunction((asciNum/4+powerFunction(asciNum, 4)),2)+3*(asciNum/1111);
+  
+	hash1 = moding(num1, bitString);
+	hash2 = moding(num2, bitString);
+	hash3 = moding(num3, bitString);
+
+  cout << "first: " << hash1 << endl;
+  cout << "second: " << hash2 << endl;
+  cout << "third: " << hash3 << endl;
+
+	bitString.at(hash1) = '1';
+	bitString.at(hash2) = '1';
+	bitString.at(hash3) = '1';
+}
+
+bool bloomFilterContains (string& str, string& bitString)
+{
+	int hash1;
+	int hash2;
+	int hash3;
+	int asciNum = asciiSum(str);
+  int num1 = powerFunction(asciNum, 4)-powerFunction((asciNum/2+powerFunction(asciNum, 2)),2)+3*(asciNum/23);
+	int num2 = powerFunction(asciNum, 5)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/733);
+	int num3 = powerFunction(asciNum, 6)-powerFunction((asciNum/4+powerFunction(asciNum, 4)),2)+3*(asciNum/1111);
+
+
+	hash1 = moding(num1, bitString);
+	hash2 = moding(num1, bitString);
+	hash3 = moding(num1, bitString);
+
+	if(bitString.at(hash1) == '0')
+		return false;
+
+	if(bitString.at(hash2) == '0')
+		return false;
+
+	if(bitString.at(hash3) == '0')
+		return false;
+
+
+	return true;
+}
+
+
+void exportToFile(string fileName, string& str)
+{
+	ofstream output;
+	output.open(fileName,ofstream::out);
+
+	output << str << endl;
+
+	output.close();
+}
+
+
+void setBloomFilter(string fileName, string& str)
+{
+	ifstream input;
+	input.open(fileName,ifstream::in);
+	str = "";
+	input >> str;
+
+	input.close();
 }

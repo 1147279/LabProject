@@ -35,17 +35,16 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
    return 0;
 }
 
-
 void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &minute, int &second )
 {
 
-   if (second%60 == 0)
+   if (second > 60)
    {
      second = 1;
-     if (minute%60 == 0)
+     if (minute > 60)
      {
        minute = 1;
-       if (hour%24 == 0)
+       if (hour > 24)
        {
          hour = 1;
          if (day%365 == 0)
@@ -64,15 +63,15 @@ void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &min
          }
        }else
        {
-         hour ++;
+         hour += 2;
        }
      }else
      {
-       minute++;
+       minute+= 30;
      }
    }else
    {
-     second++;
+     second += 30;
    }
 
 }
@@ -90,13 +89,18 @@ int main(int argc, char** argv) {
   double randTemperatureold,randTemperaturenew;
 	ifstream input;
 	input.open("input.txt");
-  int year, month, day, hour, minute, second, ID;
-  year = 2019; month = 8; day = 16; hour = 1; minute = 0; second = 0; ID = 0;
+  int year, month, day, hour, minute, second;
+  year = 2018;
+  month = 8;
+  day = 20;
+  hour = 0;
+  minute = 0;
+  second = 0;
 	sqlite3 *db;
 	char *zErrMsg = NULL;
 	int rc;
 	const char *sql;
-  bloom::OrdinaryBloomFilter<std::string> bf(4, 900000);
+  bloom::OrdinaryBloomFilter<std::string> bf(3, 900000);
 
   //bf.printFilter();
 
@@ -109,56 +113,24 @@ int main(int argc, char** argv) {
 
 
 
-
-
-
   string tempString = "";
 
-  
+  int ID = 0;
   unsigned int milli ;//= 500000;
-  milli = 2;
-  string Location = "\'FakePlace\'";
+  milli = 2;//000000;
+  string Location = "\'Braamfontein\'";
   srand(time(NULL));
   randTemperatureold = randomTemperatureGenerator();
   randTemperaturenew = randTemperatureold;
-  int l=200;
-  
-   rc = sqlite3_open("test2.db", &db);
-  tempString += "DELETE FROM WEATHER WHERE ID >= 0;";
-	
-	sql = tempString.c_str();
-    cout << sql << endl;
-
-
-
-
-  	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-	
-  
-  while (l<100)
+  int l=0;
+  rc = sqlite3_open("test2.db", &db);
+  while (l<1000)
   {
-	
-	
-   
+
+
     getCurrentDateAndTime( year, month, day, hour, minute, second );
 
 
-
-
-
-    /* Create SQL statement */
-
-    /*CREATE TABLE WEATHER(
-       ...> ID INT PRIMARY KEY NOT NULL,
-       ...> YEAR INT NOT NULL,
-       ...> MONTH INT NOT NULL,
-       ...> DAY INT NOT NULL,
-       ...> HOUR INT NOT NULL,
-       ...> MINUTE INT NOT NULL,
-       ...> SECOND INT NOT NULL,
-       ...> LOCATION CHAR(50) NOT NULL,
-       ...> TEMPERATURE INT NOT NULL);
-    */
 
     randTemperatureold = randomTemperatureGenerator();
     while (abs(randTemperaturenew-randTemperatureold) > 2)
@@ -215,25 +187,29 @@ int main(int argc, char** argv) {
     tempString="";
     bloomKey = "";
     ID++;
-    
+
     usleep(milli);
 
 
-    
     l++;
   }
-	sqlite3_close(db);
-	system("sqlite3 -header -csv 'test2.db' 'select * from WEATHER;' > outTemp.csv");
+
+  system("sqlite3 -header -csv 'test2.db' 'select * from WEATHER;' > outTemp.csv");
+
+  sqlite3_close(db);
 
   bf.printFilter();
 
   system("mv bitstringprint.txt bitstringread.txt");
 
 
-
-
-
-	sqlite3_close(db);
 	input.close();
+
+
+
+
+
+
+
 return 0;
 }
