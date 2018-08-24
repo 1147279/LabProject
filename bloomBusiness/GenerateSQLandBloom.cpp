@@ -43,19 +43,19 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &minute, int &second )
 {
 
-   if (second%60 == 0)
+   if (second >= 60)
    {
-     second = 1;
-     if (minute%60 == 0)
+     second = 0;
+     if (minute >=60 )
      {
-       minute = 1;
-       if (hour%24 == 0)
+       minute = 0;
+       if (hour >= 24 )
        {
-         hour = 1;
-         if (day%365 == 0)
+         hour = 0;
+         if (day >= 30 )
          {
            day = 1;
-           if (month%12)
+           if (month >= 12)
            {
              month = 1;
            }else
@@ -64,26 +64,26 @@ void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &min
            }
          }else
          {
-           day++;
+           day += 10;
          }
        }else
        {
-         hour ++;
+         hour +=22;
        }
      }else
      {
-       minute++;
+       minute += 46;
      }
    }else
    {
-     second++;
+     second +=29;
    }
 
 }
 
 double randomTemperatureGenerator()
 {
-  return ceilf(((rand()%33 +8)+((rand()%100)/27.5))* 100) / 100;
+  return ceilf(((rand()%90 +2)+((rand()%100)/27.5))* 100) / 100;
 }
 
 
@@ -97,7 +97,7 @@ int main(int argc, char** argv) {
 	ifstream input;
 	input.open("input.txt");
   int year, month, day, hour, minute, second, ID;
-  year = 2019; month = 8; day = 16; hour = 1; minute = 0; second = 0; ID = 0;
+  year = 2019; month = 8; day = 16; hour = 0; minute = 0; second = 0; ID = 0;
 	sqlite3 *db;
 	char *zErrMsg = NULL;
 	int rc;
@@ -126,12 +126,12 @@ int main(int argc, char** argv) {
   milli = 2;
   string Location = "\'Kensington\'";
   srand(time(NULL));
-  randTemperatureold = randomTemperatureGenerator();
+  randTemperatureold = randomTemperatureGenerator()+20;
   randTemperaturenew = randTemperatureold;
   int l=0;
   string check;
-   rc = sqlite3_open("test2.db", &db);
-  tempString += "DELETE FROM WEATHER WHERE ID >= 0;";
+   rc = sqlite3_open("humidity.db", &db);
+  tempString += "DELETE FROM HUMIDITY WHERE ID >= 0;";
 
 	sql = tempString.c_str();
     cout << sql << endl;
@@ -173,7 +173,7 @@ int main(int argc, char** argv) {
       randTemperatureold = randomTemperatureGenerator();
     }
 
-    tempString += "INSERT INTO WEATHER (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,TEMPERATURE) VALUES (";
+    tempString += "INSERT INTO HUMIDITY (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,HUMIDITY) VALUES (";
     tempString += to_string(ID);
     tempString += ",";
     tempString += to_string(year);
@@ -230,7 +230,7 @@ int main(int argc, char** argv) {
     l++;
   }
 	sqlite3_close(db);
-	system("sqlite3 -header -csv 'test2.db' 'select * from WEATHER;' > outTemp.csv");
+	system("sqlite3 -header -csv 'humidity.db' 'select * from HUMIDITY;' > outTemp.csv");
 
   //bf.printFilter();
 	exportToFile("bitstringOUT.txt", bloomfilter);
@@ -260,10 +260,10 @@ int asciiSum(string str)
 
 	for(int i = 0; i < str.size(); i++)
 	{
-		sum += str.at(i);
+		sum += i*str.at(i)+powerFunction(i,2)*str.at(i)+str.at(i)*107;
 	}
 
-	return sum;
+	return sum-310296;
 }
 
 
@@ -302,10 +302,18 @@ void bloomFilterInsert (string& str, string& bitString)
 	int hash2;
 	int hash3;
 	int asciNum = asciiSum(str);
-  int num1 = powerFunction(asciNum, 4)-powerFunction((asciNum/2+powerFunction(asciNum, 2)),2)+3*(asciNum/23);
-	int num2 = powerFunction(asciNum, 5)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/733);
-	int num3 = powerFunction(asciNum, 6)-powerFunction((asciNum/4+powerFunction(asciNum, 4)),2)+3*(asciNum/1111);
-  
+  cout << asciNum << endl;
+  int num1;// = asciNum;
+  num1 = (asciNum-1555)*5112+2*asciNum; //+powerFunction((asciNum/2+powerFunction(num1, 2)),2)+3*(asciNum/23);
+
+	int num2 = asciNum ;
+  num2= powerFunction(num2, 3)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/21);
+
+	int num3 = asciNum ;
+  num3= (asciNum/1023)*(499*asciNum)-17825;//powerFunction(num3, 1)+powerFunction((num3/4+powerFunction(asciNum, 4)),2)+3*(asciNum/17);
+
+
+
 	hash1 = moding(num1, bitString);
 	hash2 = moding(num2, bitString);
 	hash3 = moding(num3, bitString);
@@ -325,9 +333,16 @@ bool bloomFilterContains (string& str, string& bitString)
 	int hash2;
 	int hash3;
 	int asciNum = asciiSum(str);
-  int num1 = powerFunction(asciNum, 4)-powerFunction((asciNum/2+powerFunction(asciNum, 2)),2)+3*(asciNum/23);
-	int num2 = powerFunction(asciNum, 5)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/733);
-	int num3 = powerFunction(asciNum, 6)-powerFunction((asciNum/4+powerFunction(asciNum, 4)),2)+3*(asciNum/1111);
+  cout << asciNum;
+
+  int num1;// = asciNum;
+  num1 = (asciNum-1555)*5112+2*asciNum; //+powerFunction((asciNum/2+powerFunction(num1, 2)),2)+3*(asciNum/23);
+
+	int num2 = asciNum ;
+  num2= powerFunction(num2, 3)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/21);
+
+	int num3 = asciNum ;
+  num3= (asciNum/1023)*(499*asciNum)-17825;//powerFunction(num3, 1)+powerFunction((num3/4+powerFunction(asciNum, 4)),2)+3*(asciNum/17);
 
 
 	hash1 = moding(num1, bitString);

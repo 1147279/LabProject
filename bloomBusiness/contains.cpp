@@ -92,8 +92,8 @@ void initialiseString(string& str, int strSize);
 
 int main(int argc, char** argv) {
 
-  string tempString = "\'Kensington\'201981621740";
-  string tempString2 = "\'Kensington\'2019820181233";
+  string tempString = "\'Kensington\'2019102122460";
+  string tempString2 = "\'Kensington\'2018102122460";
 
   string bloomfilter ;
   setBloomFilter("bitstringIN.txt",bloomfilter);
@@ -132,11 +132,12 @@ int asciiSum(string str)
 
 	for(int i = 0; i < str.size(); i++)
 	{
-		sum += str.at(i);
+		sum += i*str.at(i)+powerFunction(i,2)*str.at(i)+str.at(i)*107;
 	}
 
-	return sum;
+	return sum-310296;
 }
+
 
 
 
@@ -174,9 +175,17 @@ void bloomFilterInsert (string& str, string& bitString)
 	int hash2;
 	int hash3;
 	int asciNum = asciiSum(str);
-  int num1 = powerFunction(asciNum, 4)-powerFunction((asciNum/2+powerFunction(asciNum, 2)),2)+3*(asciNum/23);
-	int num2 = powerFunction(asciNum, 5)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/733);
-	int num3 = powerFunction(asciNum, 6)-powerFunction((asciNum/4+powerFunction(asciNum, 4)),2)+3*(asciNum/1111);
+
+  cout << asciNum;
+  int num1;// = asciNum;
+  num1 = (asciNum-1555)*5112+2*asciNum; //+powerFunction((asciNum/2+powerFunction(num1, 2)),2)+3*(asciNum/23);
+
+	int num2 = asciNum ;
+  num2= powerFunction(num2, 3)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/21);
+
+	int num3 = asciNum ;
+  num3= (asciNum/1023)*(499*asciNum)-17825;//powerFunction(num3, 1)+powerFunction((num3/4+powerFunction(asciNum, 4)),2)+3*(asciNum/17);
+
 
 	hash1 = moding(num1, bitString);
 	hash2 = moding(num2, bitString);
@@ -197,9 +206,16 @@ bool bloomFilterContains (string& str, string& bitString)
 	int hash2;
 	int hash3;
 	int asciNum = asciiSum(str);
-  int num1 = powerFunction(asciNum, 4)-powerFunction((asciNum/2+powerFunction(asciNum, 2)),2)+3*(asciNum/23);
-	int num2 = powerFunction(asciNum, 5)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/733);
-	int num3 = powerFunction(asciNum, 6)-powerFunction((asciNum/4+powerFunction(asciNum, 4)),2)+3*(asciNum/1111);
+  cout << asciNum;
+  int num1;// = asciNum;
+  num1 = (asciNum-1555)*5112+2*asciNum; //+powerFunction((asciNum/2+powerFunction(num1, 2)),2)+3*(asciNum/23);
+
+	int num2 = asciNum ;
+  num2= powerFunction(num2, 3)+powerFunction((asciNum/3+powerFunction(asciNum, 3)),2)-3*(asciNum/21);
+
+	int num3 = asciNum ;
+  num3= (asciNum/1023)*(499*asciNum)-17825;//powerFunction(num3, 1)+powerFunction((num3/4+powerFunction(asciNum, 4)),2)+3*(asciNum/17);
+
 
 	hash1 = moding(num1, bitString);
 	hash2 = moding(num1, bitString);
