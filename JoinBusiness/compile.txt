@@ -1,1 +1,0 @@
-g++ AbstractBloomFilter.hpp AbstractDeletableBloomFilter.hpp CountingBloomFilter.hpp PairedBloomFilter.hpp OrdinaryBloomFilter.hpp setTest.cpp -o set
