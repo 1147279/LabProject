@@ -35,7 +35,7 @@ int main ()
 
 	unsigned int milli ;//= 500000;
   milli = 200000;
-	int wordlength =12;
+	int wordlength =10;
 	ifstream inputres;
 	ifstream inputtemp;
 
@@ -324,7 +324,7 @@ string compressString(string bitstring, int wordlength)
   string newword = "";
 	string compressedString;
 
-  char word [12] ;
+  char word [10] ;
 
   string result = "";
 
