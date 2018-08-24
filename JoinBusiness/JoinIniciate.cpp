@@ -67,12 +67,14 @@ int main ()
 	string in,compressedresbloom,tempbloom;
 
 	inputres >> compressedresbloom;
-
+	cout << "compressedresbloom size: "<< compressedresbloom.size()<<endl;
 
 
 	inputtemp >> tempbloom;
 
-	cout << "e" <<endl;
+	cout << "tempbloom size: "<< tempbloom.size()<<endl;
+
+	cout << " " <<endl;
 
 
 
@@ -83,7 +85,12 @@ int main ()
 		resbloom = decompressor(i,wordlength,compressedresbloom) + resbloom;
 	}
 
+	cout << "resbloom size: "<< resbloom.size()<<endl;
+
+
 	string finalResBloom = logicalEnd(resbloom,tempbloom);
+
+	cout << "final resbloom size: "<< finalResBloom.size()<<endl;
 
 	ofstream output;
 	output.open("FinalresultingBitString.txt");
