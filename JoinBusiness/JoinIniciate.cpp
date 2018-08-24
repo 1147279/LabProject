@@ -34,7 +34,7 @@ int main ()
 
 
 	unsigned int milli ;//= 500000;
-  milli = 100000;
+  milli = 200000;
 	int wordlength =12;
 	ifstream inputres;
 	ifstream inputtemp;
