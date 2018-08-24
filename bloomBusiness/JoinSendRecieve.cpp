@@ -88,7 +88,7 @@ int main ()
 	string resBloomCompd = compressString(resBloom,wordlength);
 
 	ofstream outputcomp;
-	outputcomp.open("compressedTempBitString.txt");
+	outputcomp.open("resultingBitStringCompressed.txt");
 
 	outputcomp << resBloomCompd;
 	outputcomp.close();
@@ -186,6 +186,7 @@ int main ()
 	}
 
 	system("sudo service ssh start");
+
 	system("./sendCSVForJoin.sh");
 	//cout << str << endl;
 	//cout << compressedString << endl;
