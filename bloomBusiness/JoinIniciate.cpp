@@ -72,6 +72,8 @@ int main ()
 
 	inputtemp >> tempbloom;
 
+	cout << "e" <<endl;
+
 
 
 	int sz = compressedresbloom.size()/wordlength;
