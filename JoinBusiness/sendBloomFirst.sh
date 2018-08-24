@@ -1,5 +1,5 @@
 #!/usr/bin/expect -f
-spawn scp -r /home/pi/Desktop/LabProject/LabProject/bloomBusiness/compressedTempBitString.txt  pi@10.0.0.111:/home/pi/Desktop/LabProject/LabProject/bloomBusiness/
+spawn scp -r /home/pi/Desktop/LabProject/LabProject/JoinBusiness/compressedTempBitString.txt  pi@10.0.0.111:/home/pi/Desktop/LabProject/LabProject/JoinBusiness/
 expect "password:"
 send "0116166224\r"
 expect "password:"
