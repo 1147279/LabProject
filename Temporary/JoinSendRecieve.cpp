@@ -70,7 +70,7 @@ int main ()
 
 
 	ofstream output;
-	output.open("resultingBitString.txt");
+	output.open("resultingBitString.txt",ofstream::out);
 
 	output << resBloom;
 
@@ -80,7 +80,7 @@ int main ()
 	string resBloomCompd = compressString(resBloom,wordlength);
 
 	ofstream outputcomp;
-	outputcomp.open("resultingBitStringCompressed.txt");
+	outputcomp.open("resultingBitStringCompressed.txt",ofstream::out);
 
 	outputcomp << resBloomCompd;
 	outputcomp.close();
