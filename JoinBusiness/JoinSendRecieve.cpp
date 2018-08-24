@@ -64,9 +64,13 @@ int main ()
 
 	inputhum >> humbloom;
 
+	cout << "humbloom size: "<< humbloom.size()<<endl;
+
 	string in,compressedtempbloom,tempbloom;
 	compressedtempbloom="";
 	inputtemp >> compressedtempbloom;
+
+	cout << "compressedtempbloom size: "<< compressedtempbloom.size()<<endl;
 
 	tempbloom = "";
 
@@ -77,7 +81,11 @@ int main ()
 		tempbloom = decompressor(i,wordlength,compressedtempbloom) + tempbloom;
 	}
 
+	cout << "tempbloom size: "<< tempsbloom.size()<<endl;
 	string resBloom = logicalEnd(humbloom,tempbloom);
+
+	cout << "resbloom size: "<< resBloom.size()<<endl;
+
 
 	ofstream output;
 	output.open("resultingBitString.txt");
