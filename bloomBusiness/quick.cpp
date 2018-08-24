@@ -26,188 +26,33 @@ bool bloomFilterContains (string& str, string& bitString);
 int moding(int& num, string& str);
 int asciiSum(string str);
 string Decomp(string compressed,int wordlength);
-
+double convertToDecimal(string binNum);
 
 
 int main ()
 {
 
 
-	unsigned int milli ;//= 500000;
-  milli = 100000;
-	int wordlength =12;
 	ifstream inputhum;
 	inputhum.open("bitstringINhum.txt");
 
-  ifstream inputtemp;
+	string in,check;
+	check="";
+	inputhum >> in;
 
+	string compd = compressString(in,12);
 
-	string humbloom = "";
+	int sz = compd.size()/12;
 
-
-	cout << "waiting for bloom filter..." << endl;
-
-	while(1)
+	for (int i = 0 ; i < sz ; i++)
 	{
-		inputtemp.open("compressedTempBitString.txt");
-		if (inputtemp)
-		{
-			break;
-		}
+		check = decompressor(i,12,compd) + check;
 	}
 
-	inputtemp.close();
-
-	usleep(milli);
-
-	cout << "Bloom Filter Received" << endl;
-
-	inputtemp.open("compressedTempBitString.txt");
-
-
-
-
-	ofstream output;
-	output.open("resultingBitString.txt");
-
-	ofstream outputcompressed;
-	outputcompressed.open("resultingBitStringCompressed.txt");
-
-	string compressedhumbloom = "";
-	string compressedtempbloom = "";
-
-	inputhum >> humbloom;
-  inputtemp >> compressedtempbloom;
-
-	string tempbloom = "";
-
-	int numOfWords = compressedtempbloom.size()/wordlength;
-
-	for (int i = 0 ; i < numOfWords ; i++)
-	{
-		tempbloom = decompressor(i,wordlength,compressedtempbloom) + tempbloom;
+	if (check == in){
+		cout <<"Gucci"<<endl;
 	}
 
-
-
-	//clock_t start;
-
-  //start = clock();
-
-	string compressedString = "";
-	string str = "";
-
-	//cout << andingStrings(strA, strB, wordLength) << endl;
-	//andingStrings(compressedhumbloom, compressedtempbloom, wordLength, str, compressedString);
-	//time (&end);
-
-	str = logicalEnd(tempbloom,humbloom);
-	compressedString = compressString(str,wordlength);
-
-
-	outputcompressed << compressedString;
-	output << str;
-
-
-	inputhum.close();
-  inputtemp.close();
-
-
-	output.close();
-	outputcompressed.close();
-
-	system("sudo service ssh start");
-	system("./sendBloom.sh");
-
-	system("sqlite3 -header -csv \'humidity.db\' \'select * from HUMIDITY; \' > outHum.csv");
-
-	ifstream humiditycsv;
-	humiditycsv.open("outHum.csv");
-
-	string ID,year,month,day,hour,minute,second;
-	string location;
-	string humidity;
-
-	string bloomKey = "";
-
-	string decompResultBloom = str;
-
-	ofstream participators;
-	participators.open("ForJoin.csv");
-
-	string tempString= "";
-  setBloomFilter("resultingBitString.txt",decompResultBloom);
-
-	string firstline;
-	humiditycsv >> firstline;
-
-	while (humiditycsv.good())
-	{
-		getline(humiditycsv,ID,',');
-		getline(humiditycsv,year,',');
-		getline(humiditycsv,month,',');
-		getline(humiditycsv,day,',');
-		getline(humiditycsv,hour,',');
-		getline(humiditycsv,minute,',');
-		getline(humiditycsv,second,',');
-		getline(humiditycsv,location,',');
-		getline(humiditycsv,humidity,'\n');
-
-
-
-		tempString += ID;
-		tempString += ",";
-		tempString += year;
-		tempString += ",";
-		tempString += month;
-		tempString += ",";
-		tempString += day;
-		tempString += ",";
-		tempString += hour;
-		tempString += ",";
-		tempString += minute;
-		tempString += ",";
-		tempString += second;
-		tempString += ",";
-		tempString += "\'";
-		tempString += location;
-		tempString += "\'";
-		tempString += ",";
-		tempString += humidity;
-
-		cout << tempString << endl;
-
-		bloomKey += "\'";
-		bloomKey += location;
-		bloomKey += "\'";
-    bloomKey += year;
-    bloomKey += month;
-    bloomKey += day;
-    bloomKey += hour;
-    bloomKey += minute;
-    bloomKey += second;
-
-		cout << "----------------------" << endl;
-		cout << bloomKey << endl;
-		cout << "----------------------" << endl;
-
-
-		if (bloomFilterContains(bloomKey,decompResultBloom))
-	  {
-			participators << tempString <<endl;
-	  }
-
-		bloomKey = "";
-		tempString="";
-
-	}
-
-	system("sudo service ssh start");
-	system("./sendCSVForJoin.sh");
-	//cout << str << endl;
-	//cout << compressedString << endl;
-
-	//cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
 
 
 	return 0;
@@ -724,6 +569,7 @@ string Decomp(string compressed,int wordlength)
 
 	for (int i = 0; i < numOfWords; i++)
 	{
+		j=i*wordlength;
 		if (compressed[j+0] == '1')
 		{
 			for (int l = 0 ; l < wordlength-2 ; l ++)
@@ -732,6 +578,7 @@ string Decomp(string compressed,int wordlength)
       }
 
     	int decNumA = convertToDecimal(tempstring);
+
 			for (int k =0 ;k < decNumA ;k++)
 			{
 				decompressed += compressed[j+1];
@@ -744,7 +591,7 @@ string Decomp(string compressed,int wordlength)
       }
 			decompressed+=tempstring;
 		}
-		j+=wordlength;
+		tempstring="";
 	}
 }
 
