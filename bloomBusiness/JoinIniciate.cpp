@@ -98,11 +98,6 @@ int main ()
 	//outputcomp.close();
 
 
-
-
-
-
-
 	system("sudo service ssh start");
 	system("./sendBloom.sh");
 
