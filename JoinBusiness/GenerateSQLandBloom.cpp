@@ -64,15 +64,15 @@ void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &min
            }
          }else
          {
-           day += 10;
+           day += 5;
          }
        }else
        {
-         hour +=22;
+         hour +=11;
        }
      }else
      {
-       minute += 46;
+       minute += 23;
      }
    }else
    {
@@ -83,7 +83,7 @@ void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &min
 
 double randomTemperatureGenerator()
 {
-  return ceilf(((rand()%90 +2)+((rand()%100)/27.5))* 100) / 100;
+  return ceilf(((rand()%30 +8)+((rand()%100)/27.5))* 100) / 100;
 }
 
 
@@ -130,8 +130,8 @@ int main(int argc, char** argv) {
   randTemperaturenew = randTemperatureold;
   int l=0;
   string check;
-   rc = sqlite3_open("humidity.db", &db);
-  tempString += "DELETE FROM HUMIDITY WHERE ID >= 0;";
+   rc = sqlite3_open("temperature.db", &db);
+  tempString += "DELETE FROM WEATHER WHERE ID >= 0;";
 
 	sql = tempString.c_str();
     cout << sql << endl;
@@ -173,7 +173,7 @@ int main(int argc, char** argv) {
       randTemperatureold = randomTemperatureGenerator();
     }
 
-    tempString += "INSERT INTO HUMIDITY (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,HUMIDITY) VALUES (";
+    tempString += "INSERT INTO WEATHER (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,TEMPERATURE) VALUES (";
     tempString += to_string(ID);
     tempString += ",";
     tempString += to_string(year);
@@ -230,10 +230,10 @@ int main(int argc, char** argv) {
     l++;
   }
 	sqlite3_close(db);
-	system("sqlite3 -header -csv 'humidity.db' 'select * from HUMIDITY;' > outTemp.csv");
+	system("sqlite3 -header -csv 'temperature.db' 'select * from WEATHER;' > outTemp2.csv");
 
   //bf.printFilter();
-	exportToFile("bitstringOUT.txt", bloomfilter);
+	exportToFile("bitstringOUT2.txt", bloomfilter);
   //system("mv bitstringprint.txt bitstringread.txt");
 
 
