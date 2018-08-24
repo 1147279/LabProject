@@ -81,7 +81,7 @@ int main ()
 		tempbloom = decompressor(i,wordlength,compressedtempbloom) + tempbloom;
 	}
 
-	cout << "tempbloom size: "<< tempsbloom.size()<<endl;
+	cout << "tempbloom size: "<< tempbloom.size()<<endl;
 	string resBloom = logicalEnd(humbloom,tempbloom);
 
 	cout << "resbloom size: "<< resBloom.size()<<endl;
