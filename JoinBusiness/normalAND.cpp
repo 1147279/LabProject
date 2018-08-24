@@ -44,17 +44,17 @@ int main ()
 	inputhum >> humbloom;
   inputtemp >> tempbloom;
 
-  string compressedhumbloom = compressString(humbloom,7);
-  string compressedtempbloom = compressString(tempbloom,7);
+  string compressedhumbloom = compressString(humbloom,10);
+  string compressedtempbloom = compressString(tempbloom,10);
 
-  
+
 
   outputCompHum << compressedhumbloom;
   outputCompTemp << compressedtempbloom;
 
   outputCompHum.close();
   outputCompTemp.close();
-	int wordLength = 7;
+	int wordLength = 10;
 
 	clock_t start;
 
@@ -68,7 +68,7 @@ int main ()
 	//time (&end);
 
 	string AND = logicalEnd(humbloom,tempbloom);
-	
+
 	inputhum.close();
   inputtemp.close();
 
@@ -186,7 +186,7 @@ string compressString(string bitstring, int wordlength)
   string newword = "";
 	string compressedString;
 
-  char word [7] ;
+  char word [10] ;
 
   string result = "";
 
