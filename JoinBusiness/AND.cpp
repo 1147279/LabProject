@@ -21,65 +21,29 @@ void andingStrings(string& strA, string& strB, int& wordLength, string& str, str
 
 int main ()
 {
-	ifstream inputhum;
-	inputhum.open("bitstringINhum.txt");
 
   ifstream inputtemp;
 	inputtemp.open("bitstringINtemp.txt");
-
-	ofstream output;
-	output.open("resultingBitString.txt");
-
-
-  ofstream outputCompHum;
-	outputCompHum.open("compressedHumBitString.txt");
 
 
   ofstream outputCompTemp;
 	outputCompTemp.open("compressedTempBitString.txt");
 
-	string humbloom = "";
+
 	string tempbloom = "";
 
-	inputhum >> humbloom;
+
   inputtemp >> tempbloom;
 
-  string compressedhumbloom = compressString(humbloom,12);
+
   string compressedtempbloom = compressString(tempbloom,12);
 
-  
 
-  outputCompHum << compressedhumbloom;
   outputCompTemp << compressedtempbloom;
 
-  outputCompHum.close();
+
   outputCompTemp.close();
-	int wordLength = 12;
-
-	clock_t start;
-
-  start = clock();
-
-	string compressedString = "";
-	string str = "";
-
-	//cout << andingStrings(strA, strB, wordLength) << endl;
-	andingStrings(compressedhumbloom, compressedtempbloom, wordLength, str, compressedString);
-	//time (&end);
-
-	inputhum.close();
-  inputtemp.close();
-
-  output << str;
-	output.close();
-
-
-	//cout << str << endl;
-	//cout << compressedString << endl;
-
-	//cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
-
-
+	
 	return 0;
 }
 
