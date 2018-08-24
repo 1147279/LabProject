@@ -36,62 +36,66 @@ int main ()
 	unsigned int milli ;//= 500000;
   milli = 100000;
 	int wordlength =12;
+	ifstream inputres;
 	ifstream inputtemp;
-	ifstream inputhum;
 
+	cout << "sending bloom filter..." << endl;
 
-	cout << "waiting for bloom filter..." << endl;
+	system("./sendBloomFirst.sh");
+
+	cout << "waiting for new bloom filter..." << endl;
 
 	while(1)
 	{
-		inputtemp.open("compressedTempBitString.txt");
-		if (inputtemp)
+		inputres.open("resultingBitStringCompressed.txt");
+		if (inputres)
 		{
 			break;
 		}
 	}
 
-	inputtemp.close();
+	inputres.close();
 
 	usleep(milli);
 
 	cout << "Bloom Filter Received" << endl;
 
-	inputtemp.open("compressedTempBitString.txt");
-	inputhum.open("bitstringINhum.txt");
+	inputres.open("resultingBitStringCompressed.txt");
+	inputtemp.open("bitstringINtemp.txt");
 
-	string humbloom = "";
+	string resbloom = "";
+	string in,compressedresbloom,tempbloom;
 
-	inputhum >> humbloom;
+	inputres >> compressedresbloom;
 
-	string in,compressedtempbloom,tempbloom;
-	compressedtempbloom="";
-	inputtemp >> compressedtempbloom;
 
-	tempbloom = "";
 
-	int sz = compressedtempbloom.size()/wordlength;
+	inputtemp >> tempbloom;
+
+
+
+	int sz = compressedresbloom.size()/wordlength;
 
 	for (int i = 0 ; i < sz ; i++)
 	{
-		tempbloom = decompressor(i,wordlength,compressedtempbloom) + tempbloom;
+		resbloom = decompressor(i,wordlength,compressedresbloom) + resbloom;
 	}
 
-	string resBloom = logicalEnd(humbloom,tempbloom);
+	string finalResBloom = logicalEnd(resbloom,tempbloom);
 
 	ofstream output;
-	output.open("resultingBitString.txt");
+	output.open("FinalresultingBitString.txt");
 
-	output << resBloom;
+	output << finalResBloom;
 
 	output.close();
-	string resBloomCompd = compressString(resBloom,wordlength);
+	//string resBloomCompd = compressString(resBloom,wordlength);
 
-	ofstream outputcomp;
-	outputcomp.open("compressedTempBitString.txt");
+	//ofstream outputcomp;
+	//outputcomp.open("compressedTempBitString.txt");
 
-	outputcomp << resBloomCompd;
-	outputcomp.close();
+	//outputcomp << resBloomCompd;
+	//outputcomp.close();
 
 
 
@@ -102,39 +106,39 @@ int main ()
 	system("sudo service ssh start");
 	system("./sendBloom.sh");
 
-	system("sqlite3 -header -csv \'humidity.db\' \'select * from HUMIDITY; \' > outHum.csv");
+	system("sqlite3 -header -csv \'temperature.db\' \'select * from WEATHER; \' > outTemp.csv");
 
-	ifstream humiditycsv;
-	humiditycsv.open("outHum.csv");
+	ifstream temperaturecsv;
+	temperaturecsv.open("outTemp.csv");
 
 	string ID,year,month,day,hour,minute,second;
 	string location;
-	string humidity;
+	string temperature;
 
 	string bloomKey = "";
 
-	string decompResultBloom = resBloom;
+	string decompResultBloom = finalResBloom;
 
 	ofstream participators;
-	participators.open("ForJoin.csv");
+	participators.open("ForJoin2.csv");
 
 	string tempString= "";
-  setBloomFilter("resultingBitString.txt",decompResultBloom);
+  setBloomFilter("FinalresultingBitString.txt",decompResultBloom);
 
 	string firstline;
-	humiditycsv >> firstline;
+	temperaturecsv >> firstline;
 
-	while (humiditycsv.good())
+	while (temperaturecsv.good())
 	{
-		getline(humiditycsv,ID,',');
-		getline(humiditycsv,year,',');
-		getline(humiditycsv,month,',');
-		getline(humiditycsv,day,',');
-		getline(humiditycsv,hour,',');
-		getline(humiditycsv,minute,',');
-		getline(humiditycsv,second,',');
-		getline(humiditycsv,location,',');
-		getline(humiditycsv,humidity,'\n');
+		getline(temperaturecsv,ID,',');
+		getline(temperaturecsv,year,',');
+		getline(temperaturecsv,month,',');
+		getline(temperaturecsv,day,',');
+		getline(temperaturecsv,hour,',');
+		getline(temperaturecsv,minute,',');
+		getline(temperaturecsv,second,',');
+		getline(temperaturecsv,location,',');
+		getline(temperaturecsv,temperature,'\n');
 
 
 
@@ -156,7 +160,7 @@ int main ()
 		tempString += location;
 		tempString += "\'";
 		tempString += ",";
-		tempString += humidity;
+		tempString += temperature;
 
 		cout << tempString << endl;
 
@@ -186,7 +190,7 @@ int main ()
 	}
 
 	system("sudo service ssh start");
-	system("./sendCSVForJoin.sh");
+	system("./sendCSVForJoin2.sh");
 	//cout << str << endl;
 	//cout << compressedString << endl;
 
