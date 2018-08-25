@@ -17,6 +17,8 @@ using namespace std;
 int main ()
 {
 
+	unsigned int milli ;//= 500000;
+  milli = 100000;
 
 	system("sudo service ssh start");
 	ifstream inputres;
