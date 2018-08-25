@@ -82,8 +82,15 @@ int main ()
 	ofstream outputcomp;
 	outputcomp.open("resultingBitStringCompressed.txt",ofstream::out);
 
-	outputcomp << resBloomCompd;
-	outputcomp << '\0';
+	char one;
+
+	for (int i =0; i < resBloomCompd.size();i++)
+	{
+		one = resBloomCompd[i];
+		outputcomp.put(one);
+	}
+
+
 	outputcomp.close();
 
 
