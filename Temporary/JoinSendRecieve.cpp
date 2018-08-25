@@ -83,6 +83,7 @@ int main ()
 	outputcomp.open("resultingBitStringCompressed.txt",ofstream::out);
 
 	outputcomp << resBloomCompd;
+	outputcomp << '\0';
 	outputcomp.close();
 
 
