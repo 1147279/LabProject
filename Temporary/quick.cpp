@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
-using namespace stdl
+using namespace std;
 
 int main()
 {
