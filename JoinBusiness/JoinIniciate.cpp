@@ -98,7 +98,7 @@ int main ()
 	output << finalResBloom;
 
 	output.close();
-	string resBloomCompd = compressString(resBloom,wordlength);
+	string resBloomCompd = compressString(finalResBloom,wordlength);
 
 	ofstream outputcomp;
 	outputcomp.open("compressedTempBitString.txt");
