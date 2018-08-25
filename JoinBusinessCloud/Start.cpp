@@ -29,7 +29,7 @@ int main ()
 
 
 	unsigned int milli ;//= 500000;
-  milli = 100000;
+  milli = 200000;
 
 	ifstream input;
 	ifstream infile;
@@ -98,28 +98,102 @@ int main ()
 CREATE TABLE HUMID(ID INT PRIMARY KEY NOT NULL, YEAR PRIMARY KEY INT NOT NULL, MONTH INT  NOT NULL, DAY  INT  NOT NULL, HOUR INT NOT NULL, MINUTE INT NOT NULL, SECOND INT NOT NULL, LOCATION CHAR(50) NOT NULL, HUMIDITY FLOAT );
 
 	*/
+  string ID,year,month,day,hour,minute,second;
+  string location;
+  string temperature,humidity;
+
+  string del;
+  infile >> del;
+  input >>del;
 
 	cout << "A Split" << endl;
-	while(getline(input, tempString))
+	while(input.good())
 	{
-		cout << tempString << endl;
-		tempString = "INSERT INTO TEMP (ID, YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, LOCATION, TEMPERATURE) VALUES (" + tempString + ");";
 
-		sql = tempString.c_str();
+    getline(input,ID,',');
+    getline(input,year,',');
+    getline(input,month,',');
+    getline(input,day,',');
+    getline(input,hour,',');
+    getline(input,minute,',');
+    getline(input,second,',');
+    getline(input,location,',');
+    getline(input,temperature,'\n');
 
-		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+
+    tempString += "INSERT INTO TEMP (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,TEMPERATURE) VALUES (";
+    tempString += ID;
+    tempString += ",";
+    tempString += year;
+    tempString += ",";
+    tempString += month;
+    tempString += ",";
+    tempString += day;
+    tempString += ",";
+    tempString += hour;
+    tempString += ",";
+    tempString += minute;
+    tempString += ",";
+    tempString += second;
+    tempString += ",";
+    tempString += "\'";
+    tempString += location;
+    tempString += "\'";
+    tempString += ",";
+    tempString += temperature;
+    tempString += ");";
+
+
+    sql = tempString.c_str();
+    cout << sql << endl;
+
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    tempString="";
 	}
 	input.close();
 	infile.open("outHum.csv");
 	cout << "B Split" << endl;
-	while(getline(infile, tempString))
+	while(infile.good())
 	{
-		cout << tempString << endl;
-		tempString = "INSERT INTO HUMID (ID, YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, LOCATION, HUMIDITY) VALUES (" + tempString + ");";
+    getline(infile,ID,',');
+    getline(infile,year,',');
+    getline(infile,month,',');
+    getline(infile,day,',');
+    getline(infile,hour,',');
+    getline(infile,minute,',');
+    getline(infile,second,',');
+    getline(infile,location,',');
+    getline(infile,temperature,'\n');
 
-		sql = tempString.c_str();
 
-		rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    tempString += "INSERT INTO HUMID (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,HUMIDITY) VALUES (";
+    tempString += ID;
+    tempString += ",";
+    tempString += year;
+    tempString += ",";
+    tempString += month;
+    tempString += ",";
+    tempString += day;
+    tempString += ",";
+    tempString += hour;
+    tempString += ",";
+    tempString += minute;
+    tempString += ",";
+    tempString += second;
+    tempString += ",";
+    tempString += "\'";
+    tempString += location;
+    tempString += "\'";
+    tempString += ",";
+    tempString += humidity;
+    tempString += ");";
+
+
+    sql = tempString.c_str();
+    cout << sql << endl;
+
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    tempString="";
 	}
 	cout << "C Split" << endl;
 

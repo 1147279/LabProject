@@ -1,1 +1,1 @@
-select * from WEATHER where TEMPERATURE < 0;
+select AVG(TEMPERATURE) from WEATHER;

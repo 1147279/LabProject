@@ -1,1 +1,1 @@
-rm ForJoin.csv ForJoin2.csv
+rm outTemp.csv outHum.csv
