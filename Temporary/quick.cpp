@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 
+using namespace stdl
+
 int main()
 {
   ifstream in;
@@ -12,4 +14,5 @@ int main()
     if (i%14 == 0)
       cout << check[i] <<endl;
   }
+  in.close();
 }
