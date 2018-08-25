@@ -35,7 +35,7 @@ int main ()
 
 	unsigned int milli ;//= 500000;
   milli = 100000;
-	int wordlength =13;
+	int wordlength =14;
 	ifstream inputtemp;
 	ifstream inputhum;
 
@@ -57,22 +57,23 @@ int main ()
 
 	cout << "Bloom Filter Received" << endl;
 
+
+	
 	inputtemp.open("compressedTempBitString.txt");
 	inputhum.open("bitstringINhum.txt");
 
 	string humbloom = "";
-
 	inputhum >> humbloom;
-
 	cout << "humbloom size: "<< humbloom.size()<<endl;
 
-	string in,compressedtempbloom,tempbloom;
-	compressedtempbloom="";
-	inputtemp >> compressedtempbloom;
 
+	string compressedtempbloom,tempbloom;
+	compressedtempbloom="";
+	tempbloom = "";
+	inputtemp >> compressedtempbloom;
 	cout << "compressedtempbloom size: "<< compressedtempbloom.size()<<endl;
 
-	tempbloom = "";
+
 
 	int sz = compressedtempbloom.size()/wordlength;
 
@@ -88,17 +89,27 @@ int main ()
 
 
 	ofstream output;
-	output.open("resultingBitString.txt");
+	output.open("resultingBitString.txt",ofstream::out);
 
 	output << resBloom;
 
 	output.close();
+
+
 	string resBloomCompd = compressString(resBloom,wordlength);
 
 	ofstream outputcomp;
-	outputcomp.open("resultingBitStringCompressed.txt");
+	outputcomp.open("resultingBitStringCompressed.txt",ofstream::out);
 
-	outputcomp << resBloomCompd;
+	char one;
+
+	for (int i =0; i < resBloomCompd.size();i++)
+	{
+		one = resBloomCompd[i];
+		outputcomp.put(one);
+	}
+
+
 	outputcomp.close();
 
 
@@ -326,7 +337,7 @@ string compressString(string bitstring, int wordlength)
   string newword = "";
 	string compressedString;
 
-  char word [13] ;
+  char word [14] ;
 
   string result = "";
 

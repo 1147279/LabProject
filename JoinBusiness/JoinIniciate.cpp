@@ -35,7 +35,7 @@ int main ()
 
 	unsigned int milli ;//= 500000;
   milli = 200000;
-	int wordlength =13;
+	int wordlength =14;
 	ifstream inputres;
 	ifstream inputtemp;
 
@@ -103,7 +103,17 @@ int main ()
 	ofstream outputcomp;
 	outputcomp.open("compressedTempBitString.txt");
 
-	outputcomp << resBloomCompd;
+
+
+	char one;
+
+	for (int i =0; i < resBloomCompd.size();i++)
+	{
+		one = resBloomCompd[i];
+		outputcomp.put(one);
+	}
+
+
 	outputcomp.close();
 
 
@@ -325,7 +335,7 @@ string compressString(string bitstring, int wordlength)
   string newword = "";
 	string compressedString;
 
-  char word [13] ;
+  char word [14] ;
 
   string result = "";
 

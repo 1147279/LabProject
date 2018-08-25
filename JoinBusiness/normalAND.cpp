@@ -44,8 +44,8 @@ int main ()
 	inputhum >> humbloom;
   inputtemp >> tempbloom;
 
-  string compressedhumbloom = compressString(humbloom,13);
-  string compressedtempbloom = compressString(tempbloom,13);
+  string compressedhumbloom = compressString(humbloom,14);
+  string compressedtempbloom = compressString(tempbloom,14);
 
 
 
@@ -54,7 +54,7 @@ int main ()
 
   outputCompHum.close();
   outputCompTemp.close();
-	int wordLength = 13;
+	int wordLength = 14;
 
 	clock_t start;
 
@@ -187,7 +187,7 @@ string compressString(string bitstring, int wordlength)
   string newword = "";
 	string compressedString;
 
-  char word [13] ;
+  char word [14] ;
 
   string result = "";
 
