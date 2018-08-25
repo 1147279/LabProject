@@ -96,13 +96,13 @@ int main(int argc, char** argv) {
   int ID = 0;
   unsigned int milli ;//= 500000;
   milli = 2;
-  string Location = "\'Braamfontein\'";
+  string Location = "\'Rosebank\'";
   srand(time(NULL));
   randTemperatureold = randomTemperatureGenerator();
   randTemperaturenew = randTemperatureold;
 	rc = sqlite3_open("TAud.db", &db);
 
-  while (ID < 25000)
+  while (ID < 10000)
   {
 
 
