@@ -98,13 +98,13 @@ int main ()
 	output << finalResBloom;
 
 	output.close();
-	//string resBloomCompd = compressString(resBloom,wordlength);
+	string resBloomCompd = compressString(resBloom,wordlength);
 
-	//ofstream outputcomp;
-	//outputcomp.open("compressedTempBitString.txt");
+	ofstream outputcomp;
+	outputcomp.open("compressedTempBitString.txt");
 
-	//outputcomp << resBloomCompd;
-	//outputcomp.close();
+	outputcomp << resBloomCompd;
+	outputcomp.close();
 
 
 	system("sudo service ssh start");
