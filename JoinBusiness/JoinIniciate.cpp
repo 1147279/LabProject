@@ -32,6 +32,20 @@ string Decomp(string compressed,int wordlength);
 int main ()
 {
 
+	ifstream start;
+	while(1)
+	{
+		start.open("joinReq.txt");
+		if (start)
+		{
+			break;
+		}
+	}
+
+	start.close();
+
+
+	
 
 	unsigned int milli ;//= 500000;
   milli = 200000;
