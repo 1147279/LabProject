@@ -455,6 +455,15 @@ string compressString(string bitstring, int wordlength)
   return newres;
 }
 
+string decompressor(int index, int wordLength, string& str)
+{
+	string temp = "";
+
+	temp = str.substr(str.size() - (1+index)*wordLength, wordLength);
+	temp = decompressString(temp);
+	return temp;
+}
+
 string decimalToBinary(int num, int bitStreamLength)
 {
 	int temp = num;
