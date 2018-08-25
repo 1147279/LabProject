@@ -322,6 +322,7 @@ string compressString(string bitstring, int wordlength)
 {
 
   int newwordnum;
+	string cword = "";
   string newword = "";
 	string compressedString;
 
@@ -353,7 +354,8 @@ string compressString(string bitstring, int wordlength)
           //cout << "word in count > wordlength in in: " << word << endl;
         }
         //cout << "A: " <<word << endl;
-        result += word;
+				cword=word;
+        result += cword;
         //cout << "------------------------------------------: " << endl;
 
       }else
@@ -400,7 +402,8 @@ string compressString(string bitstring, int wordlength)
         }else
         {
           //cout << "B: " << word << endl;
-          result += word;
+					cword=word;
+	        result += cword;
           //cout << "------------------------------------------: " << endl;
         }
       }
@@ -431,7 +434,8 @@ string compressString(string bitstring, int wordlength)
         //cout << "word in count > wordlength in in: " << word << endl;
       }
       //cout <<"C: " << word << endl;
-      result += word;
+			cword=word;
+			result += cword;
       //cout << " count : "<<count << endl;
       //cout << "------------------------------------------: " << endl;
       count =1;
