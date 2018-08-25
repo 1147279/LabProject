@@ -77,7 +77,7 @@ int main(int argc, char** argv)
 
     while(1)
     {
-      inFileA.open("AA.db",ifstream::in);
+      inFileA.open("outTempAudrey.csv",ifstream::in);
       if (inFileA)
       {
         break;
@@ -92,7 +92,7 @@ int main(int argc, char** argv)
 
     while(1)
     {
-      inFileB.open("JJ.db",ifstream::in);
+      inFileB.open("outTempJohn.csv",ifstream::in);
       if (inFileB)
       {
         break;
@@ -107,7 +107,7 @@ int main(int argc, char** argv)
 
     while(1)
     {
-      inFileC.open("MM.db",ifstream::in);
+      inFileC.open("outTempRichard.csv",ifstream::in);
       if (inFileC)
       {
         break;
@@ -120,7 +120,7 @@ int main(int argc, char** argv)
 
     while(1)
     {
-      inFileD.open("RR.db",ifstream::in);
+      inFileD.open("outTempMiddleton.csv",ifstream::in);
       if (inFileD)
       {
         break;
@@ -137,10 +137,10 @@ int main(int argc, char** argv)
 
     usleep(milli);
     ofstream outFile;
-    inFileA.open("AA.db",ifstream::in);
-    inFileB.open("JJ.db",ifstream::in);
-    inFileC.open("MM.db",ifstream::in);
-    inFileD.open("RR.db",ifstream::in);
+    inFileA.open("outTempAudrey.csv",ifstream::in);
+    inFileB.open("outTempJohn.csv",ifstream::in);
+    inFileC.open("outTempRichard.csv",ifstream::in);
+    inFileD.open("outTempMiddleton.csv",ifstream::in);
     outFile.open("QueryResult.txt",ofstream::out);
 
     string tempString ="";
@@ -150,21 +150,31 @@ int main(int argc, char** argv)
   	const char *sql;
     rc = sqlite3_open("Result.db", &db);
 
-      tempString = "sqlite3 Result.db '.mode csv;.import outTempJohn.csv WEATHER;'";
-      system(tempString.c_str());
-      cout << tempString << endl;
+      tempString = ".mode csv";
+      sql = tempString.c_str();
+      cout << sql << endl;
+    	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 
-      tempString = "sqlite3 Result.db '.mode csv;.import outTempRichard.csv WEATHER;'";
-      system(tempString.c_str());
-      cout << tempString << endl;
+      tempString = ".import outTempJohn.csv WEATHER";
+      sql = tempString.c_str();
+      cout << sql << endl;
+    	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 
-      tempString = "sqlite3 Result.db '.mode csv;.import outTempMiddleton.csv WEATHER;'";
-      system(tempString.c_str());
-      cout << tempString << endl;
+      tempString = ".import outTempMiddleton.csv WEATHER";
+      sql = tempString.c_str();
+      cout << sql << endl;
+    	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 
-      tempString = "sqlite3 Result.db '.mode csv;.import outTempAudrey.csv WEATHER;'";
-      system(tempString.c_str());
-      cout << tempString << endl;
+      tempString = ".import outTempAudrey.csv WEATHER";
+      sql = tempString.c_str();
+      cout << sql << endl;
+    	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+
+      tempString = ".import outTempRichard.csv WEATHER";
+      sql = tempString.c_str();
+      cout << sql << endl;
+    	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+
 
 
       write = "";
