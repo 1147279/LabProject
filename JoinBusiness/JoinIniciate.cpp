@@ -393,7 +393,8 @@ string compressString(string bitstring, int wordlength)
             }
             newword+="1";
             //cout << newword << endl;
-            result += newword;
+						cword = newword;
+            result += cword;
 
             //cout << "------------------------------------------: " << endl;
 
@@ -449,7 +450,8 @@ string compressString(string bitstring, int wordlength)
     //cout << "We've had " << count << " " << word[1] << "'s" << endl;
   }
   //cout << "compressed:   "<<result << endl;
-  return result;
+	string newres = result;
+  return newres;
 }
 
 string decompressor(int index, int wordLength, string& str)
