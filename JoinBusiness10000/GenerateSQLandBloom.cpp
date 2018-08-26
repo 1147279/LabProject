@@ -64,11 +64,11 @@ void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &min
            }
          }else
          {
-           day += 10;
+           day += 1;
          }
        }else
        {
-         hour +=22;
+         hour +=1;
        }
      }else
      {
