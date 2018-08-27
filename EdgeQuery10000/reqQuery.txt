@@ -1,1 +1,1 @@
-select AVG(TEMPERATURE) from WEATHER;
+select * from WEATHER where ID >9980;

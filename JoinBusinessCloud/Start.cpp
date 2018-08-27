@@ -27,6 +27,19 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 int main ()
 {
 
+  cout << "Waiting For Cloud Request..." << endl;
+  ifstream waitfor;
+
+  while(1)
+  {
+    waitfor.open("instruct.txt",ifstream::in);
+    if (waitfor)
+    {
+      break;
+    }
+  }
+
+  waitfor.close();
 
 	unsigned int milli ;//= 500000;
   milli = 200000;
@@ -163,7 +176,7 @@ CREATE TABLE HUMID(ID INT PRIMARY KEY NOT NULL, YEAR PRIMARY KEY INT NOT NULL, M
     getline(infile,minute,',');
     getline(infile,second,',');
     getline(infile,location,',');
-    getline(infile,temperature,'\n');
+    getline(infile,humidity,'\n');
 
 
     tempString += "INSERT INTO HUMID (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,HUMIDITY) VALUES (";
@@ -214,7 +227,7 @@ CREATE TABLE HUMID(ID INT PRIMARY KEY NOT NULL, YEAR PRIMARY KEY INT NOT NULL, M
 
 
 
-
+  system("./tocloudAgg.sh");
 
 
 	return 0;

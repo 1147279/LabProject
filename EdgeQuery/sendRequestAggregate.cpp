@@ -24,6 +24,20 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 int main(int argc, char** argv)
 {
 
+  cout << "Waiting For Cloud Request..." << endl;
+  ifstream waitfor;
+
+  while(1)
+  {
+    waitfor.open("instruct.txt",ifstream::in);
+    if (waitfor)
+    {
+      break;
+    }
+  }
+
+  waitfor.close();
+
   string agg;
   unsigned int milli ;//= 500000;
   milli = 100000;
@@ -214,6 +228,12 @@ int main(int argc, char** argv)
     }
 
 
+    ofstream tocloud;
+    tocloud.open("forCloud.txt");
+    tocloud << "The " << agg << " is " << answer ;
+    tocloud.close();
+
+    system("./tocloudAgg.sh");
 
     system(write.c_str());
 
