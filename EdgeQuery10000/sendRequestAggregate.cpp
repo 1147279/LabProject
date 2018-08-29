@@ -234,8 +234,11 @@ int main(int argc, char** argv)
     tocloud << "The " << agg << " is " << answer ;
     tocloud.close();
 
-    system("./tocloudAgg.sh");
+    usleep(milli);
     system(write.c_str());
+
+    system("./tocloudAgg.sh");
+
 
 
     inFileA.close();

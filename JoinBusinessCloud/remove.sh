@@ -1,1 +1,1 @@
-rm outTemp.csv outHum.csv
+rm instruct.txt outTemp.csv outHum.csv

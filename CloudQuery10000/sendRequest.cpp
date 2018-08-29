@@ -353,6 +353,8 @@ int main(int argc, char** argv)
     system(write.c_str());
 
 
+    usleep(milli);
+
     inFileA.close();
     inFileB.close();
     inFileC.close();

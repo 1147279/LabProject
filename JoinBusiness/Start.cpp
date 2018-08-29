@@ -151,6 +151,8 @@ CREATE TABLE HUMID(ID INT PRIMARY KEY NOT NULL, YEAR PRIMARY KEY INT NOT NULL, M
 
 	infile.close();
 
+  
+
   system("./tocloud.sh");
 
 

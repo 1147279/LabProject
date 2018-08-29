@@ -227,7 +227,7 @@ CREATE TABLE HUMID(ID INT PRIMARY KEY NOT NULL, YEAR PRIMARY KEY INT NOT NULL, M
 
 
 
-  system("./tocloudAgg.sh");
+  system("./tocloud.sh");
 
 
 	return 0;

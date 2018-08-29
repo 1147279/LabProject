@@ -32,6 +32,7 @@ int main(int argc, char** argv)
     waitfor.open("instruct.txt",ifstream::in);
     if (waitfor)
     {
+      cout << "Type Command: "<<endl;
       break;
     }
   }
@@ -232,6 +233,8 @@ int main(int argc, char** argv)
     tocloud.open("forCloud.txt");
     tocloud << "The " << agg << " is " << answer ;
     tocloud.close();
+
+    usleep(milli);
 
     system("./tocloudAgg.sh");
 

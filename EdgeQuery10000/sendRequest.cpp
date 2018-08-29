@@ -349,10 +349,14 @@ int main(int argc, char** argv)
     write += "\' > FinalResult.csv";
     cout << write << endl;
 
+    system(write.c_str());
+
+    usleep(milli);
+
 
     system("./tocloud.sh");
 
-    system(write.c_str());
+
 
 
     inFileA.close();

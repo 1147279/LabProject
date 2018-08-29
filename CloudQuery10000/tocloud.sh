@@ -1,8 +1,8 @@
 #!/usr/bin/expect -f
-spawn scp -r /home/darren/Desktop/Proooooj/LabProject/CloudQuery10000/FinalResult.csv  uyanda@192.168.43.72:/home/uyanda/Desktop/ELEN4012/LabProject/relays
-expect "uyanda@192.168.43.72's password:"
+spawn scp -r /home/darren/Desktop/Proooooj/LabProject/CloudQuery10000/FinalResult.csv  uyanda@10.0.0.113:/home/uyanda/Desktop/ELEN4012/LabProject/relays
+expect "uyanda@10.0.0.113's password:"
 send "heavens1\r"
-expect "uyanda@192.168.43.72's password:"
+expect "uyanda@10.0.0.113's password:"
 send "heavens1\r"
-expect "uyanda@192.168.43.72's password:"
+expect "uyanda@10.0.0.113's password:"
 send "heavens1\r"

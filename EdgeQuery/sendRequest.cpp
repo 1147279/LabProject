@@ -348,12 +348,16 @@ int main(int argc, char** argv)
     write += "\' > FinalResult.csv";
     cout << write << endl;
 
+    system(write.c_str());
 
+    unsigned int milliw;
+    milliw = 400000;
+    usleep(milliw);
 
     system("./tocloud.sh");
 
 
-    system(write.c_str());
+
 
 
     inFileA.close();
