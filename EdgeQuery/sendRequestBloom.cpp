@@ -103,6 +103,7 @@ int main(int argc, char** argv)
         inFileA >> checkA;
         if (checkA != "No")
         {
+          cout << "IS TRUE"<<endl;
           a= true;
         }
         break;
@@ -124,6 +125,7 @@ int main(int argc, char** argv)
         inFileB >> checkB;
         if (checkB != "No")
         {
+          cout << "IS TRUE"<<endl;
           b= true;
         }
         break;
@@ -145,6 +147,7 @@ int main(int argc, char** argv)
         inFileC >> checkC;
         if (checkC != "No")
         {
+          cout << "IS TRUE"<<endl;
           c= true;
         }
         break;
@@ -164,6 +167,7 @@ int main(int argc, char** argv)
         inFileD >> checkD;
         if (checkD != "No")
         {
+          cout << "IS TRUE"<<endl;
           d= true;
         }
         break;

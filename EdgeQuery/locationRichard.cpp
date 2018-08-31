@@ -130,7 +130,6 @@ void initialiseString(string& str, int strSize)
 		str += "0";
 }
 
-
 int asciiSum(string str)
 {
 	int sum = 0;
@@ -140,7 +139,7 @@ int asciiSum(string str)
 		sum += i*str.at(i)+powerFunction(i,2)*str.at(i)+str.at(i)*107;
 	}
 
-	return sum-310296;
+	return sum;
 }
 
 
@@ -223,8 +222,8 @@ bool bloomFilterContains (string& str, string& bitString)
 
 
 	hash1 = moding(num1, bitString);
-	hash2 = moding(num1, bitString);
-	hash3 = moding(num1, bitString);
+	hash2 = moding(num2, bitString);
+	hash3 = moding(num3, bitString);
 
 	if(bitString.at(hash1) == '0')
 		return false;
