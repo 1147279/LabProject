@@ -24,6 +24,22 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 int main(int argc, char** argv)
 {
 
+  cout << "Waiting For Cloud Request..." << endl;
+  ifstream waitfor;
+
+  while(1)
+  {
+    waitfor.open("instruct.txt",ifstream::in);
+    if (waitfor)
+    {
+	  cout << "Type Command: " <<endl;
+      break;
+    }
+  }
+
+  waitfor.close();
+
+
   unsigned int milli ;//= 500000;
   milli = 100000;
   string temp = "";
@@ -337,6 +353,8 @@ int main(int argc, char** argv)
     system(write.c_str());
 
 
+    usleep(milli);
+
     inFileA.close();
     inFileB.close();
     inFileC.close();
@@ -346,7 +364,7 @@ int main(int argc, char** argv)
 
     cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
 
-
+    system("./tocloud.sh");
 
 
 

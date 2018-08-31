@@ -45,7 +45,7 @@ int main ()
 	start.close();
 
 
-	
+
 
 	unsigned int milli ;//= 500000;
   milli = 200000;
@@ -54,6 +54,10 @@ int main ()
 	ifstream inputtemp;
 
 	cout << "sending bloom filter..." << endl;
+
+	ifstream yt;
+	yt.open("compressedTempBitString.txt");
+	cout << "Size of compressed temp bit string: "<< yt.size()<<endl;
 
 	system("./sendBloomFirst.sh");
 
