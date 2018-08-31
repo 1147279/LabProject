@@ -99,13 +99,7 @@ int main(int argc, char** argv)
       inFileA.open("outTempAudrey.csv",ifstream::in);
       if (inFileA)
       {
-        string checkA;
-        inFileA >> checkA;
-        if (checkA != "No")
-        {
-          cout << "IS TRUE"<<endl;
-          a= true;
-        }
+
         break;
       }
     }
@@ -121,13 +115,7 @@ int main(int argc, char** argv)
       inFileB.open("outTempJohn.csv",ifstream::in);
       if (inFileB)
       {
-        string checkB;
-        inFileB >> checkB;
-        if (checkB != "No")
-        {
-          cout << "IS TRUE"<<endl;
-          b= true;
-        }
+
         break;
       }
     }
@@ -143,13 +131,7 @@ int main(int argc, char** argv)
       inFileC.open("outTempMiddleton.csv",ifstream::in);
       if (inFileC)
       {
-        string checkC;
-        inFileC >> checkC;
-        if (checkC != "No")
-        {
-          cout << "IS TRUE"<<endl;
-          c= true;
-        }
+
         break;
       }
     }
@@ -163,13 +145,7 @@ int main(int argc, char** argv)
       inFileD.open("outTempRichard.csv",ifstream::in);
       if (inFileD)
       {
-        string checkD;
-        inFileD >> checkD;
-        if (checkD != "No")
-        {
-          cout << "IS TRUE"<<endl;
-          d= true;
-        }
+
         break;
       }
     }
@@ -183,12 +159,49 @@ int main(int argc, char** argv)
     string temperature;
 
     usleep(milli);
+
+
+
+
+
+
     ofstream outFile;
     inFileA.open("outTempAudrey.csv",ifstream::in);
     inFileB.open("outTempJohn.csv",ifstream::in);
     inFileC.open("outTempMiddleton.csv",ifstream::in);
     inFileD.open("outTempRichard.csv",ifstream::in);
     outFile.open("QueryResult.txt",ofstream::out);
+
+    string checkA;
+    inFileA >> checkA;
+    if (checkA != "No")
+    {
+      cout << "IS TRUE"<<endl;
+      a= true;
+    }
+    string checkB;
+    inFileB >> checkB;
+    if (checkB != "No")
+    {
+      cout << "IS TRUE"<<endl;
+      b= true;
+    }
+    string checkC;
+    inFileC >> checkC;
+    if (checkC != "No")
+    {
+      cout << "IS TRUE"<<endl;
+      c= true;
+    }
+    string checkD;
+    inFileD >> checkD;
+    if (checkD != "No")
+    {
+      cout << "IS TRUE"<<endl;
+      d= true;
+    }
+
+
 
     string tempString ="";
     sqlite3 *db;
