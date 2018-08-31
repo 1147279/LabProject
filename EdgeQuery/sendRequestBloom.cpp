@@ -167,9 +167,7 @@ int main(int argc, char** argv)
 
     ofstream outFile;
     inFileA.open("outTempAudrey.csv",ifstream::in);
-    inFileB.open("outTempJohn.csv",ifstream::in);
-    inFileC.open("outTempMiddleton.csv",ifstream::in);
-    inFileD.open("outTempRichard.csv",ifstream::in);
+
     outFile.open("QueryResult.txt",ofstream::out);
 
     string checkA;
@@ -179,6 +177,8 @@ int main(int argc, char** argv)
       cout << "IS TRUE"<<endl;
       a= true;
     }
+    inFileB.open("outTempJohn.csv",ifstream::in);
+
     string checkB;
     inFileB >> checkB;
     if (checkB != "No")
@@ -186,6 +186,8 @@ int main(int argc, char** argv)
       cout << "IS TRUE"<<endl;
       b= true;
     }
+    inFileC.open("outTempMiddleton.csv",ifstream::in);
+
     string checkC;
     inFileC >> checkC;
     if (checkC != "No")
@@ -193,15 +195,18 @@ int main(int argc, char** argv)
       cout << "IS TRUE"<<endl;
       c= true;
     }
+    inFileD.open("outTempRichard.csv",ifstream::in);
     string checkD;
     inFileD >> checkD;
+    inFileD >> checkD;
+    cout << "DDDD:"<< checkD << endl;
     if (checkD != "No")
     {
       cout << "IS TRUE"<<endl;
       d= true;
     }
 
-
+    d=true;
 
     string tempString ="";
     sqlite3 *db;
