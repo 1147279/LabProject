@@ -74,7 +74,7 @@ int main(int argc, char** argv)
   string write ="";
 
   string bloomfilter ;
-  setBloomFilter("bloomLocationA.txt",bloomfilter);
+  setBloomFilter("bloomLocationA0.txt",bloomfilter);
 
 
   //cout << bloomfilter.size()<<endl;
