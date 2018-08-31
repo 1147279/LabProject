@@ -74,8 +74,12 @@ int main(int argc, char** argv)
   string write ="";
 
   string bloomfilter ;
-  setBloomFilter("BloomLocationA.txt",bloomfilter);
+  setBloomFilter("bloomLocationA.txt",bloomfilter);
 
+
+  //cout << bloomfilter.size()<<endl;
+
+  //cout << "Before contains..."<<endl;
 
   if (bloomFilterContains(req,bloomfilter))
   {
@@ -183,7 +187,7 @@ void bloomFilterInsert (string& str, string& bitString)
 	int hash3;
 	int asciNum = asciiSum(str);
 
-  cout << asciNum;
+  //cout << asciNum;
   int num1;// = asciNum;
   num1 = (asciNum-1555)*5112+2*asciNum; //+powerFunction((asciNum/2+powerFunction(num1, 2)),2)+3*(asciNum/23);
 
@@ -198,9 +202,7 @@ void bloomFilterInsert (string& str, string& bitString)
 	hash2 = moding(num2, bitString);
 	hash3 = moding(num3, bitString);
 
-  cout << "first: " << hash1 << endl;
-  cout << "second: " << hash2 << endl;
-  cout << "third: " << hash3 << endl;
+
 
 	bitString.at(hash1) = '1';
 	bitString.at(hash2) = '1';
@@ -213,7 +215,7 @@ bool bloomFilterContains (string& str, string& bitString)
 	int hash2;
 	int hash3;
 	int asciNum = asciiSum(str);
-  cout << asciNum;
+  //cout << asciNum;
   int num1;// = asciNum;
   num1 = (asciNum-1555)*5112+2*asciNum; //+powerFunction((asciNum/2+powerFunction(num1, 2)),2)+3*(asciNum/23);
 

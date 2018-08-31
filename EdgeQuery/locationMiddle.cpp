@@ -73,7 +73,7 @@ int main(int argc, char** argv)
   string write ="";
 
   string bloomfilter ;
-  setBloomFilter("BloomLocationA0.txt",bloomfilter);
+  setBloomFilter("bloomLocationA0.txt",bloomfilter);
 
 
   if (bloomFilterContains(req,bloomfilter))
