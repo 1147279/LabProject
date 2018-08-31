@@ -87,9 +87,9 @@ int main(int argc, char** argv)
     cout << write << endl;
 
 
-    write += "sqlite3 -header -csv \'TAud.db\' \'select * from WEATHER where LOCATION = ";
+    write += "sqlite3 -header -csv \'TAud.db\' \'select * from WEATHER where LOCATION = \"";
     write += req;
-    write += "\' > outTempAudrey.csv";
+    write += "\"\' > outTempAudrey.csv";
     cout << write << endl;
 
 
