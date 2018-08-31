@@ -79,6 +79,55 @@ void setBloomFilter(string fileName, string& str)
 }
 
 
+
+int asciiSum(string str)
+{
+	int sum = 0;
+
+	for(int i = 0; i < str.size(); i++)
+	{
+		sum += i*str.at(i)+powerFunction(i,2)*str.at(i)+str.at(i)*107;
+	}
+
+	return sum-310296;
+}
+
+int powerFunction(int base, int power)
+{
+	int number = base;
+
+	if(power == 0)
+	{
+		return 1;
+	}else if (power > 0)
+	{
+		for (int i = 0; i < power - 1 ; i++)
+		{
+			number *= base;
+		}
+	}
+	return number;
+}
+
+int moding(int& num, string& str)
+{
+	int result = 0;
+
+	result = num%str.size();
+	return result;
+
+}
+
+void exportToFile(string fileName, string& str)
+{
+	ofstream output;
+	output.open(fileName,ofstream::out);
+
+	output << str << endl;
+
+	output.close();
+}
+
 int main(int argc, char** argv)
 {
 
