@@ -28,9 +28,7 @@ int main(int argc, char *argv[])
   //ofstream outFile;
   //outFile.open("Weather.csv",ofstream::out);
 
-  string ID,city,date,year,month,day,high_temp,avg_temp,low_temp,high_dewpt,
-          avg_dewpt,low_dewpt,high_humidity,avg_humidity,low_humidity,high_hg,
-          avg_hg,low_hg,high_vis,avg_vis,low_vis,high_wind,avg_wind,low_wind,precip,events;
+  string ID,year,month,day,hour,minute,second,location,temperature;
 
 
   int numOfLines=0;
@@ -41,31 +39,14 @@ int main(int argc, char *argv[])
   {
     numOfLines ++;
     getline(input_A,ID,delimiter);
-    getline(input_A,city,delimiter);
-    getline(input_A,date,delimiter);
     getline(input_A,year,delimiter);
     getline(input_A,month,delimiter);
     getline(input_A,day,delimiter);
-    getline(input_A,high_temp,delimiter);
-    getline(input_A,avg_temp,delimiter);
-    getline(input_A,low_temp,delimiter);
-    getline(input_A,high_dewpt,delimiter);
-    getline(input_A,avg_dewpt,delimiter);
-    getline(input_A,low_dewpt,delimiter);
-    getline(input_A,high_humidity,delimiter);
-    getline(input_A,avg_humidity,delimiter);
-    getline(input_A,low_humidity,delimiter);
-    getline(input_A,high_hg,delimiter);
-    getline(input_A,avg_hg,delimiter);
-    getline(input_A,low_hg,delimiter);
-    getline(input_A,high_vis,delimiter);
-    getline(input_A,avg_vis,delimiter);
-    getline(input_A,low_vis,delimiter);
-    getline(input_A,high_wind,delimiter);
-    getline(input_A,avg_wind,delimiter);
-    getline(input_A,low_wind,delimiter);
-    getline(input_A,precip,delimiter);
-    getline(input_A,events,'\n');
+    getline(input_A,hour,delimiter);
+    getline(input_A,minute,delimiter);
+    getline(input_A,second,delimiter);
+    getline(input_A,location,delimiter);
+    getline(input_A,temperature,'\n');
   }
 
   input_A.close();
@@ -77,7 +58,7 @@ int main(int argc, char *argv[])
   input_A.open("Weather.csv", ifstream::in);
   outFile.open("resTimeSeriesCompression.txt",ofstream::out);
 
-  int count = 0 ;
+  int count = 1 ;
   double currentSum = 0;
   double avg ;
 
@@ -89,53 +70,42 @@ int main(int argc, char *argv[])
   linestoAVG =  numOfLines/divisions;
   cout << "linestoAVG" << linestoAVG << endl;
 
-  while (input_A.good())
+  outFile << "ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,TEMPERATURE"<< endl;
+  string temp;
+  input_A >> temp;
+    while (input_A.good())
   {
     getline(input_A,ID,delimiter);
-    getline(input_A,city,delimiter);
-    getline(input_A,date,delimiter);
     getline(input_A,year,delimiter);
     getline(input_A,month,delimiter);
     getline(input_A,day,delimiter);
-    getline(input_A,high_temp,delimiter);
-    getline(input_A,avg_temp,delimiter);
-    getline(input_A,low_temp,delimiter);
-    getline(input_A,high_dewpt,delimiter);
-    getline(input_A,avg_dewpt,delimiter);
-    getline(input_A,low_dewpt,delimiter);
-    getline(input_A,high_humidity,delimiter);
-    getline(input_A,avg_humidity,delimiter);
-    getline(input_A,low_humidity,delimiter);
-    getline(input_A,high_hg,delimiter);
-    getline(input_A,avg_hg,delimiter);
-    getline(input_A,low_hg,delimiter);
-    getline(input_A,high_vis,delimiter);
-    getline(input_A,avg_vis,delimiter);
-    getline(input_A,low_vis,delimiter);
-    getline(input_A,high_wind,delimiter);
-    getline(input_A,avg_wind,delimiter);
-    getline(input_A,low_wind,delimiter);
-    getline(input_A,precip,delimiter);
-    getline(input_A,events,'\n');
+    getline(input_A,hour,delimiter);
+    getline(input_A,minute,delimiter);
+    getline(input_A,second,delimiter);
+    getline(input_A,location,delimiter);
+    getline(input_A,temperature,'\n');
 
 
-    if (count < linestoAVG)
-    {
-      currentSum += stoi(avg_temp);
+      currentSum += stod(temperature);
 
-    }else
+
     if (count == linestoAVG)
     {
       avg = currentSum/count;
       count = 0;
       currentSum = 0;
-      outFile << ID << delimiter << city << delimiter << date << delimiter << year <<
-      delimiter << month << delimiter << day << delimiter << avg << endl ;
+      outFile << ID << delimiter << year << delimiter << month << delimiter << day <<
+      delimiter << hour << delimiter << minute << delimiter << second << delimiter << location << delimiter << avg << endl ;
     }
     count++;
 
   }
 
+  avg = currentSum/count;
+  count = 0;
+  currentSum = 0;
+  outFile << ID << delimiter << year << delimiter << month << delimiter << day <<
+  delimiter << hour << delimiter << minute << delimiter << second << delimiter << location << avg << endl ;
   input_A.close();
 
   outFile.close();

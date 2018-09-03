@@ -225,6 +225,10 @@ bool bloomFilterContains (string& str, string& bitString)
 	hash2 = moding(num2, bitString);
 	hash3 = moding(num3, bitString);
 
+  cout << hash1 <<endl;
+  cout << hash2 <<endl;
+  cout << hash3 <<endl;
+
 	if(bitString.at(hash1) == '0')
 		return false;
 
