@@ -34,7 +34,7 @@ int main(int argc, char** argv)
     waitfor.open("instruct.txt",ifstream::in);
     if (waitfor)
     {
-        cout << "Type Command: "<<endl;
+        cout << "Received: "<<endl;
       break;
     }
   }
@@ -47,6 +47,9 @@ int main(int argc, char** argv)
   string temp = "";
   char query[256];
   string queryTwo = "";
+
+    system("mv instruct.txt reqQuery.txt");
+    /*
   ofstream outreq;
   outreq.open("reqQuery.txt",ofstream::out);
 
@@ -67,7 +70,7 @@ int main(int argc, char** argv)
 
   system(write.c_str());
 
-
+*/
 
 
     clock_t start;
@@ -79,6 +82,12 @@ int main(int argc, char** argv)
     system("./sendReqJohn.sh");
     system("./sendReqRichard.sh");
     system("./sendReqMiddleton.sh");
+    system("./sendReqRalph.sh");
+    system("./sendReqStorm.sh");
+    system("./sendReqMac.sh");
+    system("./sendReqMurphy.sh");
+    system("./sendReqHarvis.sh");
+    system("./sendReqCourage.sh");
 
 
     cout << "Requests Sent." << endl;
@@ -344,6 +353,19 @@ int main(int argc, char** argv)
 
 
     sqlite3_close(db);
+
+
+    ifstream queryFile;
+    queryFile.open("reqQuery.txt");
+    queryFile.getline (query,256);
+
+    string write ="";
+
+
+
+    cout << write << endl;
+
+
 
     write = "";
     write += "sqlite3 -header -csv \'Result.db\' \'";

@@ -1,1 +1,1 @@
-select * from WEATHER where TEMPERATURE < -7;
+select * from WEATHER where ID < 10;
