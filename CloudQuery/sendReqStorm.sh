@@ -1,10 +1,10 @@
 #!/usr/bin/expect -f
-spawn scp -r /home/darren/Desktop/Proooooj/LabProject/CloudQuery/reqQuery.txt  pi@10.0.0.111:/home/pi/Desktop/LabProject/LabProject/CloudQuery/
+spawn scp -r /home/pi/Desktop/LabProject/LabProject/CloudQuery/reqQuery.txt  pi@192.168.1.105:/home/pi/Desktop/LabProject/LabProject/CloudQuery/
 expect "password:"
 send "0116166224\r"
 expect "password:"
 send "0116166224\r"
 expect "password:"
 send "0116166224\r"
-expect "pi@10.0.0.111's password:"
+expect "pi@192.168.1.105's password:"
 send "0116166224\r"
