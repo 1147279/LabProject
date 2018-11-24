@@ -253,7 +253,8 @@ int main(int argc, char** argv)
 
     write = "";
     write += "sqlite3 -header -csv \'Result.db\' \'";
-    write += query;
+    //edge//write += query;
+    write += "select * from WEATHER;"
     write += "\' > FinalResultRichard.csv";
     cout << write << endl;
 

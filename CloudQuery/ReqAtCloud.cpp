@@ -23,81 +23,55 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 
 int main(int argc, char** argv)
 {
-  system("sudo service ssh start");
-  cout << "Waiting For Cloud Request..." << endl;
-
-  ifstream waitfor;
-
-  while(1)
-  {
-    //cout << "a"<<endl;
-    waitfor.open("instruct.txt",ifstream::in);
-    if (waitfor)
-    {
-        cout << "Received: "<<endl;
-      break;
-    }
-  }
-
-  waitfor.close();
-
-
-  unsigned int milli ;//= 500000;
-  milli = 100000;
-  string temp = "";
-  char query[256];
-  string queryTwo = "";
-
-    system("mv instruct.txt reqQuery.txt");
-    /*
-  ofstream outreq;
-  outreq.open("reqQuery.txt",ofstream::out);
-
-  cin.getline (query,256);
-
-  string write ="";
+    system("sudo service ssh start");
 
 
 
-  //cout << query << endl;
+
+    cout << "Type Command: " <<endl;
 
 
-  write += "echo \'";
-  write += query;
-  write += "\' > reqQuery.txt";
-  cout << write << endl;
+    string temp = "";
+    char query[256];
+    string queryTwo = "";
 
+    cin.getline (query,256);
 
-  system(write.c_str());
-
-*/
-
-
-    clock_t start;
-
-    start = clock();
+    string write ="";
 
 
 
-    system("./sendReqCourage.sh");
-    system("./sendReqRalph.sh");
+    //cout << query << endl;
+
+
+    write += "echo \'";
+    write += query;
+    write += "\' > instruct.txt";
+    system(write.c_str());
 
 
 
-    cout << "Requests Sent." << endl;
 
-    // Wait till file with results is sent back from sensor/s
+    system("./sendReqJohn.sh");
+    system("./sendReqRichard.sh");
+    system("./sendReqAudrey.sh");
+
+
+
+    cout << "Requests Sent to fog Gateways." << endl;
+
 
     ifstream inFileA;
     ifstream inFileB;
+    ifstream inFileC;
 
 
-    cout << "Waiting For Data..." << endl;
+    cout << "Waiting For Data from Fog Gateways..." << endl;
 
 
     while(1)
     {
-      inFileA.open("outTempCourage.csv",ifstream::in);
+      inFileA.open("FinalResultRichard.csv",ifstream::in);
       if (inFileA)
       {
         break;
@@ -106,13 +80,13 @@ int main(int argc, char** argv)
 
     inFileA.close();
 
-    cout << "Courage Received" << endl;
+    cout << "Richard Received" << endl;
 
 
 
     while(1)
     {
-      inFileB.open("outTempRalph.csv",ifstream::in);
+      inFileB.open("FinalResultJohn.csv",ifstream::in);
       if (inFileB)
       {
         break;
@@ -121,7 +95,22 @@ int main(int argc, char** argv)
 
     inFileB.close();
 
-    cout << "Ralph Received" << endl;
+    cout << "John Received" << endl;
+
+
+
+    while(1)
+    {
+      inFileB.open("FinalResultAudrey.csv",ifstream::in);
+      if (inFileB)
+      {
+        break;
+      }
+    }
+
+    inFileB.close();
+
+    cout << "Audrey Received" << endl;
 
 
 
@@ -132,10 +121,13 @@ int main(int argc, char** argv)
 
     usleep(milli);
     ofstream outFile;
-    inFileA.open("outTempCourage.csv",ifstream::in);
-    inFileB.open("outTempRalph.csv",ifstream::in);
+    inFileA.open("FinalResultRichard.csv",ifstream::in);
+    inFileB.open("FinalResultJohn.csv",ifstream::in);
+    inFileC.open("FinalResultAudrey.csv",ifstream::in);
 
-    outFile.open("QueryResult.txt",ofstream::out);
+
+
+    outFile.open("EndResult.txt",ofstream::out);
 
     string tempString ="";
     sqlite3 *db;
@@ -233,28 +225,67 @@ int main(int argc, char** argv)
       tempString="";
 
     }
+    while (inFileC.good())
+    {
+      getline(inFileC,ID,',');
+      getline(inFileC,year,',');
+      getline(inFileC,month,',');
+      getline(inFileC,day,',');
+      getline(inFileC,hour,',');
+      getline(inFileC,minute,',');
+      getline(inFileC,second,',');
+      getline(inFileC,location,',');
+      getline(inFileC,temperature,'\n');
+
+
+      tempString += "INSERT INTO WEATHER (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,TEMPERATURE) VALUES (";
+      tempString += ID;
+      tempString += ",";
+      tempString += year;
+      tempString += ",";
+      tempString += month;
+      tempString += ",";
+      tempString += day;
+      tempString += ",";
+      tempString += hour;
+      tempString += ",";
+      tempString += minute;
+      tempString += ",";
+      tempString += second;
+      tempString += ",";
+      tempString += "\'";
+      tempString += location;
+      tempString += "\'";
+      tempString += ",";
+      tempString += temperature;
+      tempString += ");";
+
+
+      sql = tempString.c_str();
+      cout << sql << endl;
+
+   	  rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+      tempString="";
+
+    }
 
 
 
     sqlite3_close(db);
 
 
-    ifstream queryFile;
-    queryFile.open("reqQuery.txt");
-    queryFile.getline (query,256);
-
     string write ="";
 
 
 
-    cout << write << endl;
+
 
 
 
     write = "";
     write += "sqlite3 -header -csv \'Result.db\' \'";
     write += query;
-    write += "\' > FinalResultRichard.csv";
+    write += "\' > EndResult.csv";
     cout << write << endl;
 
     system(write.c_str());
@@ -262,20 +293,12 @@ int main(int argc, char** argv)
     usleep(milli);
 
 
-    system("./tocloudRichard.sh");
-
-
-
 
     inFileA.close();
     inFileB.close();
+    inFileC.close();
 
     outFile.close();
-
-
-    cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
-
-
 
 
 
