@@ -254,7 +254,7 @@ int main(int argc, char** argv)
     write = "";
     write += "sqlite3 -header -csv \'Result.db\' \'";
     //edge//write += query;
-    write += "select * from WEATHER;"
+    write += "select * from WEATHER;";
     write += "\' > FinalResultAudrey.csv";
     cout << write << endl;
 
