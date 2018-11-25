@@ -32,7 +32,7 @@ int main(int argc, char** argv)
     waitfor.open("instruct.txt",ifstream::in);
     if (waitfor)
     {
-      cout << "Type Command: "<<endl;
+      cout << "Received: "<<endl;
       break;
     }
   }
@@ -44,6 +44,9 @@ int main(int argc, char** argv)
   milli = 100000;
   string temp = "";
   char query[256];
+  system("mv instruct.txt reqQuery.txt");
+
+ /*
   string queryTwo = "";
   ofstream outreq;
   outreq.open("reqQuery.txt",ofstream::out);
@@ -72,7 +75,9 @@ int main(int argc, char** argv)
   cout << "What Aggregate Function would you like to perform? "<<endl;
   cout << "Type avg for average, sum for sum: ";
   cin >> agg;
+*/
 
+  agg = "avg";
 
     system("sudo service ssh start");
 
@@ -206,7 +211,7 @@ int main(int argc, char** argv)
     }
 
     cout << "A: " << aggregateA <<endl;
-    cout << "B: " << aggregateA <<endl;
+    cout << "B: " << aggregateB <<endl;
     cout << "C: " << aggregateC <<endl;
     cout << "D: " << aggregateD <<endl;
 
@@ -238,7 +243,7 @@ int main(int argc, char** argv)
 
     system("./tocloudAgg.sh");
 
-    system(write.c_str());
+    //system(write.c_str());
 
 
     inFileA.close();

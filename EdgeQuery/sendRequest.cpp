@@ -23,7 +23,7 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 
 int main(int argc, char** argv)
 {
-
+  system("sudo service ssh start");
   cout << "Waiting For Cloud Request..." << endl;
   ifstream waitfor;
 
@@ -32,18 +32,27 @@ int main(int argc, char** argv)
     waitfor.open("instruct.txt",ifstream::in);
     if (waitfor)
     {
-	  cout << "Type Command: " <<endl;
+	  cout << " Received: " <<endl;
       break;
     }
   }
 
   waitfor.close();
 
+
+
+
+
   unsigned int milli ;//= 500000;
   milli = 100000;
   string temp = "";
   char query[256];
   string queryTwo = "";
+
+  system("mv instruct.txt reqQuery.txt");
+
+/*
+
   ofstream outreq;
   outreq.open("reqQuery.txt",ofstream::out);
 
@@ -63,6 +72,8 @@ int main(int argc, char** argv)
 
 
   system(write.c_str());
+
+  */
 
     system("sudo service ssh start");
 
@@ -342,7 +353,19 @@ int main(int argc, char** argv)
 
     sqlite3_close(db);
 
-    write = "";
+
+    ifstream queryFile;
+    queryFile.open("reqQuery.txt");
+    queryFile.getline (query,256);
+
+    string write ="";
+
+
+
+    cout << write << endl;
+
+
+
     write += "sqlite3 -header -csv \'Result.db\' \'";
     write += query;
     write += "\' > FinalResult.csv";
@@ -367,8 +390,10 @@ int main(int argc, char** argv)
     outFile.close();
 
 
-    cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+    //cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+    system("clear");
 
+    cout << "Result sent to Cloud."<<endl;
 
 
 

@@ -1,1 +1,1 @@
-Limpopo
+select AVG(TEMPERATURE) from WEATHER;

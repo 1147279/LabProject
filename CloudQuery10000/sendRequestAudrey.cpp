@@ -23,16 +23,18 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName)
 
 int main(int argc, char** argv)
 {
-
+  system("sudo service ssh start");
   cout << "Waiting For Cloud Request..." << endl;
+
   ifstream waitfor;
 
   while(1)
   {
+    //cout << "a"<<endl;
     waitfor.open("instruct.txt",ifstream::in);
     if (waitfor)
     {
-	  cout << "Type Command: " <<endl;
+        cout << "Received: "<<endl;
       break;
     }
   }
@@ -45,6 +47,9 @@ int main(int argc, char** argv)
   string temp = "";
   char query[256];
   string queryTwo = "";
+
+    system("mv instruct.txt reqQuery.txt");
+    /*
   ofstream outreq;
   outreq.open("reqQuery.txt",ofstream::out);
 
@@ -65,7 +70,7 @@ int main(int argc, char** argv)
 
   system(write.c_str());
 
-    system("sudo service ssh start");
+*/
 
 
     clock_t start;
@@ -73,8 +78,11 @@ int main(int argc, char** argv)
     start = clock();
 
 
+
     system("./sendReqStorm.sh");
     system("./sendReqHarvis.sh");
+
+
 
     cout << "Requests Sent." << endl;
 
@@ -118,7 +126,6 @@ int main(int argc, char** argv)
 
 
 
-
     string ID,year,month,day,hour,minute,second;
     string location;
     string temperature;
@@ -127,6 +134,7 @@ int main(int argc, char** argv)
     ofstream outFile;
     inFileA.open("outTempStorm.csv",ifstream::in);
     inFileB.open("outTempHarvis.csv",ifstream::in);
+
     outFile.open("QueryResult.txt",ofstream::out);
 
     string tempString ="";
@@ -227,28 +235,48 @@ int main(int argc, char** argv)
     }
 
 
+
     sqlite3_close(db);
 
-    write = "";
-    write += "sqlite3 -header -csv \'Result.db\' \'";
-    write += query;
-    write += "\' > FinalResultAudrey.csv";
+
+    ifstream queryFile;
+    queryFile.open("reqQuery.txt");
+    queryFile.getline (query,256);
+
+    string write ="";
+
+
+
     cout << write << endl;
 
 
-    system(write.c_str());
 
+    write = "";
+    write += "sqlite3 -header -csv \'Result.db\' \'";
+    //edge//write += query;
+    write += "select * from WEATHER;";
+    write += "\' > FinalResultAudrey.csv";
+    cout << write << endl;
+
+    system(write.c_str());
 
     usleep(milli);
 
+
+    system("./tocloudAudrey.sh");
+
+
+
+
     inFileA.close();
     inFileB.close();
+
     outFile.close();
 
 
     cout << "Cloud Time: " << (clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
 
-    system("./tocloudAudrey.sh");
+
 
 
 
