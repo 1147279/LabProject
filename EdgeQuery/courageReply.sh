@@ -1,5 +1,5 @@
 #!/usr/bin/expect -f
-spawn scp -r /home/pi/Desktop/LabProject/LabProject/CloudQuery/outTempCourage.csv  pi@192.168.1.112:/home/pi/Desktop/LabProject/LabProject/CloudQuery/
+spawn scp -r /home/pi/Desktop/LabProject/LabProject/EdgeQuery/outTempCourage.csv  pi@192.168.1.112:/home/pi/Desktop/LabProject/LabProject/EdgeQuery/
 expect "password:"
 send "0116166224\r"
 expect "password:"
