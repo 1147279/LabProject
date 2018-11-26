@@ -54,37 +54,32 @@ int main(int argc, char** argv)
 
 
 
-
-  rc = sqlite3_open("TAud.db", &db);
-
-  char req[256];
-
-  inFileA.getline (req,256);
-
   string write ="";
-
+  char query[256];
+  ifstream queryFile;
+  queryFile.open("reqQuery.txt");
+  queryFile.getline (query,256);
 
 
   cout << write << endl;
 
 
-  write += "sqlite3 -header -csv \'TAud.db\' \'";
-  write += req;
-  write += "\' > outTempAudrey.csv";
+  write += "sqlite3 -header -csv \'TMac.db\' \'";
+  write += query;
+  write += "\' > outTempMac.csv";
   cout << write << endl;
-
 
   system(write.c_str());
 
-
   system("sudo service ssh start");
 
-  system("./audreyReply.sh");
+  system("./macReply.sh");
 
 
+  queryFile.close();
 
+	//sqlite3_close(db);
 
-	sqlite3_close(db);
 
 
 
