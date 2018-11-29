@@ -54,9 +54,7 @@ int main(int argc, char** argv)
   system(write.c_str());
 
 
-  cout << "What Aggregate Function would you like to perform? "<<endl;
-  cout << "Type avg for average, sum for sum: ";
-  cin >> agg;
+  agg = "avg";
 
 
     system("sudo service ssh start");
@@ -117,14 +115,14 @@ int main(int argc, char** argv)
 
         while(1)
         {
-          inFileB.open("FinalResultAudrey.csv",ifstream::in);
-          if (inFileB)
+          inFileC.open("FinalResultAudrey.csv",ifstream::in);
+          if (inFileC)
           {
             break;
           }
         }
 
-        inFileB.close();
+        inFileC.close();
 
         cout << "Audrey Received" << endl;
 
@@ -138,7 +136,7 @@ int main(int argc, char** argv)
     ofstream outFile;
     inFileA.open("FinalResultAudrey.csv",ifstream::in);
     inFileB.open("FinalResultJohn.csv",ifstream::in);
-    inFileD.open("FinalResultRichard.csv",ifstream::in);
+    inFileC.open("FinalResultRichard.csv",ifstream::in);
     outFile.open("QueryResult.txt",ofstream::out);
 
 
@@ -152,24 +150,31 @@ int main(int argc, char** argv)
     }
     while (inFileB.good())
     {
-      getline(inFileA,firstline,'\n');
-      getline(inFileA,aggregateB,'\n');
+      getline(inFileB,firstline,'\n');
+      getline(inFileB,aggregateB,'\n');
 
 
     }
     while (inFileC.good())
     {
-      getline(inFileA,firstline,'\n');
-      getline(inFileA,aggregateC,'\n');
+      getline(inFileC,firstline,'\n');
+      getline(inFileC,aggregateC,'\n');
 
 
     }
+
+    cout << "Agg A: " << aggregateA <<endl;
+    cout << "Agg B: " << aggregateB <<endl;
+    cout << "Agg C: " << aggregateC <<endl;
+
 
     double answer=0;
 
     if (agg == "avg")
     {
-      answer = (stoi(aggregateA)+stoi(aggregateB)+stoi(aggregateC))/3;
+      cout << "Hey there "<<endl;
+      answer = (stod(aggregateA)+stod(aggregateB)+stod(aggregateC))/3.00;
+      cout << answer << endl;
     }
 
     if (agg == "sum")
