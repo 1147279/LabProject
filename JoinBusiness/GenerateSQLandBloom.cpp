@@ -58,25 +58,26 @@ void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &min
            if (month >= 12)
            {
              month = 1;
+             year++;
            }else
            {
              month++;
            }
          }else
          {
-           day += 5;
+           day += 1;
          }
        }else
        {
-         hour +=11;
+         hour +=5;
        }
      }else
      {
-       minute += 23;
+       minute += 15;
      }
    }else
    {
-     second +=29;
+     second +=10;
    }
 
 }
@@ -124,14 +125,14 @@ int main(int argc, char** argv) {
 
   unsigned int milli ;//= 500000;
   milli = 2;
-  string Location = "\'Kensington\'";
+  string Location = "\'Norwood\'";
   srand(time(NULL));
-  randTemperatureold = randomTemperatureGenerator()+20;
+  randTemperatureold = randomTemperatureGenerator();
   randTemperaturenew = randTemperatureold;
   int l=0;
   string check;
-   rc = sqlite3_open("temperature.db", &db);
-  tempString += "DELETE FROM WEATHER WHERE ID >= 0;";
+   rc = sqlite3_open("radiation.db", &db);
+  tempString += "DELETE FROM RADIATION WHERE ID >= 0;";
 
 	sql = tempString.c_str();
     cout << sql << endl;
@@ -142,7 +143,7 @@ int main(int argc, char** argv) {
   	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 
 
-  while (l<1000)
+  while (l<10000)
   {
 
 
@@ -155,7 +156,7 @@ int main(int argc, char** argv) {
 
     /* Create SQL statement */
 
-    /*CREATE TABLE WEATHER(
+    /*CREATE TABLE RADIATION(
        ...> ID INT PRIMARY KEY NOT NULL,
        ...> YEAR INT NOT NULL,
        ...> MONTH INT NOT NULL,
@@ -164,7 +165,7 @@ int main(int argc, char** argv) {
        ...> MINUTE INT NOT NULL,
        ...> SECOND INT NOT NULL,
        ...> LOCATION CHAR(50) NOT NULL,
-       ...> TEMPERATURE INT NOT NULL);
+       ...> RADIATION INT NOT NULL);
     */
 
     randTemperatureold = randomTemperatureGenerator();
@@ -173,7 +174,7 @@ int main(int argc, char** argv) {
       randTemperatureold = randomTemperatureGenerator();
     }
 
-    tempString += "INSERT INTO WEATHER (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,TEMPERATURE) VALUES (";
+    tempString += "INSERT INTO RADIATION (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,RADIATION) VALUES (";
     tempString += to_string(ID);
     tempString += ",";
     tempString += to_string(year);
@@ -230,10 +231,10 @@ int main(int argc, char** argv) {
     l++;
   }
 	sqlite3_close(db);
-	system("sqlite3 -header -csv 'temperature.db' 'select * from WEATHER;' > outTemp2.csv");
+	system("sqlite3 -header -csv 'radiation.db' 'select * from RADIATION;' > outRADIATION2.csv");
 
   //bf.printFilter();
-	exportToFile("bitstringOUT2.txt", bloomfilter);
+	exportToFile("bitstringOUTCourage.txt", bloomfilter);
   //system("mv bitstringprint.txt bitstringread.txt");
 
 
