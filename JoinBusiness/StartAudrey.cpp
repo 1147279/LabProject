@@ -133,7 +133,7 @@ int main ()
 
   while(1)
 	{
-		infile.open("compressedbloomFinalAudrey.txt");
+		infile.open("compressedbloomFinalRichard.txt");
 		if (infile)
 		{
 			break;
@@ -142,17 +142,17 @@ int main ()
 
 	infile.close();
 
-	cout << "Audrey Bloom filter Received" << endl;
+	cout << "Richard Bloom filter Received" << endl;
 
 
 
 
 	int wordlength =14;
 	ifstream inputAudrey;
-	ifstream inputAudrey;
+	ifstream inputRichard;
 
   inputAudrey.open("compressedbloomFinalAudrey.txt");
-  inputAudrey.open("compressedbloomFinalAudrey.txt");
+  inputAudrey.open("compressedbloomFinalRichard.txt");
 
   string compressedAudreyBloom,AudreyBloom;
   compressedAudreyBloom="";
@@ -162,16 +162,16 @@ int main ()
 
 
 
-  string compressedAudreyBloom,AudreyBloom;
-  compressedAudreyBloom="";
-  AudreyBloom = "";
-  inputAudrey >> compressedAudreyBloom;
-  cout << "compressedAudreyBloom size: "<< compressedAudreyBloom.size()<<endl;
+  string compressedRichardBloom,RichardBloom;
+  compressedRichardBloom="";
+  RichardBloom = "";
+  inputRichard >> compressedRichardBloom;
+  cout << "compressedRichardBloom size: "<< compressedRichardBloom.size()<<endl;
 
 
 
   int sz = compressedAudreyBloom.size()/wordlength;
-  int sz2 = compressedAudreyBloom.size()/wordlength;
+  int sz2 = compressedRichardBloom.size()/wordlength;
 
   for (int i = 0 ; i < sz ; i++)
   {
@@ -180,13 +180,13 @@ int main ()
 
   for (int i = 0 ; i < sz2 ; i++)
   {
-    AudreyBloom = decompressor(i,wordlength,compressedAudreyBloom) + AudreyBloom;
+    RichardBloom = decompressor(i,wordlength,compressedRichardBloom) + RichardBloom;
   }
 
   cout << "AudreyBloom size: "<< AudreyBloom.size()<<endl;
-  cout << "AudreyBloom size: "<< AudreyBloom.size()<<endl;
+  cout << "RichardBloom size: "<< RichardBloom.size()<<endl;
 
-  string resBloom = logicalEnd(AudreyBloom,AudreyBloom);
+  string resBloom = logicalEnd(AudreyBloom,RichardBloom);
 
   cout << "resbloom size: "<< resBloom.size()<<endl;
 
@@ -207,7 +207,7 @@ int main ()
 
   while(1)
   {
-    infile.open("compressedbloomFinalAudrey.txt");
+    infile.open("compressedbloomFinalJohn.txt");
     if (infile)
     {
       break;
@@ -216,39 +216,39 @@ int main ()
 
   infile.close();
 
-  cout << "Audrey Bloom filter Received" << endl;
+  cout << "John Bloom filter Received" << endl;
 
 
 
 
   //int wordlength =14;
-  ifstream inputAudrey;
+  ifstream inputJohn;
 
 
-  inputAudrey.open("compressedbloomFinalAudrey.txt");
-
-
-
-  string compressedAudreyBloom,AudreyBloom;
-  compressedAudreyBloom="";
-  AudreyBloom = "";
-  inputAudrey >> compressedAudreyBloom;
-  cout << "compressedAudreyBloom size: "<< compressedAudreyBloom.size()<<endl;
+  inputJohn.open("compressedbloomFinalJohn.txt");
 
 
 
-  sz = compressedAudreyBloom.size()/wordlength;
+  string compressedJohnBloom,JohnBloom;
+  compressedJohnBloom="";
+  JohnBloom = "";
+  inputJohn >> compressedJohnBloom;
+  cout << "compressedJohnBloom size: "<< compressedJohnBloom.size()<<endl;
+
+
+
+  sz = compressedJohnBloom.size()/wordlength;
 
 
   for (int i = 0 ; i < sz ; i++)
   {
-    AudreyBloom = decompressor(i,wordlength,compressedAudreyBloom) + AudreyBloom;
+    JohnBloom = decompressor(i,wordlength,compressedJohnBloom) + JohnBloom;
   }
 
-  cout << "AudreyBloom size: "<< AudreyBloom.size()<<endl;
+  cout << "JohnBloom size: "<< JohnBloom.size()<<endl;
   cout << "RoundOneBloom size: "<< resBloom.size()<<endl;
 
-  string resBloom2 = logicalEnd(resBloom,AudreyBloom);
+  string resBloom2 = logicalEnd(resBloom,JohnBloom);
 
   cout << "resbloom2 size: "<< resBloom2.size()<<endl;
 

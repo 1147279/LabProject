@@ -74,6 +74,21 @@ int main ()
 
 
 
+    while(1)
+  	{
+  		infile.open("compressedbloomFinalJohn.txt");
+  		if (infile)
+  		{
+  			break;
+  		}
+  	}
+
+  	infile.close();
+
+  	cout << "John Bloom filter Received" << endl;
+
+
+
 	while(1)
 	{
 		input.open("ForJoinMac.csv");
@@ -101,18 +116,6 @@ int main ()
 	cout << "Join Murphy Received" << endl;
 
 
-  while(1)
-	{
-		infile.open("compressedbloomFinalJohn.txt");
-		if (infile)
-		{
-			break;
-		}
-	}
-
-	infile.close();
-
-	cout << "John Bloom filter Received" << endl;
 
 	usleep(milli);
 
@@ -145,11 +148,11 @@ int main ()
 
 
 	int wordlength =14;
-	ifstream inputAudrey;
 	ifstream inputJohn;
+	ifstream inputAudrey;
 
-  inputAudrey.open("compressedbloomFinalAudrey.txt");
   inputJohn.open("compressedbloomFinalJohn.txt");
+  inputAudrey.open("compressedbloomFinalAudrey.txt");
 
   string compressedJohnBloom,JohnBloom;
   compressedJohnBloom="";
@@ -167,21 +170,21 @@ int main ()
 
 
 
-  int sz = compressedAudreyBloom.size()/wordlength;
-  int sz2 = compressedJohnBloom.size()/wordlength;
+  int sz = compressedJohnBloom.size()/wordlength;
+  int sz2 = compressedAudreyBloom.size()/wordlength;
 
   for (int i = 0 ; i < sz ; i++)
-  {
-    AudreyBloom = decompressor(i,wordlength,compressedAudreyBloom) + AudreyBloom;
-  }
-
-  for (int i = 0 ; i < sz2 ; i++)
   {
     JohnBloom = decompressor(i,wordlength,compressedJohnBloom) + JohnBloom;
   }
 
-  cout << "AudreyBloom size: "<< AudreyBloom.size()<<endl;
+  for (int i = 0 ; i < sz2 ; i++)
+  {
+    AudreyBloom = decompressor(i,wordlength,compressedAudreyBloom) + AudreyBloom;
+  }
+
   cout << "JohnBloom size: "<< JohnBloom.size()<<endl;
+  cout << "AudreyBloom size: "<< AudreyBloom.size()<<endl;
 
   string resBloom = logicalEnd(JohnBloom,AudreyBloom);
 
@@ -204,7 +207,7 @@ int main ()
 
   while(1)
   {
-    infile.open("compressedbloomFinalJohn.txt");
+    infile.open("compressedbloomFinalRichard.txt");
     if (infile)
     {
       break;
@@ -213,39 +216,39 @@ int main ()
 
   infile.close();
 
-  cout << "John Bloom filter Received" << endl;
+  cout << "Richard Bloom filter Received" << endl;
 
 
 
 
   //int wordlength =14;
-  ifstream inputJohn;
+  ifstream inputRichard;
 
 
-  inputJohn.open("compressedbloomFinalJohn.txt");
-
-
-
-  string compressedJohnBloom,JohnBloom;
-  compressedJohnBloom="";
-  JohnBloom = "";
-  inputJohn >> compressedJohnBloom;
-  cout << "compressedJohnBloom size: "<< compressedJohnBloom.size()<<endl;
+  inputJohn.open("compressedbloomFinalRichard.txt");
 
 
 
-  sz = compressedJohnBloom.size()/wordlength;
+  string compressedRichardBloom,RichardBloom;
+  compressedRichardBloom="";
+  RichardBloom = "";
+  inputRichard >> compressedRichardBloom;
+  cout << "compressedRichardBloom size: "<< compressedRichardBloom.size()<<endl;
+
+
+
+  sz = compressedRichardBloom.size()/wordlength;
 
 
   for (int i = 0 ; i < sz ; i++)
   {
-    JohnBloom = decompressor(i,wordlength,compressedJohnBloom) + JohnBloom;
+    RichardBloom = decompressor(i,wordlength,compressedRichardBloom) + RichardBloom;
   }
 
-  cout << "JohnBloom size: "<< JohnBloom.size()<<endl;
+  cout << "RichardBloom size: "<< RichardBloom.size()<<endl;
   cout << "RoundOneBloom size: "<< resBloom.size()<<endl;
 
-  string resBloom2 = logicalEnd(resBloom,JohnBloom);
+  string resBloom2 = logicalEnd(resBloom,RichardBloom);
 
   cout << "resbloom2 size: "<< resBloom2.size()<<endl;
 
