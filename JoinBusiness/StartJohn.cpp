@@ -122,7 +122,8 @@ int main ()
 	string inputString;
 	string tempString;
 
-	//inputString = "input.txt";
+	//inp
+  ]////'utString = "input.txt";
 
 
 	input.open("ForJoinMac.csv");
@@ -145,7 +146,7 @@ int main ()
 	cout << "Audrey Bloom filter Received" << endl;
 
 
-
+  usleep(milli);
 
 	int wordlength =14;
 	ifstream inputJohn;
@@ -218,7 +219,7 @@ int main ()
 
   cout << "Richard Bloom filter Received" << endl;
 
-
+  usleep(milli);
 
 
   //int wordlength =14;

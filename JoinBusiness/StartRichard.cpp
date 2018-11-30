@@ -86,7 +86,7 @@ int main ()
 	input.close();
 
 	cout << "Join Ralph Received" << endl;
-
+usleep(milli);
 	while(1)
 	{
 		infile.open("ForJoinRalph.csv");
@@ -100,7 +100,7 @@ int main ()
 
 	cout << "Join Courage Received" << endl;
 
-
+usleep(milli);
   while(1)
 	{
 		infile.open("compressedbloomFinalRichard.txt");
@@ -149,7 +149,7 @@ int main ()
   }
 
   infile.close();
-
+usleep(milli);
   cout << "John Bloom filter Received" << endl;
 
 
@@ -214,7 +214,7 @@ int main ()
     	infile.close();
 
     	cout << "Audrey Bloom filter Received" << endl;
-
+usleep(milli);
 
 
     inputAudrey.open("compressedbloomFinalAudrey.txt");

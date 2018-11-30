@@ -86,7 +86,7 @@ int main ()
   	infile.close();
 
   	cout << "Audrey Bloom filter Received" << endl;
-
+usleep(milli);
 
 
 	while(1)
@@ -101,7 +101,7 @@ int main ()
 	input.close();
 
 	cout << "Join Storm Received" << endl;
-
+usleep(milli);
 	while(1)
 	{
 		infile.open("ForJoinHarvis.csv");
@@ -144,7 +144,7 @@ int main ()
 
 	cout << "Richard Bloom filter Received" << endl;
 
-
+usleep(milli);
 
 
 	int wordlength =14;
@@ -218,7 +218,7 @@ int main ()
 
   cout << "John Bloom filter Received" << endl;
 
-
+usleep(milli);
 
 
   //int wordlength =14;
