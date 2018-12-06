@@ -48,7 +48,7 @@ int main ()
 
 
 	unsigned int milli ;//= 500000;
-  milli = 200000;
+  milli = 400000;
 	int wordlength =14;
 	ifstream inputres;
 	ifstream inputMac;

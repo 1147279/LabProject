@@ -60,7 +60,7 @@ int main ()
 
 
 	unsigned int milli ;//= 500000;
-  milli = 100000;
+  milli = 400000;
 
 	ifstream input;
 	ifstream infile;
