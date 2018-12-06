@@ -152,12 +152,13 @@ usleep(milli);
 	ifstream inputRichard;
 
   inputAudrey.open("compressedbloomFinalAudrey.txt");
-  inputAudrey.open("compressedbloomFinalRichard.txt");
+  inputRichard.open("compressedbloomFinalRichard.txt");
 
   string compressedAudreyBloom,AudreyBloom;
   compressedAudreyBloom="";
   AudreyBloom = "";
   inputAudrey >> compressedAudreyBloom;
+  
   cout << "compressedAudreyBloom size: "<< compressedAudreyBloom.size()<<endl;
 
 
