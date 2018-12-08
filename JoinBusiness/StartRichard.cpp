@@ -124,8 +124,8 @@ usleep(milli);
 
 	input.open("ForJoinCourage.csv");
 
-  system("./sendBloomJohn.sh");
-  system("./sendBloomAudrey.sh");
+  system("./sendBloomJohnR.sh");
+  system("./sendBloomAudreyR.sh");
 
 
 

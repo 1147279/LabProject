@@ -128,8 +128,8 @@ int main ()
 
 	input.open("ForJoinMac.csv");
 
-  system("./sendBloomAudrey.sh");
-  system("./sendBloomRichard.sh");
+  system("./sendBloomAudreyJ.sh");
+  system("./sendBloomRichardJ.sh");
 
 
   while(1)
