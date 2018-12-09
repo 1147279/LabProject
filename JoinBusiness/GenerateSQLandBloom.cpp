@@ -65,19 +65,19 @@ void getCurrentDateAndTime( int &year, int &month, int &day, int &hour, int &min
            }
          }else
          {
-           day += 1;
+           day += 20;
          }
        }else
        {
-         hour +=5;
+         hour +=8;
        }
      }else
      {
-       minute += 15;
+       minute += 4;
      }
    }else
    {
-     second +=10;
+     second +=30;
    }
 
 }
@@ -131,8 +131,8 @@ int main(int argc, char** argv) {
   randTemperaturenew = randTemperatureold;
   int l=0;
   string check;
-   rc = sqlite3_open("radiation.db", &db);
-  tempString += "DELETE FROM RADIATION WHERE ID >= 0;";
+   rc = sqlite3_open("humidity.db", &db);
+  tempString += "DELETE FROM HUMIDITY WHERE ID >= 0;";
 
 	sql = tempString.c_str();
     cout << sql << endl;
@@ -143,7 +143,7 @@ int main(int argc, char** argv) {
   	rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
 
 
-  while (l<10000)
+  while (l<100000)
   {
 
 
@@ -156,7 +156,7 @@ int main(int argc, char** argv) {
 
     /* Create SQL statement */
 
-    /*CREATE TABLE RADIATION(
+    /*CREATE TABLE HUMIDITY(
        ...> ID INT PRIMARY KEY NOT NULL,
        ...> YEAR INT NOT NULL,
        ...> MONTH INT NOT NULL,
@@ -165,7 +165,7 @@ int main(int argc, char** argv) {
        ...> MINUTE INT NOT NULL,
        ...> SECOND INT NOT NULL,
        ...> LOCATION CHAR(50) NOT NULL,
-       ...> RADIATION INT NOT NULL);
+       ...> HUMIDITY INT NOT NULL);
     */
 
     randTemperatureold = randomTemperatureGenerator();
@@ -174,7 +174,7 @@ int main(int argc, char** argv) {
       randTemperatureold = randomTemperatureGenerator();
     }
 
-    tempString += "INSERT INTO RADIATION (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,RADIATION) VALUES (";
+    tempString += "INSERT INTO HUMIDITY (ID,YEAR,MONTH,DAY,HOUR,MINUTE,SECOND,LOCATION,HUMIDITY) VALUES (";
     tempString += to_string(ID);
     tempString += ",";
     tempString += to_string(year);
@@ -231,10 +231,10 @@ int main(int argc, char** argv) {
     l++;
   }
 	sqlite3_close(db);
-	system("sqlite3 -header -csv 'radiation.db' 'select * from RADIATION;' > outRADIATION2.csv");
+	system("sqlite3 -header -csv 'humidity.db' 'select * from HUMIDITY;' > outHUMIDITY2.csv");
 
   //bf.printFilter();
-	exportToFile("bitstringOUTCourage.txt", bloomfilter);
+	exportToFile("bitstringOUTMurphy.txt", bloomfilter);
   //system("mv bitstringprint.txt bitstringread.txt");
 
 
