@@ -156,7 +156,7 @@ usleep(milli);
 
 
   //int wordlength =14;
-  ifstream inputJohn;
+  ifstream inputJohn,inputRichard;
 
 
   inputJohn.open("compressedbloomFinalJohn.txt");
@@ -179,12 +179,29 @@ usleep(milli);
     JohnBloom = decompressor(i,wordlength,compressedJohnBloom) + JohnBloom;
   }
 
-  string resBloom;
+
+  string compressedRichardBloom,RichardBloom;
+  compressedRichardBloom="";
+  RichardBloom = "";
+  inputRichard >> compressedRichardBloom;
+  cout << "compressedRichardBloom size: "<< compressedRichardBloom.size()<<endl;
+
+
+
+  sz = compressedRichardBloom.size()/wordlength;
+
+
+  for (int i = 0 ; i < sz ; i++)
+  {
+    RichardBloom = decompressor(i,wordlength,compressedRichardBloom) + RichardBloom;
+  }
+
+
 
   cout << "JohnBloom size: "<< JohnBloom.size()<<endl;
-  cout << "RoundOneBloom size: "<< resBloom.size()<<endl;
+  cout << "RichardBloom size: "<< RichardBloom.size()<<endl;
 
-  string resBloom2 = logicalEnd(resBloom,JohnBloom);
+  string resBloom2 = logicalEnd(RichardBloom,JohnBloom);
 
   cout << "resbloom2 size: "<< resBloom2.size()<<endl;
 
@@ -218,13 +235,13 @@ usleep(milli);
 
 
     inputAudrey.open("compressedbloomFinalAudrey.txt");
-    inputRichard.open("compressedbloomFinalRichard.txt");
+    inputRichard.open("resultingBitStringRoundTwo.txt");
 
     string compressedRichardBloom,RichardBloom;
     compressedRichardBloom="";
     RichardBloom = "";
     inputRichard >> compressedRichardBloom;
-    cout << "compressedRichardBloom size: "<< compressedRichardBloom.size()<<endl;
+    cout << "Round two Bloom size: "<< compressedRichardBloom.size()<<endl;
 
 
 
@@ -244,15 +261,12 @@ usleep(milli);
       AudreyBloom = decompressor(i,wordlength,compressedAudreyBloom) + AudreyBloom;
     }
 
-    for (int i = 0 ; i < sz2 ; i++)
-    {
-      RichardBloom = decompressor(i,wordlength,compressedRichardBloom) + RichardBloom;
-    }
+
 
     cout << "AudreyBloom size: "<< AudreyBloom.size()<<endl;
-    cout << "RichardBloom size: "<< RichardBloom.size()<<endl;
+    cout << "RichardBloom size: "<< compressedRichardBloom.size()<<endl;
 
-    resBloom = logicalEnd(RichardBloom,AudreyBloom);
+    resBloom = logicalEnd(compressedRichardBloom,AudreyBloom);
 
     cout << "resbloom size: "<< resBloom.size()<<endl;
 
@@ -304,7 +318,7 @@ usleep(milli);
 	participators.open("ForJoinCourageReduced.csv");
 
 	tempString= "";
-  setBloomFilter("resultingBitStringRoundTwo.txt",decompResultBloom);
+  setBloomFilter("resultingBitStringRoundOne.txt",decompResultBloom);
 
 	string firstline;
 	firstcsv >> firstline;
@@ -384,7 +398,7 @@ usleep(milli);
 	participators.open("ForJoinRalphReduced.csv");
 
 	tempString= "";
-  setBloomFilter("resultingBitStringRoundTwo.txt",decompResultBloom);
+  setBloomFilter("resultingBitStringRoundOne.txt",decompResultBloom);
 
 	firstline="";
 	firstcsv >> firstline;
