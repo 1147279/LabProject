@@ -127,8 +127,8 @@ usleep(milli);
 
 	input.open("ForJoinStorm.csv");
 
-  system("./sendBloomRichard.sh");
-  system("./sendBloomJohn.sh");
+  system("./sendBloomRichardA.sh");
+  system("./sendBloomJohnA.sh");
 
 
   while(1)
@@ -158,7 +158,7 @@ usleep(milli);
   compressedAudreyBloom="";
   AudreyBloom = "";
   inputAudrey >> compressedAudreyBloom;
-  
+
   cout << "compressedAudreyBloom size: "<< compressedAudreyBloom.size()<<endl;
 
 
